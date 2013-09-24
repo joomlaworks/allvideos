@@ -354,6 +354,9 @@ class plgContentJw_allvideos extends JPlugin {
 					} else {
 						$output->posterFrame = '';
 					}
+					
+					// Poster frame (remote)
+					$output->posterFrameRemote = substr($tagsource,0,-3).'jpg';
 
 					// Set a unique ID
 					$output->playerID = 'AVPlayerID_'.substr(md5($tagsource),1,8).'_'.rand();
@@ -375,6 +378,7 @@ class plgContentJw_allvideos extends JPlugin {
 						"{FILE_EXT}",
 						"{PLUGIN_PATH}",
 						"{PLAYER_POSTER_FRAME}",
+						"{PLAYER_POSTER_FRAME_REMOTE}",
 						"{PLAYER_SKIN}",
 						"{PLAYER_ABACKGROUND}",
 						"{PLAYER_AFRONTCOLOR}",
@@ -398,6 +402,7 @@ class plgContentJw_allvideos extends JPlugin {
 						$plg_tag,
 						$pluginLivePath,
 						$output->posterFrame,
+						$output->posterFrameRemote,
 						$skin,
 						$abackground,
 						$afrontcolor,
