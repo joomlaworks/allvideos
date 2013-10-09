@@ -382,6 +382,9 @@ $tagReplace = array(
 </object>
 ",
 
+// gloria.tv - http://gloria.tv/?media=509392
+"Gloria" => "<iframe src=\"http://gloria.tv/?embed=frame&amp;media={SOURCE}&amp;width={WIDTH}&amp;height={HEIGHT}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
+
 // goal4replay.net - http://www.goal4replay.net/VideoWatchF.asp?ID=56215&Ln=En
 "goal4replay" => "
 <object type=\"application/x-shockwave-flash\" style=\"width:{VWIDTH}px;height:{VHEIGHT}px;\" data=\"http://www.goal4replay.net/videoEmbedLa.swf?ID={AVSOURCE}&amp;MediaID=1\">
