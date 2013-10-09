@@ -266,7 +266,7 @@ $tagReplace = array(
 
 /* --- Major 3rd party video providers --- */
 // youtube.com - http://www.youtube.com/watch?v=g5lGNkS5TE0
-"YouTube" => "<iframe src=\"http://www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"YouTube" => "<iframe src=\"//www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // vimeo.com - http://www.vimeo.com/1319796
 "Vimeo" => "<iframe src=\"http://player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
