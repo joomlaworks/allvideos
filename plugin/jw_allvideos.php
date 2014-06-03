@@ -17,8 +17,8 @@ if (version_compare(JVERSION, '1.6.0', 'ge')) {
 
 class plgContentJw_allvideos extends JPlugin {
 
-  // JoomlaWorks reference parameters
-	var $plg_name								= "jw_allvideos";
+	// JoomlaWorks reference parameters
+	var $plg_name					= "jw_allvideos";
 	var $plg_copyrights_start		= "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.6.0) starts here -->\n";
 	var $plg_copyrights_end			= "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.6.0) ends here -->\n\n";
 
@@ -32,14 +32,12 @@ class plgContentJw_allvideos extends JPlugin {
 	}
 
 	// Joomla! 1.5
-	function onPrepareContent(&$row, &$params, $page = 0)
-	{
+	function onPrepareContent(&$row, &$params, $page = 0){
 		$this->renderAllVideos($row, $params, $page = 0);
 	}
 
 	// Joomla! 2.5+
-	function onContentPrepare($context, &$row, &$params, $page = 0)
-	{
+	function onContentPrepare($context, &$row, &$params, $page = 0){
 		$this->renderAllVideos($row, $params, $page = 0);
 	}
 
