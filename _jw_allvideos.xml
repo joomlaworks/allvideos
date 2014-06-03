@@ -23,11 +23,9 @@
 					<option value="transparent">JW_PLG_AV_YES</option>
 				</field>
 				<field name="background" type="text" default="#010101" size="6" label="JW_PLG_AV_FLASHMP4WEBMOGG_THEORA_VIDEO_PLAYER_BACKGROUND_COLOR" description="JW_PLG_AV_SET_THE_BACKGROUND_COLOR_OF_THE_PLAYER_ONLY_IF_THE_TRANSPARENCY_IS_SET_TO_NO_VALUES_SHOULD_BE_GIVEN_IN_HEXADECIMAL_FORMAT_EG_000000_FOR_BLACK" />
-				<field name="controlBarLocation" type="list" default="bottom" label="JW_PLG_AV_FLASHMP4WEBMOGG_THEORA_VIDEO_PLAYER_CONTROL_BAR_LOCATION" description="JW_PLG_AV_DEFINE_WHERE_YOU_WANT_THE_CONTROLBAR_OF_THE_PLAYER_TO_APPEAR">
-					<option value="bottom">JW_PLG_AV_BOTTOM_DEFAULT</option>
-					<option value="top">JW_PLG_AV_TOP</option>
-					<option value="over">JW_PLG_AV_OVER</option>
-					<option value="none">JW_PLG_AV_NONE</option>
+				<field name="controls" type="list" default="1" label="JW_PLG_AV_CONTROLS" description="">
+					<option value="0">JW_PLG_AV_NO</option>
+					<option value="1">JW_PLG_AV_YES</option>
 				</field>
 				<field name="backgroundQT" type="list" default="black" label="JW_PLG_AV_PLAYER_BACKGROUND_COLOR_FOR_MEDIA_REPRODUCED_BY_THE_QUICKTIME_PLAYER" description="JW_PLG_AV_SET_THE_BACKGROUND_COLOR_OF_THE_PLAYER_FOR_ALL_MEDIA_TYPES_REPRODUCED_BY_THE_QUICKTIME_PLAYER_MOV_3GP_3G2_MPEG_MPG_AND_AVI">
 					<option value="black">JW_PLG_AV_BLACK_000000</option>
