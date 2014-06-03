@@ -59,6 +59,7 @@ $audioPlayerEmbedRemote = "
 <script type=\"text/javascript\">
 	jwplayer('avID_{SOURCEID}').setup({
 		'file': '{SOURCE}',
+		'image': '{PLAYER_POSTER_FRAME_REMOTE}',
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
 		'autostart': '{PLAYER_AUTOPLAY}',

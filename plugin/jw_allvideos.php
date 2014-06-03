@@ -71,9 +71,9 @@ class plgContentJw_allvideos extends JPlugin {
 		// Simple performance check to determine whether plugin should process further
 		$grabTags = strtolower(implode(array_keys($tagReplace),"|"));
 		if (preg_match("#{(".$grabTags.")}#is", $row->text)==false) return;
-		
-		
-		
+
+
+
 		// ----------------------------------- Get plugin parameters -----------------------------------
 
 		// Get plugin info
@@ -112,7 +112,7 @@ class plgContentJw_allvideos extends JPlugin {
 		$jwPlayerLoading				= $pluginParams->get('jwPlayerLoading','local'); // local | cdn
 		$jwPlayerAPIKey					= $pluginParams->get('jwPlayerAPIKey','plXkZcoHeQXVlRo0nD6AUscwEXmFJCmIpGL3kw==');
 		$jwPlayerCDNUrl					= $pluginParams->get('jwPlayerCDNUrl','http://jwpsrv.com/library/n9Po9gncEeOKaBIxOUCPzg.js');
-		
+
 		// Variable cleanups for K2
 		if (JRequest::getCmd('format')=='raw') {
 			$this->plg_copyrights_start = '';
@@ -141,29 +141,22 @@ class plgContentJw_allvideos extends JPlugin {
 				JHTML::_('behavior.mootools');
 			}
 
+			if ($gzipScripts) {
+				$document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.6.0');
+			} else {
+				$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.6.0');
+				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.6.0');
+				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.6.0');
+				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/AC_QuickTime.js?v=4.6.0');
+			}
+
 			if($jwPlayerLoading=='local'){
-				if ($gzipScripts) {
-					$document->addScript($pluginLivePath.'/includes/js/jwp_all.js.php?v=4.6.0');
-				} else {
-					$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.6.0');
-					$document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.6.0');
-					$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.6.0');
-					$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.6.0');
-					$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/AC_QuickTime.js?v=4.6.0');
-				}
+				$document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.6.0');
 				$document->addScriptDeclaration('
 					/* JW Player API Key */
 					jwplayer.key="'.$jwPlayerAPIKey.'";
 				');
 			} else {
-				if ($gzipScripts) {
-					$document->addScript($pluginLivePath.'/includes/js/jwp_swq.js.php?v=4.6.0');
-				} else {
-					$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.6.0');
-					$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.6.0');
-					$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.6.0');
-					$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/AC_QuickTime.js?v=4.6.0');
-				}
 				$document->addScript($jwPlayerCDNUrl);
 			}
 
@@ -171,7 +164,7 @@ class plgContentJw_allvideos extends JPlugin {
 
 		// Loop throught the found tags
 		foreach ($tagReplace as $plg_tag => $value) {
-		
+
 			$cloned_plg_tag = $plg_tag;
 			$plg_tag = strtolower($plg_tag);
 
@@ -267,14 +260,14 @@ class plgContentJw_allvideos extends JPlugin {
 					if ($plg_tag=="metacafe" && substr($tagsource,-1,1)=='/') {
 						$tagsource = substr($tagsource,0,-1);
 					}
-					
+
 					if ($plg_tag=="sevenload") {
 						$tagsource = parse_url($tagsource);
 						$tagsource = explode('-',$tagsource['query']);
 						$tagsource = array_reverse($tagsource);
 						$tagsource = $tagsource[0];
 					}
-					
+
 					if ($plg_tag=="sohu") {
 						$tagsource = parse_url($tagsource);
 						$tagsource = explode('/',$tagsource['query']);
@@ -338,7 +331,7 @@ class plgContentJw_allvideos extends JPlugin {
 						}
 						if (strpos($tagsource,'youtu.be')!==false) {
 							$tagsource = preg_replace("~(http|https):(.+?)youtu.be\/~s","",$tagsource);
-						}	
+						}
 						if (strpos($tagsource,'&')!==false) {
 							$tagsourceYoutube = explode('&',$tagsource);
 							foreach($tagsourceYoutube as $ytVideoParam) {
@@ -371,7 +364,7 @@ class plgContentJw_allvideos extends JPlugin {
 					} else {
 						$output->posterFrame = '';
 					}
-					
+
 					// Poster frame (remote)
 					$output->posterFrameRemote = substr($tagsource,0,-3).'jpg';
 
