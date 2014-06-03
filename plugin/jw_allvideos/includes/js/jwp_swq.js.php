@@ -18,9 +18,6 @@ ob_start("ob_gzhandler");
 // Includes
 echo "/* behaviour.js */\n";
 include(dirname( __FILE__ ).DS."behaviour.js");
-echo "/* jwplayer.js */\n";
-include(dirname( __FILE__ ).DS."mediaplayer".DS."jwplayer.min.js");
-echo "\n\n";
 echo "/* silverlight.js */\n";
 include(dirname( __FILE__ ).DS."wmvplayer".DS."silverlight.js");
 echo "\n\n";

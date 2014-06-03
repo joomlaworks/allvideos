@@ -19,21 +19,8 @@ $mediaplayerEmbed = "
 		'image': '{PLAYER_POSTER_FRAME}',
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
-		'modes': [
-			{ 'type': 'html5' },
-		  { 'type': 'flash', src: '{PLUGIN_PATH}/includes/js/mediaplayer/player.swf' },
-		  { 'type': 'download' }
-		],
 		'autostart': '{PLAYER_AUTOPLAY}',
-		'backcolor': '{PLAYER_BACKGROUND}',
-		'plugins': {
-			'viral-2': {
-				'onpause': 'false',
-				'oncomplete': 'false'
-			}
-		},
-		'controlbar': '{PLAYER_CONTROLBAR}',
-		'skin': '{PLUGIN_PATH}/includes/js/mediaplayer/skins/{PLAYER_SKIN}/{PLAYER_SKIN}.zip'
+		'controls': '{JWPLAYER_CONTROLS}'
 	});
 </script>
 ";
@@ -46,21 +33,8 @@ $mediaplayerEmbedRemote = "
 		'image': '{PLAYER_POSTER_FRAME_REMOTE}',
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
-		'modes': [
-			{ type: 'html5' },
-		  { type: 'flash', src: '{PLUGIN_PATH}/includes/js/mediaplayer/player.swf' },
-		  { type: 'download' }
-		],
 		'autostart': '{PLAYER_AUTOPLAY}',
-		'backcolor': '{PLAYER_BACKGROUND}',
-		'plugins': {
-			'viral-2': {
-				'onpause': 'false',
-				'oncomplete': 'false'
-			}
-		},
-		'controlbar': '{PLAYER_CONTROLBAR}',
-		'skin': '{PLUGIN_PATH}/includes/js/mediaplayer/skins/{PLAYER_SKIN}/{PLAYER_SKIN}.zip'
+		'controls': '{JWPLAYER_CONTROLS}'
 	});
 </script>
 ";
@@ -74,16 +48,8 @@ $audioPlayerEmbed = "
 		'image': '{PLAYER_POSTER_FRAME}',
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
-		'modes': [
-		  { 'type': 'flash', src: '{PLUGIN_PATH}/includes/js/mediaplayer/player.swf' },
-		  { 'type': 'html5' },
-		  { 'type': 'download' }
-		],
 		'autostart': '{PLAYER_AUTOPLAY}',
-    'backcolor': '{PLAYER_ABACKGROUND}',
-    'frontcolor': '{PLAYER_AFRONTCOLOR}',
-    'lightcolor': '{PLAYER_ALIGHTCOLOR}',
-    'controlbar': 'bottom'
+		'controls': '{JWPLAYER_CONTROLS}'
 	});
 </script>
 ";
@@ -95,16 +61,8 @@ $audioPlayerEmbedRemote = "
 		'file': '{SOURCE}',
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
-		'modes': [
-		  { type: 'flash', src: '{PLUGIN_PATH}/includes/js/mediaplayer/player.swf' },
-		  { type: 'html5' },
-		  { type: 'download' }
-		],
 		'autostart': '{PLAYER_AUTOPLAY}',
-    'backcolor': '{PLAYER_ABACKGROUND}',
-    'frontcolor': '{PLAYER_AFRONTCOLOR}',
-    'lightcolor': '{PLAYER_ALIGHTCOLOR}',
-    'controlbar': 'bottom'
+		'controls': '{JWPLAYER_CONTROLS}'
 	});
 </script>
 ";
