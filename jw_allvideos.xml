@@ -4,8 +4,8 @@
 	<author>JoomlaWorks</author>
 	<authorEmail>please-use-the-contact-form@joomlaworks.net</authorEmail>
 	<authorUrl>www.joomlaworks.net</authorUrl>
-	<copyright>Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.</copyright>
-	<creationDate>April 22nd, 2013</creationDate>
+	<copyright>Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.</copyright>
+	<creationDate>June 3rd, 2014</creationDate>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<version>4.5.1</version>
 	<description>JW_PLG_AV_XML_DESC</description>
@@ -63,6 +63,13 @@
 		</param>
 	</params>
 	<params addpath="/plugins/content/jw_allvideos/includes/elements" group="advanced">
+		<param name="" type="header" default="JW_PLG_AV_JWPLAYER_PARAMETERS" label="" description="" />
+		<param name="jwPlayerLoading" type="radio" default="local" label="JW_PLG_AV_JWPLAYER_LOADING" description="JW_PLG_AV_JWPLAYER_LOADING_DESC">
+			<option value="local">JW_PLG_AV_LOCAL</option>
+			<option value="cdn">JW_PLG_AV_CDN</option>
+		</param>
+		<param name="jwPlayerAPIKey" type="text" default="" size="40" label="JW_PLG_AV_JWPLAYER_APIKEY" description="JW_PLG_AV_JWPLAYER_APIKEY_DESC" />
+		<param name="jwPlayerCDNUrl" type="text" default="" size="40" label="JW_PLG_AV_JWPLAYER_CDNURL" description="JW_PLG_AV_JWPLAYER_CDNURL_DESC" />
 		<param name="" type="header" default="JW_PLG_AV_PERFORMANCE_PARAMETERS" label="" description="" />
 		<param name="gzipScripts" type="radio" default="0" label="JW_PLG_AV_COMPRESS_PLAYER_JS_SCRIPTS_USING_PHP" description="JW_PLG_AV_IMPROVE_YOUR_SITES_PERFORMANCE_WHEN_USING_ALLVIDEOS_BY_ENABLING_THIS_OPTION_IT_WILL_COMPRESS_AND_COMBINE_THE_JAVASCRIPT_CODE_REQUIRED_BY_THE_VARIOUS_MEDIA_PLAYERS_TO_WORK_PROPERLY_THIS_OPTION_MAY_NOT_BE_SUPPORTED_BY_YOUR_SERVER_SO_IN_CASE_YOU_STUMBLE_ONTO_ANY_ISSUES_YOU_CAN_SAFELY_TURN_IT_BACK_TO_NO">
 			<option value="0">JW_PLG_AV_NO</option>

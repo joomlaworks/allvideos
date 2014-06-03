@@ -2,8 +2,8 @@
 /**
  * @version		4.5.1
  * @package		AllVideos (plugin)
- * @author    JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.
+ * @author    	JoomlaWorks - http://www.joomlaworks.net
+ * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -111,9 +111,9 @@ class plgContentJw_allvideos extends JPlugin {
 		$gzipScripts					= $pluginParams->get('gzipScripts',0);
 		/* Advanced */
 		$jwPlayerLoading				= $pluginParams->get('jwPlayerLoading','local'); // local | cdn
-		$jwPlayerCDNUrl					= $pluginParams->get('jwPlayerCDNUrl','http://jwpsrv.com/library/n9Po9gncEeOKaBIxOUCPzg.js');
 		$jwPlayerAPIKey					= $pluginParams->get('jwPlayerAPIKey','plXkZcoHeQXVlRo0nD6AUscwEXmFJCmIpGL3kw==');
-
+		$jwPlayerCDNUrl					= $pluginParams->get('jwPlayerCDNUrl','http://jwpsrv.com/library/n9Po9gncEeOKaBIxOUCPzg.js');
+		
 		// Variable cleanups for K2
 		if (JRequest::getCmd('format')=='raw') {
 			$this->plg_copyrights_start = '';

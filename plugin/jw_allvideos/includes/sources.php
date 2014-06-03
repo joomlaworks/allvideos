@@ -2,8 +2,8 @@
 /**
  * @version		4.5.1
  * @package		AllVideos (plugin)
- * @author    JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.
+ * @author    	JoomlaWorks - http://www.joomlaworks.net
+ * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -120,47 +120,47 @@ $tagReplace = array(
 /* --- Audio/Video formats --- */
 
 /* JW Player compatible media */
-"flv" 				=> $mediaplayerEmbed,
+"flv" 			=> $mediaplayerEmbed,
 "flvremote" 	=> $mediaplayerEmbedRemote,
-"mp4" 				=> $mediaplayerEmbed,
+"mp4" 			=> $mediaplayerEmbed,
 "mp4remote" 	=> $mediaplayerEmbedRemote,
-"ogv" 				=> $mediaplayerEmbed,
+"ogv" 			=> $mediaplayerEmbed,
 "ogvremote" 	=> $mediaplayerEmbedRemote,
-"webm" 				=> $mediaplayerEmbed,
+"webm" 			=> $mediaplayerEmbed,
 "webmremote" 	=> $mediaplayerEmbedRemote,
-"f4v" 				=> $mediaplayerEmbed,
+"f4v" 			=> $mediaplayerEmbed,
 "f4vremote" 	=> $mediaplayerEmbedRemote,
-"m4v" 				=> $mediaplayerEmbed,
+"m4v" 			=> $mediaplayerEmbed,
 "m4vremote" 	=> $mediaplayerEmbedRemote,
-"3gp" 				=> $mediaplayerEmbed,
+"3gp" 			=> $mediaplayerEmbed,
 "3gpremote" 	=> $mediaplayerEmbedRemote,
-"3g2" 				=> $mediaplayerEmbed,
+"3g2" 			=> $mediaplayerEmbed,
 "3g2remote" 	=> $mediaplayerEmbedRemote,
 
-"mp3" 				=> $audioPlayerEmbed,
+"mp3" 			=> $audioPlayerEmbed,
 "mp3remote" 	=> $audioPlayerEmbedRemote,
-"aac" 				=> $audioPlayerEmbed,
+"aac" 			=> $audioPlayerEmbed,
 "aacremote" 	=> $audioPlayerEmbedRemote,
-"m4a" 				=> $audioPlayerEmbed,
+"m4a" 			=> $audioPlayerEmbed,
 "m4aremote" 	=> $audioPlayerEmbedRemote,
-"ogg" 				=> $audioPlayerEmbed,
+"ogg" 			=> $audioPlayerEmbed,
 "oggremote" 	=> $audioPlayerEmbedRemote,
 
 /* Quicktime */
-"mov" 				=> $qtEmbed,
+"mov" 			=> $qtEmbed,
 "movremote"		=> $qtEmbedRemote,
-"mpeg" 				=> $qtEmbed,
+"mpeg" 			=> $qtEmbed,
 "mpegremote" 	=> $qtEmbedRemote,
-"mpg" 				=> $qtEmbed,
+"mpg" 			=> $qtEmbed,
 "mpgremote" 	=> $qtEmbedRemote,
-"avi" 				=> $qtEmbed,
+"avi" 			=> $qtEmbed,
 "aviremote" 	=> $qtEmbedRemote,
 
 /* Windows Media */
-"wmv" => $wmEmbed,
-"wma" => $wmEmbed,
-"wmvremote" => $wmEmbedRemote,
-"wmaremote" => $wmEmbedRemote,
+"wmv" 			=> $wmEmbed,
+"wma" 			=> $wmEmbed,
+"wmvremote" 	=> $wmEmbedRemote,
+"wmaremote" 	=> $wmEmbedRemote,
 
 /* DivX */
 "divx" => "
