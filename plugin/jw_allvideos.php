@@ -71,10 +71,11 @@ class plgContentJw_allvideos extends JPlugin {
 		require(dirname(__FILE__).DS.$this->plg_name.DS.'includes'.DS.'sources.php');
 
 		// Simple performance check to determine whether plugin should process further
-		$grabTags = str_replace("(","",str_replace(")","",implode(array_keys($tagReplace),"|")));
-		if (preg_match("#{(".strtolower($grabTags).")}#is",$row->text)==false) return;
-
-
+		$grabTags = strtolower(implode(array_keys($tagReplace),"|"));
+		if (preg_match("#{(".$grabTags.")}#is", $row->text)==false) return;
+		
+		
+		
 		// ----------------------------------- Get plugin parameters -----------------------------------
 
 		// Get plugin info
@@ -152,7 +153,10 @@ class plgContentJw_allvideos extends JPlugin {
 					$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.6.0');
 					$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/AC_QuickTime.js?v=4.6.0');
 				}
-				$document->addScriptDeclaration('jwplayer.key="'.$jwPlayerAPIKey.'";');
+				$document->addScriptDeclaration('
+					/* JW Player API Key */
+					jwplayer.key="'.$jwPlayerAPIKey.'";
+				');
 			} else {
 				if ($gzipScripts) {
 					$document->addScript($pluginLivePath.'/includes/js/jwp_swq.js.php?v=4.6.0');
@@ -170,6 +174,7 @@ class plgContentJw_allvideos extends JPlugin {
 		// Loop throught the found tags
 		foreach ($tagReplace as $plg_tag => $value) {
 		
+			$cloned_plg_tag = $plg_tag;
 			$plg_tag = strtolower($plg_tag);
 
 			// expression to search for
@@ -386,7 +391,7 @@ class plgContentJw_allvideos extends JPlugin {
 						"{PLAYER_TRANSPARENCY}",
 						"{PLAYER_BACKGROUND}",
 						"{PLAYER_BACKGROUNDQT}",
-						"{JWPLAYER_CONTROLS}"
+						"{JWPLAYER_CONTROLS}",
 						"{SITEURL}",
 						"{SITEURL_ABS}",
 						"{FILE_EXT}",
@@ -422,7 +427,7 @@ class plgContentJw_allvideos extends JPlugin {
 					);
 
 					// Do the element replace
-					$output->player = JFilterOutput::ampReplace(str_replace($findAVparams, $replaceAVparams, $tagReplace[$plg_tag]));
+					$output->player = JFilterOutput::ampReplace(str_replace($findAVparams, $replaceAVparams, $tagReplace[$cloned_plg_tag]));
 
 					// Fetch the template
 					ob_start();
