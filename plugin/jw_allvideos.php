@@ -163,6 +163,7 @@ class plgContentJw_allvideos extends JPlugin {
 		}
 
 		// Loop throught the found tags
+		$tagReplace = array_change_key_case($tagReplace, CASE_LOWER);
 		foreach ($tagReplace as $plg_tag => $value) {
 
 			$cloned_plg_tag = $plg_tag;
@@ -429,7 +430,7 @@ class plgContentJw_allvideos extends JPlugin {
 					ob_end_clean();
 
 					// Output
-					$row->text = preg_replace("#{".$plg_tag."}".preg_quote($tagcontent)."{/".$plg_tag."}#s", $getTemplate , $row->text);
+					$row->text = preg_replace("#{".$plg_tag."}".preg_quote($tagcontent)."{/".$plg_tag."}#is", $getTemplate , $row->text);
 
 				} // End second foreach
 
