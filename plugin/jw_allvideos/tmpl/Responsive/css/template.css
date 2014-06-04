@@ -1,7 +1,7 @@
 /**
  * @version		4.6.1
  * @package		AllVideos (plugin)
- * @author    JoomlaWorks - http://www.joomlaworks.net
+ * @author		JoomlaWorks - http://www.joomlaworks.net
  * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license:http://www.gnu.org/copyleft/gpl.html
  */
@@ -21,6 +21,7 @@
 	.avVideo .avPlayerContainer .avPlayerBlock iframe,
 	.avVideo .avPlayerContainer .avPlayerBlock object,
 	.avVideo .avPlayerContainer .avPlayerBlock embed,
+	.avVideo .avPlayerContainer .avPlayerBlock video,
 	.avVideo .avPlayerContainer .avPlayerBlock > div {position:absolute!important;top:0;left:0;min-width:320px!important;width:100%!important;height:100%!important;}
 	/* SoundCloud container styling only */
 	.avSoundCloudSet .avPlayerContainer .avPlayerBlock {width:100%!important;position:relative!important;padding:0 0 56% 0!important;}
