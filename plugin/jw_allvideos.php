@@ -372,6 +372,42 @@ class plgContentJw_allvideos extends JPlugin {
 					// Set a unique ID
 					$output->playerID = 'AVPlayerID_'.substr(md5($tagsource),1,8).'_'.rand();
 
+                                        // Subtitle?
+					$subtitle_vars = (@$tagparams[4]) ? $tagparams[4] : 'false';
+                                        $subs = array();
+                                        $substring = '[]';
+                                        if ($subtitle_vars) {
+                                            $substring = '[';
+                                            $subs = explode(';',$subtitle_vars);                                           
+                                            foreach ($subs as &$sub) {
+                                                // search for the 'file' part
+                                                $parts = explode(',', $sub);
+                                                foreach ($parts as &$part) {
+                                                    $part = trim($part);
+                                                    if (strtolower(substr($part, 0, 5)) === 'file:') {
+                                                        //replace the file with the relative file location
+                                                        $fileparts = explode(':', $part);
+                                                        if (isset($fileparts[1])) {
+                                                            $urlpart = trim($fileparts[1]);
+                                                            // if the filepath already contains a '/', assume it is set as a relative path, else create the relative path to the movie folder
+                                                            if (strpos($fileparts[1], chr(47)) === false) { 
+                                                                //remove the " from the urlpart
+                                                                $urlpart = str_replace('"', '', $urlpart);
+                                                                $urlpart = '"' . $siteUrl . '/' . $output->folder .'/' . $urlpart . '"';
+                                                            } 
+                                                            $part = 'file: ' . $urlpart;
+                                                        }                                                        
+                                                    }
+                                                }
+                                                // add the default 'kind' option
+                                                $parts[] = 'kind: "captions"';
+                                                $sub = implode(', ', $parts);
+                                                $sub = '{' . $sub . '}';                                                
+                                            }
+                                            $substring .= implode(',', $subs);
+                                            $substring .= ']';
+                                        }
+          
 					// Placeholder elements
 					$findAVparams = array(
 						"{SOURCE}",
@@ -392,7 +428,8 @@ class plgContentJw_allvideos extends JPlugin {
 						"{PLAYER_POSTER_FRAME_REMOTE}",
 						"{PLAYER_ABACKGROUND}",
 						"{PLAYER_AFRONTCOLOR}",
-						"{PLAYER_ALIGHTCOLOR}"
+						"{PLAYER_ALIGHTCOLOR}",
+                                                "{SUBTITLES}"
 					);
 
 					// Replacement elements
@@ -415,7 +452,8 @@ class plgContentJw_allvideos extends JPlugin {
 						$output->posterFrameRemote,
 						$abackground,
 						$afrontcolor,
-						$alightcolor
+						$alightcolor,
+                                                $substring
 					);
 
 					// Do the element replace
