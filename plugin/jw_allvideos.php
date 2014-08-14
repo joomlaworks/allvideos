@@ -306,12 +306,6 @@ class plgContentJw_allvideos extends JPlugin {
 						}
 					}
 
-					if ($plg_tag=="yahoo") {
-						$tagsourceYahoo = explode('-',str_replace('.html','',$tagsource));
-						$tagsourceYahoo = array_reverse($tagsourceYahoo);
-						$tagsource = $tagsourceYahoo[0];
-					}
-
 					if ($plg_tag=="yfrog") {
 						$tagsource = preg_replace("~(http|https):(.+?)yfrog.com\/~s","",$tagsource);
 					}

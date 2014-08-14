@@ -619,19 +619,8 @@ $tagReplace = array(
 // vidiac.com - http://www.vidiac.com/video/Dating-Stupid-Girls;Funny-Stuff
 "vidiac" => "<iframe src=\"http://www.vidiac.com/video/{SOURCE}/player?layout=&read_more=1\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// video.yahoo.com - http://video.yahoo.com/editorspicks-12135647/featured-24306389/mission-impossible-4-trailer-25805900.html
-"yahoo" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://d.yimg.com/nl/vyc/site/player.swf\" title=\"JoomlaWorks AllVideos Player\">
-	<param name=\"movie\" value=\"http://d.yimg.com/nl/vyc/site/player.swf\" />
-	<param name=\"quality\" value=\"high\" />
-	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-	<param name=\"allowfullscreen\" value=\"true\" />
-	<param name=\"allowscriptaccess\" value=\"always\" />
-	<param name=\"flashvars\" value=\"vid={SOURCE}&amp;autoPlay={PLAYER_AUTOPLAY}&amp;volume=100&amp;enableFullScreen=1\" />
-</object>
-",
+// screen.yahoo.com - https://screen.yahoo.com/comedy/sad-dog-does-not-baths-103338320.html
+"yahoo" => "<iframe width=\"{WIDTH}\" height=\"{HEIGHT}\" scrolling=\"no\" frameborder=\"0\" src=\"{SOURCE}?format=embed\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allowtransparency=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // vine.co - https://vine.co/v/bXZre5gtYgT
 "vine" => "<iframe class=\"vine-embed\" src=\"https://vine.co/v/{SOURCE}/embed/simple\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\"></iframe><script async src=\"//platform.vine.co/static/scripts/embed.js\" charset=\"utf-8\"></script>",
