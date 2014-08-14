@@ -384,20 +384,6 @@ $tagReplace = array(
 </object>
 ",
 
-// justin.tv - http://www.justin.tv/jessicaycombinator/b/258383456
-"Justin" => "
-<script type=\"text/javascript\">
-	allvideos.ready(function(){
-		allvideos.embed({
-			'url': 'http://api.justin.tv/api/embed/from_url.json?jsonp=justintv{SOURCEID}&width={WIDTH}&height={HEIGHT}&url={SOURCE}',
-			'callback': 'justintv{SOURCEID}',
-			'playerID': 'avID_{SOURCEID}'
-		});
-	});
-</script>
-<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
-",
-
 // kewego.com - http://www.kewego.com/video/iLyROoafYcaT.html
 "Kewego" => "
 <object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://sll.kewego.com/swf/kp.swf\" title=\"JoomlaWorks AllVideos Player\" name=\"kplayer_{SOURCE}\" id=\"kplayer_{SOURCE}\">
