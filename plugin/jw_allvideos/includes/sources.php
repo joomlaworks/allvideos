@@ -228,17 +228,17 @@ $tagReplace = array(
 "YouTube" => "<iframe src=\"//www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // vimeo.com - http://www.vimeo.com/1319796
-"Vimeo" => "<iframe src=\"http://player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Vimeo" => "<iframe src=\"//player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // dailymotion.com - http://www.dailymotion.com/featured/video/x35714_cap-nord-projet-1_creation
-"Dailymotion" => "<iframe src=\"http://www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Dailymotion" => "<iframe src=\"//www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // blip.tv - http://blip.tv/joomlaworks/k2-for-joomla-dec-2010-4565453
 "Blip" => "
 <script type=\"text/javascript\">
 	allvideos.ready(function(){
 		allvideos.embed({
-			'url': 'http://blip.tv/oembed/?callback=bliptv{SOURCEID}&width={WIDTH}&height={HEIGHT}&url={SOURCE}',
+			'url': 'https://blip.tv/oembed/?callback=bliptv{SOURCEID}&width={WIDTH}&height={HEIGHT}&url={SOURCE}',
 			'callback': 'bliptv{SOURCEID}',
 			'playerID': 'avID_{SOURCEID}'
 		});
@@ -271,18 +271,8 @@ $tagReplace = array(
 </object>
 ",
 
-// collegehumor.com - http://www.collegehumor.com/video/3515739/bowsers-minions
-"CollegeHumor" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id={SOURCE}&use_node_id=true&fullscreen=1\" title=\"JoomlaWorks AllVideos Player\">
-	<param name=\"movie\" value=\"http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id={SOURCE}&use_node_id=true&fullscreen=1\" />
-	<param name=\"quality\" value=\"high\" />
-	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-	<param name=\"allowfullscreen\" value=\"true\" />
-	<param name=\"allowscriptaccess\" value=\"always\" />
-</object>
-",
+// collegehumor.com - http://www.collegehumor.com/video/6961115/should-we-do-a-bitcoin-sketch
+"CollegeHumor" => "<iframe src=\"http://www.collegehumor.com/e/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitAllowFullScreen allowFullScreen></iframe>",
 
 // dotsub.com - http://dotsub.com/view/9518104c-aa15-4646-9a39-a789e5586cdb
 "Dotsub" => "
