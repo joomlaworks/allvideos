@@ -272,7 +272,7 @@ $tagReplace = array(
 ",
 
 // collegehumor.com - http://www.collegehumor.com/video/6961115/should-we-do-a-bitcoin-sketch
-"CollegeHumor" => "<iframe src=\"http://www.collegehumor.com/e/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitAllowFullScreen allowFullScreen></iframe>",
+"CollegeHumor" => "<iframe src=\"http://www.collegehumor.com/e/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // dotsub.com - http://dotsub.com/view/9518104c-aa15-4646-9a39-a789e5586cdb
 "Dotsub" => "
@@ -288,10 +288,10 @@ $tagReplace = array(
 </object>
 ",
 
-// flickr.com - http://www.flickr.com/photos/bswise/5930051523/in/pool-726923@N23/
+// flickr.com - https://www.flickr.com/photos/bswise/5930051523/in/pool-726923@N23/
 "Flickr" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.flickr.com/apps/video/stewart.swf?v=109786\" title=\"JoomlaWorks AllVideos Player\">
-	<param name=\"movie\" value=\"http://www.flickr.com/apps/video/stewart.swf?v=109786\" />
+<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"https://www.flickr.com/apps/video/stewart.swf?v=109786\" title=\"JoomlaWorks AllVideos Player\">
+	<param name=\"movie\" value=\"https://www.flickr.com/apps/video/stewart.swf?v=109786\" />
 	<param name=\"quality\" value=\"high\" />
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
@@ -303,18 +303,7 @@ $tagReplace = array(
 ",
 
 // funnyordie.com - http://www.funnyordie.com/videos/7c52bd0f81/the-pussy-patch-from-lil-jon
-"FunnyOrDie" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://player.ordienetworks.com/flash/fodplayer.swf\" title=\"JoomlaWorks AllVideos Player\">
-	<param name=\"movie\" value=\"http://player.ordienetworks.com/flash/fodplayer.swf\" />
-	<param name=\"quality\" value=\"high\" />
-	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-	<param name=\"allowfullscreen\" value=\"true\" />
-	<param name=\"allowscriptaccess\" value=\"always\" />
-	<param name=\"flashvars\" value=\"key={SOURCE}\" />
-</object>
-",
+"FunnyOrDie" => "<iframe src=\"http://www.funnyordie.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // gametrailers.com - http://www.gametrailers.com/video/downloadable-content-soul-calibur/41925
 "GameTrailers" => "
