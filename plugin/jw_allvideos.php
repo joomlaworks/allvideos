@@ -306,6 +306,12 @@ class plgContentJw_allvideos extends JPlugin {
 						}
 					}
 
+					if ($plg_tag=="vine") {
+						if (strpos($tagsource,'http')===false) {
+							$tagsource = 'https://vine.co/v/'.$tagsource;
+						}
+					}
+
 					if ($plg_tag=="yfrog") {
 						$tagsource = preg_replace("~(http|https):(.+?)yfrog.com\/~s","",$tagsource);
 					}
