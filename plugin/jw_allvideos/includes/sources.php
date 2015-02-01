@@ -590,9 +590,6 @@ $tagReplace = array(
 // screen.yahoo.com - https://screen.yahoo.com/comedy/sad-dog-does-not-baths-103338320.html
 "yahoo" => "<iframe width=\"{WIDTH}\" height=\"{HEIGHT}\" scrolling=\"no\" frameborder=\"0\" src=\"{SOURCE}?format=embed\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allowtransparency=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// vine.co - https://vine.co/v/bXZre5gtYgT
-"vine" => "<iframe class=\"vine-embed\" src=\"https://vine.co/v/{SOURCE}/embed/simple\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\"></iframe><script async src=\"//platform.vine.co/static/scripts/embed.js\" charset=\"utf-8\"></script>",
-
 // yfrog.com - http://yfrog.com/0ia9mcz
 "yfrog" => "<iframe src=\"http://yfrog.com/{SOURCE}:embed\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
