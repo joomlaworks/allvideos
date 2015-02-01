@@ -236,6 +236,20 @@ $tagReplace = array(
 // vine.co - https://vine.co/v/hr9OQTHJYPj
 "Vine" => "<iframe src=\"{SOURCE}/embed/simple?audio=1\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
+// soundcloud.com - http://soundcloud.com/sebastien-tellier/look
+"SoundCloud" => "
+<script type=\"text/javascript\">
+	allvideos.ready(function(){
+		allvideos.embed({
+			'url': 'http://soundcloud.com/oembed?format=js&iframe=true&callback=soundcloud{SOURCEID}&auto_play={PLAYER_AUTOPLAY}&maxwidth={WIDTH}&url={SOURCE}',
+			'callback': 'soundcloud{SOURCEID}',
+			'playerID': 'avID_{SOURCEID}'
+		});
+	});
+</script>
+<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
+",
+
 
 
 /* --- Other 3rd party video providers --- */
@@ -471,20 +485,6 @@ $tagReplace = array(
 </object>
 ",
 
-// soundcloud.com - http://soundcloud.com/sebastien-tellier/look
-"SoundCloud" => "
-<script type=\"text/javascript\">
-	allvideos.ready(function(){
-		allvideos.embed({
-			'url': 'http://soundcloud.com/oembed?format=js&iframe=true&callback=soundcloud{SOURCEID}&auto_play={PLAYER_AUTOPLAY}&maxwidth={WIDTH}&url={SOURCE}',
-			'callback': 'soundcloud{SOURCEID}',
-			'playerID': 'avID_{SOURCEID}'
-		});
-	});
-</script>
-<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
-",
-
 // southparkstudios.com (clips only) - http://www.southparkstudios.com/clips/388728/it-sounds-like-poo
 "SouthPark" => "
 <object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://media.mtvnservices.com/mgid:cms:item:southparkstudios.com:{SOURCE}\" title=\"JoomlaWorks AllVideos Player\">
@@ -537,9 +537,6 @@ $tagReplace = array(
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
 ",
-
-// twitvid.com - http://www.twitvid.com/PMRZA
-"twitvid" => "<iframe src=\"http://www.twitvid.com/embed.php?guid={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // ustream.tv - http://www.ustream.tv/recorded/15746278
 "ustream" => "
