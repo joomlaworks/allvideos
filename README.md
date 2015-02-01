@@ -1,8 +1,6 @@
 AllVideos
 =========
 
-*** New version 4.5 out now, fully compatible with Joomla! 1.5, 2.5 & 3.0 and fully responsive! ***
-
 AllVideos (by JoomlaWorks) is truly THE all-in-one media management solution for Joomla! and a classic must-have extension for any Joomla! based website.
 
 You can use the plugin to easily embed media hosted on popular services like YouTube, Vimeo, Dailymotion, SoundCloud (and many more) inside your Joomla! articles (or K2, redShop, Virtuemart etc).
@@ -28,7 +26,11 @@ AllVideos means dead-simple & inexpensive media streaming for anyone. You can us
 7. Mobile/tablet friendly: if you use MP4 for uploaded videos or if you use services like YouTube, Vimeo & Dailymotion, your videos are mobile ready.
 8. Includes 3 templates: Classic, Framed and Responsive
 9. Fully responsive players when using the "Responsive" template.
-10. Uses the core Joomla! updater since version 4.5.0.
+10. Uses the core Joomla! updater (since version 4.5.0).
+
+
+## COMPATIBILITY
+AllVideos is fully compatible with Joomla! versions 1.5, 2.5 & 3.x
 
 
 ## LEARN MORE

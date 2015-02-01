@@ -1,9 +1,9 @@
 <?php
 /**
- * @version		4.6.1
+ * @version		4.6.2
  * @package		AllVideos (plugin)
  * @author    	JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
+ * @copyright	Copyright (c) 2006 - 2015 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -233,19 +233,8 @@ $tagReplace = array(
 // dailymotion.com - http://www.dailymotion.com/featured/video/x35714_cap-nord-projet-1_creation
 "Dailymotion" => "<iframe src=\"//www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// blip.tv - http://blip.tv/joomlaworks/k2-for-joomla-dec-2010-4565453
-"Blip" => "
-<script type=\"text/javascript\">
-	allvideos.ready(function(){
-		allvideos.embed({
-			'url': 'https://blip.tv/oembed/?callback=bliptv{SOURCEID}&width={WIDTH}&height={HEIGHT}&url={SOURCE}',
-			'callback': 'bliptv{SOURCEID}',
-			'playerID': 'avID_{SOURCEID}'
-		});
-	});
-</script>
-<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
-",
+// vine.co - https://vine.co/v/hr9OQTHJYPj
+"Vine" => "<iframe src=\"{SOURCE}/embed/simple?audio=1\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 
 
@@ -269,6 +258,20 @@ $tagReplace = array(
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"allowscriptaccess\" value=\"sameDomain\" />
 </object>
+",
+
+// blip.tv - http://blip.tv/joomlaworks/k2-for-joomla-dec-2010-4565453
+"Blip" => "
+<script type=\"text/javascript\">
+	allvideos.ready(function(){
+		allvideos.embed({
+			'url': 'https://blip.tv/oembed/?callback=bliptv{SOURCEID}&maxwidth={WIDTH}&maxheight={HEIGHT}&url={SOURCE}',
+			'callback': 'bliptv{SOURCEID}',
+			'playerID': 'avID_{SOURCEID}'
+		});
+	});
+</script>
+<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
 ",
 
 // collegehumor.com - http://www.collegehumor.com/video/6961115/should-we-do-a-bitcoin-sketch

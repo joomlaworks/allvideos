@@ -1,9 +1,9 @@
 <?php
 /**
- * @version		4.6.1
+ * @version		4.6.2
  * @package		AllVideos (plugin)
  * @author    	JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
+ * @copyright	Copyright (c) 2006 - 2015 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 

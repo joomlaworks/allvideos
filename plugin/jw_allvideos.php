@@ -1,9 +1,9 @@
 <?php
 /**
- * @version		4.6.1
+ * @version		4.6.2
  * @package		AllVideos (plugin)
  * @author    	JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
+ * @copyright	Copyright (c) 2006 - 2015 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -19,8 +19,8 @@ class plgContentJw_allvideos extends JPlugin {
 
 	// JoomlaWorks reference parameters
 	var $plg_name					= "jw_allvideos";
-	var $plg_copyrights_start		= "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.6.1) starts here -->\n";
-	var $plg_copyrights_end			= "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.6.1) ends here -->\n\n";
+	var $plg_copyrights_start		= "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.6.2) starts here -->\n";
+	var $plg_copyrights_end			= "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.6.2) ends here -->\n\n";
 
 	function plgContentJw_allvideos( &$subject, $params ) {
 		parent::__construct( $subject, $params );
@@ -142,16 +142,16 @@ class plgContentJw_allvideos extends JPlugin {
 			}
 
 			if ($gzipScripts) {
-				$document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.6.1');
+				$document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.6.2');
 			} else {
-				$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.6.1');
-				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.6.1');
-				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.6.1');
-				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/AC_QuickTime.js?v=4.6.1');
+				$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.6.2');
+				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.6.2');
+				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.6.2');
+				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/AC_QuickTime.js?v=4.6.2');
 			}
 
 			if($jwPlayerLoading=='local'){
-				$document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.6.1');
+				$document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.6.2');
 				$document->addScriptDeclaration('
 					/* JW Player API Key */
 					jwplayer.key="'.$jwPlayerAPIKey.'";
