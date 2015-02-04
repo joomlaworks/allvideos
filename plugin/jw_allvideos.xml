@@ -92,6 +92,6 @@
 		<language tag="en-GB">language/en-GB/en-GB.plg_content_jw_allvideos.sys.ini</language>
 	</languages>
 	<updateservers>
-		<server type="extension" priority="1" name="AllVideos">http://www.joomlaworks.net/updates/jw_allvideos.xml</server>
+		<server type="extension" priority="1" name="AllVideos">http://cdn.joomlaworks.org/updates/allvideos.xml</server>
 	</updateservers>
 </extension>
