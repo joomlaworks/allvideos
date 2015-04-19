@@ -27,9 +27,9 @@ class AllVideosHelper {
 		}
 		else
 		{
-			if (version_compare(JVERSION, '1.6.0', 'ge'))
+			if (version_compare(JVERSION, '2.5.0', 'ge'))
 			{
-				// Joomla! 1.6
+				// Joomla! 2.5 or newer
 				$p->file = JPATH_SITE.DS.'plugins'.DS.$pluginGroup.DS.$pluginName.DS.$pluginName.DS.'tmpl'.DS.$tmpl.DS.$file;
 				$p->http = JURI::root(true)."/plugins/{$pluginGroup}/{$pluginName}/{$pluginName}/tmpl/{$tmpl}/{$file}";
 			}

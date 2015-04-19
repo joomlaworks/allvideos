@@ -71,13 +71,13 @@ $audioPlayerEmbedRemote = "
 /* -------------------------------- Embed templates for Quicktime Media -------------------------------- */
 $qtEmbed = "
 <script type=\"text/javascript\">
-	QT_WriteOBJECT_XHTML('{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}', '{WIDTH}', '{HEIGHT}', '', 'autoplay', '{PLAYER_AUTOPLAY}', 'bgcolor', '{PLAYER_BACKGROUNDQT}', 'scale', 'aspect');
+	QT_WriteOBJECT_XHTML('{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}', '{WIDTH}', '{HEIGHT}', '', 'autoplay', '{PLAYER_AUTOPLAY}', 'bgcolor', '{PLAYER_BACKGROUNDQT}', 'scale', 'aspect', 'wmode', 'transparent', 'title', 'JoomlaWorks AllVideos Player');
 </script>
 ";
 
 $qtEmbedRemote = "
 <script type=\"text/javascript\">
-	QT_WriteOBJECT_XHTML('{SOURCE}', '{WIDTH}', '{HEIGHT}', '', 'autoplay', '{PLAYER_AUTOPLAY}', 'bgcolor', '{PLAYER_BACKGROUNDQT}', 'scale', 'aspect');
+	QT_WriteOBJECT_XHTML('{SOURCE}', '{WIDTH}', '{HEIGHT}', '', 'autoplay', '{PLAYER_AUTOPLAY}', 'bgcolor', '{PLAYER_BACKGROUNDQT}', 'scale', 'aspect', 'wmode', 'transparent', 'title', 'JoomlaWorks AllVideos Player');
 </script>
 ";
 

@@ -24,7 +24,7 @@ class JWElementHeader extends JWElement
 				.jwHeaderContainer15 { clear:both; font-weight:bold; font-size:12px; color:#369; margin:0; padding:0; background:#d5e7fa; border-bottom:2px solid #96b0cb; float:left; width:100%; }
 				.jwHeaderContent { padding:6px 8px; }
 			');
-		if (version_compare(JVERSION, '1.6.0', 'ge'))
+		if (version_compare(JVERSION, '2.5.0', 'ge'))
 		{
 			return '<div class="jwHeaderContainer"><div class="jwHeaderContent">'.JText::_($value).'</div><div class="jwHeaderClr"></div></div>';
 		}

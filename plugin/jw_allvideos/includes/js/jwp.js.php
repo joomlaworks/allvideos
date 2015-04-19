@@ -24,8 +24,8 @@ echo "\n\n";
 echo "/* wmvplayer.js */\n";
 include(dirname( __FILE__ ).DS."wmvplayer".DS."wmvplayer.js");
 echo "\n\n";
-echo "/* AC_QuickTime.js */\n";
-include(dirname( __FILE__ ).DS."quicktimeplayer".DS."AC_QuickTime.js");
+echo "/* ac_quicktime.js */\n";
+include(dirname( __FILE__ ).DS."quicktimeplayer".DS."ac_quicktime.js");
 echo "\n\n";
 
 ob_end_flush();

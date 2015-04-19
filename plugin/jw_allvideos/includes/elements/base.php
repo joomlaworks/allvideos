@@ -10,7 +10,7 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-if (version_compare(JVERSION, '1.6.0', 'ge'))
+if (version_compare(JVERSION, '2.5.0', 'ge'))
 {
 	jimport('joomla.form.formfield');
 	class JWElement extends JFormField

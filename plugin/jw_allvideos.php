@@ -11,7 +11,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.plugin.plugin');
-if (version_compare(JVERSION, '1.6.0', 'ge')) {
+if (version_compare(JVERSION, '2.5.0', 'ge')) {
 	jimport('joomla.html.parameter');
 }
 
@@ -52,7 +52,7 @@ class plgContentJw_allvideos extends JPlugin {
 		// Assign paths
 		$sitePath = JPATH_SITE;
 		$siteUrl  = JURI::root(true);
-		if (version_compare(JVERSION, '1.6.0', 'ge')) {
+		if (version_compare(JVERSION, '2.5.0', 'ge')) {
 			$pluginLivePath = $siteUrl.'/plugins/content/'.$this->plg_name.'/'.$this->plg_name;
 		} else {
 			$pluginLivePath = $siteUrl.'/plugins/content/'.$this->plg_name;
@@ -135,7 +135,7 @@ class plgContentJw_allvideos extends JPlugin {
 			$document->addStyleSheet($avCSS);
 
 			// JS
-			if (version_compare(JVERSION,'1.6.0','ge')) {
+			if (version_compare(JVERSION,'2.5.0','ge')) {
 				JHtml::_('behavior.framework');
 			} else {
 				JHTML::_('behavior.mootools');
@@ -147,7 +147,7 @@ class plgContentJw_allvideos extends JPlugin {
 				$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.6.2');
 				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.6.2');
 				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.6.2');
-				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/AC_QuickTime.js?v=4.6.2');
+				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/ac_quicktime.js?v=4.6.2');
 			}
 
 			if($jwPlayerLoading=='local'){
@@ -178,9 +178,10 @@ class plgContentJw_allvideos extends JPlugin {
 				// start the replace loop
 				foreach ($matches[0] as $key => $match) {
 
-					$tagcontent 		= preg_replace("/{.+?}/", "", $match);
-					$tagparams 			= explode('|',$tagcontent);
-					$tagsource 			= trim(strip_tags($tagparams[0]));
+					$tagcontent 	= preg_replace("/{.+?}/", "", $match);
+					$tagcontent		= str_replace(array('"','\'','`'), array('&quot;','&apos;','&#x60;'), $tagcontent); // Address potential XSS attacks
+					$tagparams 		= explode('|',$tagcontent);
+					$tagsource 		= trim(strip_tags($tagparams[0]));
 
 					// Prepare the HTML
 					$output = new JObject;
