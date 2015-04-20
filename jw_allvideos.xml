@@ -20,7 +20,7 @@
 			<option value="opaque">JW_PLG_AV_NO</option>
 			<option value="transparent">JW_PLG_AV_YES</option>
 		</param>
-		<param name="background" type="text" default="#010101" size="6" label="JW_PLG_AV_FLASHMP4WEBMOGG_THEORA_VIDEO_PLAYER_BACKGROUND_COLOR" description="JW_PLG_AV_SET_THE_BACKGROUND_COLOR_OF_THE_PLAYER_ONLY_IF_THE_TRANSPARENCY_IS_SET_TO_NO_VALUES_SHOULD_BE_GIVEN_IN_HEXADECIMAL_FORMAT_EG_000000_FOR_BLACK" />
+		<param name="background" type="text" default="#010101" size="8" label="JW_PLG_AV_FLASHMP4WEBMOGG_THEORA_VIDEO_PLAYER_BACKGROUND_COLOR" description="JW_PLG_AV_SET_THE_BACKGROUND_COLOR_OF_THE_PLAYER_ONLY_IF_THE_TRANSPARENCY_IS_SET_TO_NO_VALUES_SHOULD_BE_GIVEN_IN_HEXADECIMAL_FORMAT_EG_000000_FOR_BLACK" />
 		<param name="controls" type="radio" default="1" label="JW_PLG_AV_CONTROLS" description="">
 			<option value="0">JW_PLG_AV_NO</option>
 			<option value="1">JW_PLG_AV_YES</option>
@@ -47,9 +47,9 @@
 		<param name="afolder" type="text" default="images/stories/audio" size="40" label="JW_PLG_AV_LOCAL_AUDIO_FOLDER" description="JW_PLG_AV_THIS_IS_THE_FOLDER_WHERE_YOU_STORE_ALL_THE_AUDIO_SOUND_FILES_THAT_YOU_WANT_TO_STREAMPLAY_FROM_YOUR_WEBSITE_IT_IS_BETTER_IF_THIS_FOLDER_IS_INSIDE_THE_IMAGESSTORIES_FOLDER_SO_THAT_YOU_WONT_STUMBLE_INTO_ANY_PERMISSION_ISSUES_IN_THIS_LOCAL_AUDIO_FOLDER_YOU_CAN_THEN_UPLOAD_MP3_AND_WMA_AUDIO_FILE_TYPES" />
 		<param name="awidth" type="text" default="480" size="4" label="JW_PLG_AV_DEFAULT_WIDTH_IN_PX_FOR_AUDIO_PLAYER" description="JW_PLG_AV_THE_PRESELECTED_WIDTH_OF_THE_AUDIO_PLAYER_IN_PIXELS_TO_SHOW_INSIDE_YOUR_CONTENT_IT_SHOULD_BE_SMALLER_THAN_THE_WIDTH_OF_THE_SURROUNDING_BOX_IF_ANY_IN_ORDER_NOT_TO_BREAK_YOUR_LAYOUT" />
 		<param name="aheight" type="text" default="24" size="4" label="JW_PLG_AV_DEFAULT_HEIGHT_IN_PX_FOR_AUDIO_PLAYER" description="JW_PLG_AV_THE_PRESELECTED_HEIGHT_OF_THE_AUDIO_PLAYER_IN_PIXELS_TO_SHOW_INSIDE_YOUR_CONTENT" />
-		<param name="abackground" type="text" default="#010101" size="6" label="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_BACKGROUND_COLOR" description="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_BACKGROUND_COLOR_DESC" />
-		<param name="afrontcolor" type="text" default="#FFFFFF" size="6" label="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_FRONT_COLOR" description="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_FRONT_COLOR_DESC" />
-		<param name="alightcolor" type="text" default="#00ADE3" size="6" label="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_LIGHT_COLOR" description="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_LIGHT_COLOR_DESC" />
+		<param name="abackground" type="text" default="#010101" size="8" label="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_BACKGROUND_COLOR" description="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_BACKGROUND_COLOR_DESC" />
+		<param name="afrontcolor" type="text" default="#FFFFFF" size="8" label="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_FRONT_COLOR" description="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_FRONT_COLOR_DESC" />
+		<param name="alightcolor" type="text" default="#00ADE3" size="8" label="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_LIGHT_COLOR" description="JW_PLG_AV_FLASH_HTML5_AUDIO_PLAYER_LIGHT_COLOR_DESC" />
 		<param name="allowAudioDownloading" type="radio" default="0" label="JW_PLG_AV_ALLOW_AUDIO_DOWNLOADING" description="JW_PLG_AV_ALLOW_AUDIO_DOWNLOADING_DESC">
 			<option value="0">JW_PLG_AV_NO</option>
 			<option value="1">JW_PLG_AV_YES</option>
