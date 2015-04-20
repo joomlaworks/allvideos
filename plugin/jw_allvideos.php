@@ -282,13 +282,6 @@ class plgContentJw_allvideos extends JPlugin {
 						$tagsource = str_replace('.shtml','',$tagsource[0]);
 					}
 
-					if ($plg_tag=="twitvid") {
-						$tagsource = preg_replace("~(http|https):(.+?)twitvid.com\/~s","",$tagsource);
-						if ($final_autoplay=='true') {
-							$tagsource = $tagsource.'&amp;autoplay=1';
-						}
-					}
-
 					if ($plg_tag=="vidiac") {
 						$tagsourceVidiac = explode(';',$tagsource);
 						$tagsource = $tagsourceVidiac[0];
