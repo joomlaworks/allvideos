@@ -20,7 +20,8 @@ $mediaplayerEmbed = "
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
 		'autostart': '{PLAYER_AUTOPLAY}',
-		'controls': '{JWPLAYER_CONTROLS}'
+		'controls': '{JWPLAYER_CONTROLS}',
+                'tracks': {SUBTITLES}
 	});
 </script>
 ";
@@ -34,7 +35,8 @@ $mediaplayerEmbedRemote = "
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
 		'autostart': '{PLAYER_AUTOPLAY}',
-		'controls': '{JWPLAYER_CONTROLS}'
+		'controls': '{JWPLAYER_CONTROLS}',
+                'tracks': {SUBTITLES}
 	});
 </script>
 ";
