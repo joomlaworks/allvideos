@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		4.6.2
+ * @version		4.7.0
  * @package		AllVideos (plugin)
  * @author    	JoomlaWorks - http://www.joomlaworks.net
  * @copyright	Copyright (c) 2006 - 2015 JoomlaWorks Ltd. All rights reserved.
@@ -19,8 +19,8 @@ class plgContentJw_allvideos extends JPlugin {
 
 	// JoomlaWorks reference parameters
 	var $plg_name					= "jw_allvideos";
-	var $plg_copyrights_start		= "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.6.2) starts here -->\n";
-	var $plg_copyrights_end			= "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.6.2) ends here -->\n\n";
+	var $plg_copyrights_start		= "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.7.0) starts here -->\n";
+	var $plg_copyrights_end			= "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.7.0) ends here -->\n\n";
 
 	function plgContentJw_allvideos( &$subject, $params ) {
 		parent::__construct( $subject, $params );
@@ -88,7 +88,7 @@ class plgContentJw_allvideos extends JPlugin {
 		$pluginParams = class_exists('JParameter') ? new JParameter($plugin->params) : new JRegistry($plugin->params);
 
 		/* Video Parameters */
-		$playerTemplate					= ($params->get('playerTemplate')) ? $params->get('playerTemplate') : $pluginParams->get('playerTemplate','Classic');
+		$playerTemplate					= ($params->get('playerTemplate')) ? $params->get('playerTemplate') : $pluginParams->get('playerTemplate','Responsive');
 		$vfolder 						= ($params->get('vfolder')) ? $params->get('vfolder') : $pluginParams->get('vfolder','images/stories/videos');
 		$vwidth 						= ($params->get('vwidth')) ? $params->get('vwidth') : $pluginParams->get('vwidth',400);
 		$vheight 						= ($params->get('vheight')) ? $params->get('vheight') : $pluginParams->get('vheight',300);
@@ -142,16 +142,16 @@ class plgContentJw_allvideos extends JPlugin {
 			}
 
 			if ($gzipScripts) {
-				$document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.6.2');
+				$document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.7.0');
 			} else {
-				$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.6.2');
-				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.6.2');
-				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.6.2');
-				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/ac_quicktime.js?v=4.6.2');
+				$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.7.0');
+				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.7.0');
+				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.7.0');
+				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/ac_quicktime.js?v=4.7.0');
 			}
 
 			if($jwPlayerLoading=='local'){
-				$document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.6.2');
+				$document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.7.0');
 				$document->addScriptDeclaration('
 					/* JW Player API Key */
 					jwplayer.key="'.$jwPlayerAPIKey.'";
@@ -339,6 +339,31 @@ class plgContentJw_allvideos extends JPlugin {
 							foreach($tagsourceYoutube as $ytVideoParam) {
 								if (preg_match("~v=~s", $ytVideoParam)) {
 									$tagsource = str_replace("v=", "", $ytVideoParam);
+								}
+							}
+						} else {
+							if (strpos($tagsource,'=')!==false) {
+								$tagsourceYoutube = explode('=',$tagsource);
+								$tagsource = $tagsourceYoutube[1];
+							}
+						}
+
+						$tagsource = $tagsource.'?rel=0&amp;fs=1&amp;wmode=transparent';
+
+						if ($final_autoplay=='true') {
+							$tagsource = $tagsource.'&amp;autoplay=1';
+						}
+					}
+
+					if ($plg_tag=="youtubeplaylist") {
+						if (strpos($tagsource,'youtube.com')!==false) {
+							$tagsource = preg_replace("~(http|https):(.+?)youtube.com\/playlist\?~s","",$tagsource);
+						}
+						if (strpos($tagsource,'&')!==false) {
+							$tagsourceYoutube = explode('&',$tagsource);
+							foreach($tagsourceYoutube as $ytVideoParam) {
+								if (preg_match("~list=~s", $ytVideoParam)) {
+									$tagsource = str_replace("list=", "", $ytVideoParam);
 								}
 							}
 						} else {

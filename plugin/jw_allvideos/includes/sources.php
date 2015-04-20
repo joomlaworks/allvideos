@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		4.6.2
+ * @version		4.7.0
  * @package		AllVideos (plugin)
  * @author    	JoomlaWorks - http://www.joomlaworks.net
  * @copyright	Copyright (c) 2006 - 2015 JoomlaWorks Ltd. All rights reserved.
@@ -226,6 +226,9 @@ $tagReplace = array(
 /* --- Major 3rd party video providers --- */
 // youtube.com - http://www.youtube.com/watch?v=g5lGNkS5TE0
 "YouTube" => "<iframe src=\"//www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
+
+// youtube.com Playlists - https://www.youtube.com/playlist?list=PL0875C16C899A8DE6
+"YouTubePlaylist" => "<iframe src=\"//www.youtube.com/embed/videoseries?list={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // vimeo.com - http://www.vimeo.com/1319796
 "Vimeo" => "<iframe src=\"//player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",

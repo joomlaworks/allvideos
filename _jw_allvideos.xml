@@ -5,16 +5,16 @@
 	<authorEmail>please-use-the-contact-form@joomlaworks.net</authorEmail>
 	<authorUrl>www.joomlaworks.net</authorUrl>
 	<copyright>Copyright (c) 2006 - 2015 JoomlaWorks Ltd. All rights reserved.</copyright>
-	<creationDate>Feb 1st, 2015</creationDate>
+	<creationDate>April 20th, 2015</creationDate>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>4.6.2</version>
+	<version>4.7.0</version>
 	<description>JW_PLG_AV_XML_DESC</description>
 	<!-- Parameters -->
 	<config>
 		<fields name="params">
 			<fieldset name="basic" addfieldpath="/plugins/content/jw_allvideos/jw_allvideos/includes/elements">
 				<field name="" type="header" default="JW_PLG_AV_VIDEO_PARAMETERS" label="" description="" />
-				<field name="playerTemplate" type="template" directory="/plugins/content/jw_allvideos/jw_allvideos/tmpl" default="Classic" hide_default="1" hide_none="1" label="JW_PLG_AV_TEMPLATE" description="JW_PLG_AV_TEMPLATE_DESC" />
+				<field name="playerTemplate" type="template" directory="/plugins/content/jw_allvideos/jw_allvideos/tmpl" default="Responsive" hide_default="1" hide_none="1" label="JW_PLG_AV_TEMPLATE" description="JW_PLG_AV_TEMPLATE_DESC" />
 				<field name="vfolder" type="text" default="images/videos" size="40" label="JW_PLG_AV_LOCAL_VIDEO_FOLDER" description="JW_PLG_AV_THIS_IS_THE_FOLDER_WHERE_YOU_STORE_ALL_THE_VIDEO_FILES_THAT_YOU_WANT_TO_STREAMPLAY_FROM_YOUR_WEBSITE_IT_IS_BETTER_IF_THIS_FOLDER_IS_INSIDE_THE_IMAGESSTORIES_FOLDER_SO_THAT_YOU_WONT_STUMBLE_INTO_ANY_PERMISSION_ISSUES_IN_THIS_LOCAL_VIDEO_FOLDER_YOU_CAN_THEN_UPLOAD_VIDEO_FILES_OF_THE_FOLLOWING_TYPE_FLV_SWF_MOV_MP4_WMV_DIVX" />
 				<field name="vwidth" type="text" default="400" size="4" label="JW_PLG_AV_DEFAULT_WIDTH_IN_PX_FOR_VIDEOS" description="JW_PLG_AV_THE_PRESELECTED_WIDTH_OF_THE_VIDEO_IN_PIXELS_TO_SHOW_INSIDE_YOUR_CONTENT_IT_SHOULD_BE_SMALLER_THAN_THE_WIDTH_OF_THE_SURROUNDING_BOX_IF_ANY_IN_ORDER_NOT_TO_BREAK_YOUR_LAYOUT" />
 				<field name="vheight" type="text" default="300" size="4" label="JW_PLG_AV_DEFAULT_HEIGHT_IN_PX_FOR_VIDEOS" description="JW_PLG_AV_THE_PRESELECTED_HEIGHT_OF_THE_VIDEO_IN_PIXELS_TO_SHOW_INSIDE_YOUR_CONTENT" />
