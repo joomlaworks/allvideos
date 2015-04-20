@@ -20,6 +20,7 @@ $mediaplayerEmbed = "
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
 		'autostart': '{PLAYER_AUTOPLAY}',
+		'repeat': '{PLAYER_LOOP}',
 		'controls': '{JWPLAYER_CONTROLS}'
 	});
 </script>
@@ -34,6 +35,7 @@ $mediaplayerEmbedRemote = "
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
 		'autostart': '{PLAYER_AUTOPLAY}',
+		'repeat': '{PLAYER_LOOP}',
 		'controls': '{JWPLAYER_CONTROLS}'
 	});
 </script>
@@ -49,6 +51,7 @@ $audioPlayerEmbed = "
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
 		'autostart': '{PLAYER_AUTOPLAY}',
+		'repeat': '{PLAYER_LOOP}',
 		'controls': '{JWPLAYER_CONTROLS}'
 	});
 </script>
@@ -63,6 +66,7 @@ $audioPlayerEmbedRemote = "
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
 		'autostart': '{PLAYER_AUTOPLAY}',
+		'repeat': '{PLAYER_LOOP}',
 		'controls': '{JWPLAYER_CONTROLS}'
 	});
 </script>
@@ -71,13 +75,13 @@ $audioPlayerEmbedRemote = "
 /* -------------------------------- Embed templates for Quicktime Media -------------------------------- */
 $qtEmbed = "
 <script type=\"text/javascript\">
-	QT_WriteOBJECT_XHTML('{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}', '{WIDTH}', '{HEIGHT}', '', 'autoplay', '{PLAYER_AUTOPLAY}', 'bgcolor', '{PLAYER_BACKGROUNDQT}', 'scale', 'aspect', 'wmode', 'transparent', 'title', 'JoomlaWorks AllVideos Player');
+	QT_WriteOBJECT_XHTML('{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}', '{WIDTH}', '{HEIGHT}', '', 'autoplay', '{PLAYER_AUTOPLAY}', 'loop', '{PLAYER_LOOP}', 'bgcolor', '{PLAYER_BACKGROUNDQT}', 'scale', 'aspect', 'wmode', 'transparent', 'title', 'JoomlaWorks AllVideos Player');
 </script>
 ";
 
 $qtEmbedRemote = "
 <script type=\"text/javascript\">
-	QT_WriteOBJECT_XHTML('{SOURCE}', '{WIDTH}', '{HEIGHT}', '', 'autoplay', '{PLAYER_AUTOPLAY}', 'bgcolor', '{PLAYER_BACKGROUNDQT}', 'scale', 'aspect', 'wmode', 'transparent', 'title', 'JoomlaWorks AllVideos Player');
+	QT_WriteOBJECT_XHTML('{SOURCE}', '{WIDTH}', '{HEIGHT}', '', 'autoplay', '{PLAYER_AUTOPLAY}', 'loop', '{PLAYER_LOOP}', 'bgcolor', '{PLAYER_BACKGROUNDQT}', 'scale', 'aspect', 'wmode', 'transparent', 'title', 'JoomlaWorks AllVideos Player');
 </script>
 ";
 
@@ -92,7 +96,8 @@ $wmEmbed = "
 		'image': '{PLAYER_POSTER_FRAME}',
 		'width': '{WIDTH}',
 		'height': '{HEIGHT}',
-		'autostart': '{PLAYER_AUTOPLAY}'
+		'autostart': '{PLAYER_AUTOPLAY}',
+		'repeat': '{PLAYER_LOOP}'
 	};
 	var ply = new jeroenwijering.Player(cnt,src,cfg);
 </script>
@@ -107,7 +112,8 @@ $wmEmbedRemote = "
 		'file': '{SOURCE}',
 		'width': '{WIDTH}',
 		'height': '{HEIGHT}',
-		'autostart': '{PLAYER_AUTOPLAY}'
+		'autostart': '{PLAYER_AUTOPLAY}',
+		'repeat': '{PLAYER_LOOP}'
 	};
 	var ply = new jeroenwijering.Player(cnt,src,cfg);
 </script>
@@ -176,6 +182,7 @@ $tagReplace = array(
 	<param name=\"allowContextMenu\" value=\"true\" />
 	<param name=\"previewImage\" value=\"{SITEURL}/{FOLDER}/{SOURCE}.jpg\" />
 	<param name=\"autoPlay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"minVersion\" value=\"1.0.0\" />
 	<param name=\"custommode\" value=\"none\" />
 	<p>No video? Get the DivX browser plug-in for <a href=\"http://download.divx.com/player/DivXWebPlayerInstaller.exe\">Windows</a> or <a href=\"http://download.divx.com/player/DivXWebPlayer.dmg\">Mac</a></p>
@@ -194,6 +201,7 @@ $tagReplace = array(
 	<param name=\"allowContextMenu\" value=\"true\" />
 	<param name=\"previewImage\" value=\"\" />
 	<param name=\"autoPlay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"minVersion\" value=\"1.0.0\" />
 	<param name=\"custommode\" value=\"none\" />
 	<p>No video? Get the DivX browser plug-in for <a href=\"http://download.divx.com/player/DivXWebPlayerInstaller.exe\">Windows</a> or <a href=\"http://download.divx.com/player/DivXWebPlayer.dmg\">Mac</a></p>
@@ -208,6 +216,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 </object>
 ",
 
@@ -218,17 +227,15 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 </object>
 ",
 
 
 
 /* --- Major 3rd party video providers --- */
-// youtube.com - http://www.youtube.com/watch?v=g5lGNkS5TE0
+// youtube.com - http://www.youtube.com/watch?v=g5lGNkS5TE0 or https://www.youtube.com/playlist?list=PL0875C16C899A8DE6
 "YouTube" => "<iframe src=\"//www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
-
-// youtube.com Playlists - https://www.youtube.com/playlist?list=PL0875C16C899A8DE6
-"YouTubePlaylist" => "<iframe src=\"//www.youtube.com/embed/videoseries?list={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // vimeo.com - http://www.vimeo.com/1319796
 "Vimeo" => "<iframe src=\"//player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
@@ -263,6 +270,8 @@ $tagReplace = array(
 	<param name=\"quality\" value=\"high\" />
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
+	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 </object>
 ",
 
@@ -273,6 +282,8 @@ $tagReplace = array(
 	<param name=\"quality\" value=\"high\" />
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
+	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowscriptaccess\" value=\"sameDomain\" />
 </object>
 ",
@@ -302,6 +313,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 	<param name=\"flashvars\" value=\"type=flv&plugins=dotsub&debug=none&tid=UA-3684979-1&uuid={SOURCE}&lang=eng\" />
@@ -316,6 +328,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 	<param name=\"flashvars\" value=\"intl_lang=en-us&amp;div_id=stewart_swf{SOURCE}_div&amp;flickr_notracking=true&amp;flickr_target=_self&amp;flickr_h={HEIGHT}&amp;flickr_w={WIDTH}&amp;flickr_no_logo=true&amp;onsite=true&amp;flickr_noAutoPlay=false&amp;in_photo_gne=true&amp;photo_secret=&amp;photo_id={SOURCE}&amp;flickr_doSmall=true\" />
@@ -333,6 +346,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"sameDomain\" />
 	<param name=\"base\" value=\".\" />
@@ -351,6 +365,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -364,6 +379,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 	<param name=\"flashvars\" value=\"file=http://www.godtube.com/resource/mediaplayer/{SOURCE}.file&image=http://www.godtube.com/resource/mediaplayer/{SOURCE}.jpg&screencolor=000000&type=video&autostart={PLAYER_AUTOPLAY}&playonce=true&skin=http://media.salemwebnetwork.com/godtube/resource/mediaplayer/skin/default/videoskin.swf&logo.file=undefinedtheme/default/media/embed-logo.png&logo.link=http://www.godtube.com/watch/%3Fv%3D{SOURCE}&logo.position=top-left&logo.hide=false&controlbar.position=over\" />
@@ -378,6 +394,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -392,6 +409,8 @@ $tagReplace = array(
 	<param name=\"flashVars\" value=\"language_code=en&playerKey=902e0deec887&configKey=&suffix=&sig={SOURCE}&autostart={PLAYER_AUTOPLAY}\" />
 	<param name=\"movie\" value=\"http://sll.kewego.com/swf/kp.swf\" />
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
+	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<video id=\"kewego_HTML5_{SOURCE}\" poster=\"http://api.kewego.com/video/getHTML5Thumbnail/?playerKey=902e0deec887&amp;sig={SOURCE}\" controls=\"true\" height=\"{HEIGHT}\" width=\"{WIDTH}\" preload=\"none\">
 		<source src=\"http://api.kewego.com/video/getHTML5Stream/?playerKey=902e0deec887&amp;sig={SOURCE}\" type=\"video/mp4\" width=\"{WIDTH}\" height=\"{HEIGHT}\" />
 	</video>
@@ -409,6 +428,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -422,6 +442,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -435,6 +456,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -448,6 +470,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"sameDomain\" />
 </object>
@@ -461,6 +484,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -483,6 +507,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"Always\" />
 </object>
@@ -496,6 +521,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -509,22 +535,9 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
-</object>
-",
-
-// tnaondemand.com - http://www.tnaondemand.com/launch.html?vidid=34722&oid=132
-"tnaondemand" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://my.voped.com/flash/vopedmainplayer.swf\" title=\"JoomlaWorks AllVideos Player\">
-	<param name=\"movie\" value=\"http://my.voped.com/flash/vopedmainplayer.swf\" />
-	<param name=\"quality\" value=\"high\" />
-	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-	<param name=\"allowfullscreen\" value=\"true\" />
-	<param name=\"allowscriptaccess\" value=\"always\" />
-	<param name=\"flashvars\" value=\"oid=132&vid={SOURCE}&player=98&pt=1&at=2&aid=4ffca50b272e7\" />
 </object>
 ",
 
@@ -536,6 +549,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -549,6 +563,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 	<param name=\"flashVars\" value=\"loc=%2F&amp;autoplay={PLAYER_AUTOPLAY}&amp;vid={SOURCE}&amp;locale=en_US&amp;hasticket=false&amp;v3=1\" />
@@ -563,6 +578,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -579,6 +595,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 </object>
@@ -601,6 +618,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"sameDomain\" />
 </object>
@@ -614,6 +632,7 @@ $tagReplace = array(
 	<param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
 	<param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
 	<param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
+	<param name=\"loop\" value=\"{PLAYER_LOOP}\" />
 	<param name=\"allowfullscreen\" value=\"true\" />
 	<param name=\"allowscriptaccess\" value=\"always\" />
 	<param name=\"flashvars\" value=\"file=http://www.youmaker.com/video/v/nu/{SOURCE}.xml&showdigits=true&overstretch=fit&autostart={PLAYER_AUTOPLAY}&linkfromdisplay=false&rotatetime=12&repeat=list&shuffle=false&showfsbutton=false&fsreturnpage=&fullscreenpage=\" />

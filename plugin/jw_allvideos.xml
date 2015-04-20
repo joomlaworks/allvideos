@@ -61,6 +61,10 @@
 					<option value="0">JW_PLG_AV_NO</option>
 					<option value="1">JW_PLG_AV_YES</option>
 				</field>
+				<field name="loop" type="radio" default="0" label="JW_PLG_AV_LOOP" description="JW_PLG_AV_LOOP_DESC">
+					<option value="0">JW_PLG_AV_NO</option>
+					<option value="1">JW_PLG_AV_YES</option>
+				</field>
 			</fieldset>
 			<fieldset addfieldpath="/plugins/content/jw_allvideos/jw_allvideos/includes/elements" name="advanced">
 				<field name="" type="header" default="JW_PLG_AV_JWPLAYER_PARAMETERS" label="" description="" />
