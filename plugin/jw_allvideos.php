@@ -46,7 +46,7 @@ class plgContentJw_allvideos extends JPlugin {
 
 		// API
 		jimport('joomla.filesystem.file');
-		$mainframe = JFactory::getApplication();
+		$app = JFactory::getApplication();
 		$document  = JFactory::getDocument();
 
 		// Assign paths
@@ -325,39 +325,43 @@ class plgContentJw_allvideos extends JPlugin {
 					if ($plg_tag=="youtube") {
 
 						// Check the presence of fully pasted URLs
-						if (strpos($tagsource,'youtube.com')!==false) {
-							if (preg_match("~watch~s", $tagsource)) {
-								$tagsource = preg_replace("~(http|https):(.+?)youtube.com\/watch\?~s","",$tagsource);
-							} elseif (preg_match("~playlist~s", $tagsource)) { {
-								$tagsource = preg_replace("~(http|https):(.+?)youtube.com\/playlist\?~s","",$tagsource);
+						if (strpos($tagsource,'youtube.com')!==false || strpos($tagsource,'youtu.be')!==false) {
+							$ytQuery = parse_url($tagsource, PHP_URL_QUERY);
+							$ytQuery = str_replace('&amp;', '&', $ytQuery);
+						} else {
+							$ytQuery = $tagsource;
+						}
+
+						// Process string
+						if (strpos($ytQuery,'&')!==false) {
+							$ytQuery = explode('&',$ytQuery);
+							$ytParams = array();
+							foreach($ytQuery as $ytParam) {
+								$ytParam = explode('=',$ytParam);
+								$ytParams[$ytParam[0]] = $ytParam[1];
 							}
-						}
-						if (strpos($tagsource,'youtu.be')!==false) {
-							$tagsource = preg_replace("~(http|https):(.+?)youtu.be\/~s","",$tagsource);
-						}
-						if (strpos($tagsource,'&')!==false) {
-							$tagsourceYoutube = explode('&',$tagsource);
-							foreach($tagsourceYoutube as $ytVideoParam) {
-								if (preg_match("~v=~s", $ytVideoParam)) {
-									$tagsource = str_replace("v=", "", $ytVideoParam);
-								} elseif (preg_match("~list=~s", $ytVideoParam)) {
-									$tagsource = str_replace("list=", "videoseries?list=", $ytVideoParam);
-								}
+							if(array_key_exists('v', $ytParams)){
+								$tagsource = $ytParams['v'];
+							} elseif(array_key_exists('list', $ytParams)){
+								$tagsource = 'videoseries?list='.$ytParams['list'];
+							}
+						} elseif (strpos($ytQuery,'=')!==false) {
+							$ytQuery = explode('=',$ytQuery);
+							$ytParams = array();
+							$ytParams[$ytQuery[0]] = $ytQuery[1];
+							if(array_key_exists('v', $ytParams)){
+								$tagsource = $ytParams['v'];
+							} elseif(array_key_exists('list', $ytParams)){
+								$tagsource = 'videoseries?list='.$ytParams['list'];
 							}
 						} else {
-							if (strpos($tagsource,'=')!==false) {
-								$tagsourceYoutube = explode('=',$tagsource);
-								if ($tagsourceYoutube[0]=="v") {
-									$tagsource = $tagsourceYoutube[1];
-								} elseif ($tagsourceYoutube[0]=="list") {
-									$tagsource = "videoseries?list=".$tagsourceYoutube[1];
-								}
+							if(substr($tagsource, 0, 2)=="PL"){
+								$tagsource = 'videoseries?list='.$tagsource;
 							}
 						}
 
-						// Or just grab the pasted playlist or video ID
-						if(strpos($tagsource, "PL")!==false){
-							$tagsource = 'videoseries?list='.$tagsource.'?rel=0&amp;fs=1&amp;wmode=transparent';
+						if (strpos($tagsource,'?')!==false) {
+							$tagsource = $tagsource.'&amp;rel=0&amp;fs=1&amp;wmode=transparent';
 						} else {
 							$tagsource = $tagsource.'?rel=0&amp;fs=1&amp;wmode=transparent';
 						}
@@ -369,6 +373,7 @@ class plgContentJw_allvideos extends JPlugin {
 						if ($final_loop=='true') {
 							$tagsource = $tagsource.'&amp;loop=1';
 						}
+
 					}
 
 					// Poster frame
@@ -387,7 +392,7 @@ class plgContentJw_allvideos extends JPlugin {
 					$output->posterFrameRemote = substr($tagsource,0,-3).'jpg';
 
 					// Set a unique ID
-					$output->playerID = 'AVPlayerID_'.substr(md5($tagsource),1,8).'_'.rand();
+					$output->playerID = 'AVPlayerID_'.$key.'_'.md5($tagsource);
 
 					// Placeholder elements
 					$findAVparams = array(
