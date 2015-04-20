@@ -21,7 +21,7 @@
 			<option value="transparent">JW_PLG_AV_YES</option>
 		</param>
 		<param name="background" type="text" default="#010101" size="6" label="JW_PLG_AV_FLASHMP4WEBMOGG_THEORA_VIDEO_PLAYER_BACKGROUND_COLOR" description="JW_PLG_AV_SET_THE_BACKGROUND_COLOR_OF_THE_PLAYER_ONLY_IF_THE_TRANSPARENCY_IS_SET_TO_NO_VALUES_SHOULD_BE_GIVEN_IN_HEXADECIMAL_FORMAT_EG_000000_FOR_BLACK" />
-		<param name="controls" type="list" default="1" label="JW_PLG_AV_CONTROLS" description="">
+		<param name="controls" type="radio" default="1" label="JW_PLG_AV_CONTROLS" description="">
 			<option value="0">JW_PLG_AV_NO</option>
 			<option value="1">JW_PLG_AV_YES</option>
 		</param>

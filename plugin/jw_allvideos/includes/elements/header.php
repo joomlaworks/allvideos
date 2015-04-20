@@ -19,11 +19,19 @@ class JWElementHeader extends JWElement
 
 		$document = JFactory::getDocument();
 		$document->addStyleDeclaration('
-				.jwHeaderClr { clear:both; height:0; line-height:0; border:none; float:none; background:none; padding:0; margin:0; }
-				.jwHeaderContainer { clear:both; font-weight:bold; font-size:12px; color:#369; margin:12px 0 4px; padding:0; background:#d5e7fa; border-bottom:2px solid #96b0cb; float:left; width:100%; }
-				.jwHeaderContainer15 { clear:both; font-weight:bold; font-size:12px; color:#369; margin:0; padding:0; background:#d5e7fa; border-bottom:2px solid #96b0cb; float:left; width:100%; }
-				.jwHeaderContent { padding:6px 8px; }
-			');
+			.jwHeaderClr {clear:both;height:0;line-height:0;border:none;float:none;background:none;padding:0;margin:0;}
+			.jwHeaderContainer {clear:both;font-weight:bold;font-size:12px;color:#369;margin:12px 0 4px;padding:0;background:#d5e7fa;border-bottom:2px solid #96b0cb;width:auto;}
+			.jwHeaderContainer15 {clear:both;font-weight:bold;font-size:12px;color:#369;margin:0;padding:0;background:#d5e7fa;border-bottom:2px solid #96b0cb;float:left;width:100%;}
+			.jwHeaderContent {padding:6px 8px;}
+			@media all and (min-width:771px) {
+				.form-horizontal .span9 .control-label {width:30% !important;}
+				.form-horizontal .span9 .controls {margin-left:32% !important;}
+			}
+			@media all and (min-width:481px) and (max-width:770px){
+				.form-horizontal .span9 .control-label {width:45% !important;}
+				.form-horizontal .span9 .controls {margin-left:47% !important;}
+			}
+		');
 		if (version_compare(JVERSION, '2.5.0', 'ge'))
 		{
 			return '<div class="jwHeaderContainer"><div class="jwHeaderContent">'.JText::_($value).'</div><div class="jwHeaderClr"></div></div>';
