@@ -107,6 +107,7 @@ class plgContentJw_allvideos extends JPlugin {
 		/* Global Parameters */
 		$autoplay 						= ($params->get('autoplay')) ? $params->get('autoplay') : $pluginParams->get('autoplay',0);
 		$loop 							= ($params->get('loop')) ? $params->get('loop') : $pluginParams->get('loop',0);
+		$ytnocookie						= ($params->get('ytnocookie')) ? $params->get('ytnocookie') : $pluginParams->get('ytnocookie',0);
 		/* Performance Parameters */
 		$gzipScripts					= $pluginParams->get('gzipScripts',0);
 		/* Advanced */
@@ -325,9 +326,12 @@ class plgContentJw_allvideos extends JPlugin {
 					if ($plg_tag=="youtube") {
 
 						// Check the presence of fully pasted URLs
-						if (strpos($tagsource,'youtube.com')!==false || strpos($tagsource,'youtu.be')!==false) {
+						if (strpos($tagsource,'youtube.com')!==false) {
 							$ytQuery = parse_url($tagsource, PHP_URL_QUERY);
 							$ytQuery = str_replace('&amp;', '&', $ytQuery);
+						} elseif(strpos($tagsource,'youtu.be')!==false) {
+							$ytQuery = explode('youtu.be/', $tagsource);
+							$tagsource = $ytQuery[1];
 						} else {
 							$ytQuery = $tagsource;
 						}
@@ -434,8 +438,8 @@ class plgContentJw_allvideos extends JPlugin {
 						$controls,
 						$siteUrl,
 						substr(JURI::root(false),0,-1),
-                        			$plg_tag,
-                        			str_replace("remote","",$plg_tag),
+						$plg_tag,
+						str_replace("remote","",$plg_tag),
 						$pluginLivePath,
 						$output->posterFrame,
 						$output->posterFrameRemote,
@@ -446,6 +450,10 @@ class plgContentJw_allvideos extends JPlugin {
 
 					// Do the element replace
 					$output->player = JFilterOutput::ampReplace(str_replace($findAVparams, $replaceAVparams, $tagReplace[$cloned_plg_tag]));
+
+					// Post processing
+					// For YouTube
+					if($ytnocookie) $output->player = str_replace('www.youtube.com/embed','www.youtube-nocookie.com/embed', $output->player);
 
 					// Fetch the template
 					ob_start();
