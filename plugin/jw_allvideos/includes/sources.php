@@ -34,6 +34,7 @@ $mediaplayerEmbedRemote = "
 		'image': '{PLAYER_POSTER_FRAME_REMOTE}',
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
+        	'type': '{FILE_TYPE}',
 		'autostart': '{PLAYER_AUTOPLAY}',
 		'repeat': '{PLAYER_LOOP}',
 		'controls': '{JWPLAYER_CONTROLS}'
@@ -65,6 +66,7 @@ $audioPlayerEmbedRemote = "
 		'image': '{PLAYER_POSTER_FRAME_REMOTE}',
 		'height': '{HEIGHT}',
 		'width': '{WIDTH}',
+        	'type': '{FILE_TYPE}',
 		'autostart': '{PLAYER_AUTOPLAY}',
 		'repeat': '{PLAYER_LOOP}',
 		'controls': '{JWPLAYER_CONTROLS}'
