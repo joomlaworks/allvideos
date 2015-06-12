@@ -22,7 +22,7 @@
 	.avVideo .avPlayerContainer .avPlayerBlock object,
 	.avVideo .avPlayerContainer .avPlayerBlock embed,
 	.avVideo .avPlayerContainer .avPlayerBlock video,
-	.avVideo .avPlayerContainer .avPlayerBlock > div {position:absolute!important;top:0;left:0;min-width:320px!important;width:100%!important;height:100%!important;}
+	.avVideo .avPlayerContainer .avPlayerBlock > div {position:absolute!important;top:0;left:0;min-width:100%!important;width:100%!important;height:100%!important;}
 	/* SoundCloud container styling only */
 	.avSoundCloudSet .avPlayerContainer .avPlayerBlock {width:100%!important;position:relative!important;padding:0 0 56% 0!important;}
 	.avSoundCloudSet .avPlayerContainer .avPlayerBlock iframe,
