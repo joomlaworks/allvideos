@@ -70,7 +70,7 @@ class plgContentJw_allvideos extends JPlugin {
 
 		// Simple performance check to determine whether plugin should process further
 		$grabTags = strtolower(implode(array_keys($tagReplace),"|"));
-		if (preg_match("#{(".$grabTags.")}#is", $row->text)==false) return;
+		if (preg_match("~{(".$grabTags.")}~is", $row->text)==false) return;
 
 
 
@@ -172,7 +172,7 @@ class plgContentJw_allvideos extends JPlugin {
 			$plg_tag = strtolower($plg_tag);
 
 			// expression to search for
-			$regex = "#{".$plg_tag."}.*?{/".$plg_tag."}#is";
+			$regex = "~{".$plg_tag."}.*?{/".$plg_tag."}~is";
 
 			// process tags
 			if (preg_match_all($regex, $row->text, $matches, PREG_PATTERN_ORDER)) {
@@ -267,6 +267,24 @@ class plgContentJw_allvideos extends JPlugin {
 
 					if ($plg_tag=="metacafe" && substr($tagsource,-1,1)=='/') {
 						$tagsource = substr($tagsource,0,-1);
+					}
+
+					if ($plg_tag=="myvideo") {
+						if (strpos($tagsource,'myvideo.de')!==false) {
+							if (strpos($tagsource,'myvideo.de/watch')!==false) {
+								$tagsource = parse_url($tagsource);
+								$tagsource = explode('/',$tagsource['path']);
+								$tagsource = $tagsource[2];
+							} else {
+								$tagsource = parse_url($tagsource);
+								$tagsource = explode('/',$tagsource['path']);
+								$tagsource = array_reverse($tagsource);
+								$tagsource = $tagsource[0];
+								$tagsource = explode('-',$tagsource);
+								$tagsource = array_reverse($tagsource);
+								$tagsource = $tagsource[0];
+							}
+						}
 					}
 
 					if ($plg_tag=="sevenload") {
@@ -464,7 +482,7 @@ class plgContentJw_allvideos extends JPlugin {
 					ob_end_clean();
 
 					// Output
-					$row->text = preg_replace("#{".$plg_tag."}".preg_quote($tagcontent)."{/".$plg_tag."}#is", $getTemplate , $row->text);
+					$row->text = preg_replace("~{".$plg_tag."}".preg_quote($tagcontent)."{/".$plg_tag."}~is", $getTemplate , $row->text);
 
 				} // End second foreach
 
