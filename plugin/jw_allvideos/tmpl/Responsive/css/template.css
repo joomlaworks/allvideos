@@ -27,7 +27,7 @@
 	.avSoundCloudSet .avPlayerContainer .avPlayerBlock {width:100%!important;position:relative!important;padding:0 0 56% 0!important;}
 	.avSoundCloudSet .avPlayerContainer .avPlayerBlock iframe,
 	.avSoundCloudSet .avPlayerContainer .avPlayerBlock object,
-	.avSoundCloudSet .avPlayerContainer .avPlayerBlock embed {position:absolute!important;top:0;left:0;min-width:320px!important;width:100%!important;height:100%!important;}
+	.avSoundCloudSet .avPlayerContainer .avPlayerBlock embed {position:absolute!important;top:0;left:0;min-width:100%px!important;width:100%!important;height:100%!important;}
 
 	.avSoundCloudSong .avPlayerContainer .avPlayerBlock {width:100%!important;padding:0!important;}
 	.avSoundCloudSong .avPlayerContainer .avPlayerBlock iframe,
