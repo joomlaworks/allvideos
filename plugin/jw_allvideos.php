@@ -114,6 +114,8 @@ class plgContentJw_allvideos extends JPlugin {
 		$jwPlayerLoading				= $pluginParams->get('jwPlayerLoading','local'); // local | cdn
 		$jwPlayerAPIKey					= $pluginParams->get('jwPlayerAPIKey','plXkZcoHeQXVlRo0nD6AUscwEXmFJCmIpGL3kw==');
 		$jwPlayerCDNUrl					= $pluginParams->get('jwPlayerCDNUrl','http://jwpsrv.com/library/n9Po9gncEeOKaBIxOUCPzg.js');
+		$fbAppId 						= $pluginParams->get('fbAppId');
+		$fbAppSecret					= $pluginParams->get('fbAppSecret');
 
 		// Variable cleanups for K2
 		if (JRequest::getCmd('format')=='raw') {
@@ -397,7 +399,7 @@ class plgContentJw_allvideos extends JPlugin {
 						}
 
 					}
-
+					
 					// Poster frame
 					$posterFramePath = $sitePath.DS.str_replace('/',DS,$vfolder);
 					if (JFile::exists($posterFramePath.DS.$tagsource.'.jpg')) {
@@ -412,6 +414,29 @@ class plgContentJw_allvideos extends JPlugin {
 
 					// Poster frame (remote)
 					$output->posterFrameRemote = substr($tagsource,0,-3).'jpg';
+
+					// facebook videos
+					if ($plg_tag=="facebook") {
+						if (!is_numeric($tagsource)) {
+							preg_match("/(\d{10,})(?!.+\d{10,})/is",$tagsource,$fbnodeid);
+							$tagsource = array_shift($fbnodeid);
+						}
+
+						// if facebook-app id and secret key are set, then get data from graph api
+						if($fbAppId && $fbAppSecret) {
+							$fbnodeid = $tagsource;
+							$graphapilink = 'https://graph.facebook.com/'.$fbnodeid.'/?access_token='.$fbAppId.'|'.$fbAppSecret.'&fields=source,format';
+							$fbjson = @file_get_contents($graphapilink);
+							if ($fbjson !== FALSE) {
+								$fbvideo = json_decode($fbjson);
+								$tagsource = $fbvideo->source;
+								$maxformat = end($fbvideo->format);
+								$output->posterFrameRemote = $maxformat->picture;
+							}
+						} else {
+							$cloned_plg_tag = 'facebookiframe';
+						}
+					}
 
 					// Set a unique ID
 					$output->playerID = 'AVPlayerID_'.$key.'_'.md5($tagsource);
@@ -467,7 +492,11 @@ class plgContentJw_allvideos extends JPlugin {
 					);
 
 					// Do the element replace
-					$output->player = JFilterOutput::ampReplace(str_replace($findAVparams, $replaceAVparams, $tagReplace[$cloned_plg_tag]));
+					if($plg_tag == "facebook") { 
+						$output->player = str_replace($findAVparams, $replaceAVparams, $tagReplace[$cloned_plg_tag]);
+					} else {
+						$output->player = JFilterOutput::ampReplace(str_replace($findAVparams, $replaceAVparams, $tagReplace[$cloned_plg_tag]));
+					}
 
 					// Post processing
 					// For YouTube

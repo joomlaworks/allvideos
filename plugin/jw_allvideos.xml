@@ -81,6 +81,10 @@
 					<option value="0">JW_PLG_AV_NO</option>
 					<option value="1">JW_PLG_AV_YES</option>
 				</field>
+				<field name="" type="header" default="JW_PLG_AV_FACEBOOK_PARAMETERS" label="" description="" />
+				<field name="fbAppId" type="text" default="" size="40" label="JW_PLG_AV_FACEBOOK_APPID" description="JW_PLG_AV_FACEBOOK_APPID_DESC" />
+				<field name="fbAppSecret" type="text" default="" size="40" label="JW_PLG_AV_FACEBOOK_APPSECRET" description="JW_PLG_AV_FACEBOOK_APPSECRET_DESC" />
+				<field name="fbsetuplink" type="spacer" label="JW_PLG_AV_FACEBOOK_APP_SETUP_LINK" />
 			</fieldset>
 		</fields>
 	</config>

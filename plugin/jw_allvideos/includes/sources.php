@@ -630,4 +630,8 @@ $tagReplace = array(
 </object>
 ",
 
+"facebook" => $mediaplayerEmbedRemote,
+
+"facebookiframe" => "<iframe src=\"https://www.facebook.com/video/embed?video_id={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+
 );
