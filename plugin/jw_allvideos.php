@@ -399,7 +399,7 @@ class plgContentJw_allvideos extends JPlugin {
 						}
 
 					}
-					
+
 					// Poster frame
 					$posterFramePath = $sitePath.DS.str_replace('/',DS,$vfolder);
 					if (JFile::exists($posterFramePath.DS.$tagsource.'.jpg')) {
