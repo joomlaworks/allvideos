@@ -83,6 +83,9 @@ class plgContentJw_allvideos extends JPlugin {
 		if (!$params) {
 			$params = class_exists('JParameter') ? new JParameter(null) : new JRegistry(null);
 		}
+		elseif(is_string($params)) {
+			$params = class_exists('JParameter') ? new JParameter($params) : new JRegistry($params);
+		}
 		$parsedInModule = $params->get('parsedInModule');
 
 		$pluginParams = class_exists('JParameter') ? new JParameter($plugin->params) : new JRegistry($plugin->params);
