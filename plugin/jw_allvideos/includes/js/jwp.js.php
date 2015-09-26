@@ -9,9 +9,7 @@
 
 if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
-header("Content-type: text/javascript; charset: UTF-8");
-header("Cache-Control: must-revalidate");
-header("Expires: ".gmdate("D, d M Y H:i:s", time() + 60 * 60)." GMT");
+$expires = 60; // Time in minutes to cache this file
 
 ob_start("ob_gzhandler");
 
@@ -28,4 +26,14 @@ echo "/* ac_quicktime.js */\n";
 include(dirname( __FILE__ ).DS."quicktimeplayer".DS."ac_quicktime.js");
 echo "\n\n";
 
+$bufferSize = ob_get_length(); // Required to close the connection
+
+header("Content-type: text/javascript; charset=utf-8");
+header("Cache-Control: max-age=".($expires*60));
+header("Expires: ".gmdate("D, d M Y H:i:s", time() + ($expires*60))." GMT");
+header("Content-Length: $bufferSize");
+header("Connection: close");
+
 ob_end_flush();
+ob_flush();
+flush();
