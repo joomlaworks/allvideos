@@ -23,7 +23,7 @@ echo "/* wmvplayer.js */\n";
 include(dirname( __FILE__ ).DS."wmvplayer".DS."wmvplayer.js");
 echo "\n\n";
 echo "/* ac_quicktime.js */\n";
-include(dirname( __FILE__ ).DS."quicktimeplayer".DS."ac_quicktime.js");
+include(dirname( __FILE__ ).DS."quicktimeplayer".DS."AC_QuickTime.js");
 echo "\n\n";
 
 $bufferSize = ob_get_length(); // Required to close the connection
