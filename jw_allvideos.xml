@@ -4,10 +4,10 @@
 	<author>JoomlaWorks</author>
 	<authorEmail>please-use-the-contact-form@joomlaworks.net</authorEmail>
 	<authorUrl>www.joomlaworks.net</authorUrl>
-	<copyright>Copyright (c) 2006 - 2015 JoomlaWorks Ltd. All rights reserved.</copyright>
-	<creationDate>June 12th, 2015</creationDate>
+	<copyright>Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.</copyright>
+	<creationDate>March 29th, 2016</creationDate>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>4.7.1</version>
+	<version>4.8.0</version>
 	<description>JW_PLG_AV_XML_DESC</description>
 	<!-- Parameters -->
 	<params addpath="/plugins/content/jw_allvideos/includes/elements">

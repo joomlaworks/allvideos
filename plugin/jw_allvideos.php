@@ -1,10 +1,10 @@
 <?php
 /**
- * @version		4.7.1
- * @package		AllVideos (plugin)
- * @author    	JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2015 JoomlaWorks Ltd. All rights reserved.
- * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ * @version    4.8.0
+ * @package    AllVideos (plugin)
+ * @author     JoomlaWorks - http://www.joomlaworks.net
+ * @copyright  Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.
+ * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
 // no direct access
@@ -19,25 +19,16 @@ class plgContentJw_allvideos extends JPlugin {
 
 	// JoomlaWorks reference parameters
 	var $plg_name					= "jw_allvideos";
-	var $plg_copyrights_start		= "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.7.1) starts here -->\n";
-	var $plg_copyrights_end			= "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.7.1) ends here -->\n\n";
-
-	function plgContentJw_allvideos( &$subject, $params ) {
-		parent::__construct( $subject, $params );
-
-		// Define the DS constant under Joomla! 3.0+
-		if (!defined('DS')) {
-			define('DS', DIRECTORY_SEPARATOR);
-		}
-	}
+	var $plg_copyrights_start		= "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.8.0) starts here -->\n";
+	var $plg_copyrights_end			= "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.8.0) ends here -->\n\n";
 
 	// Joomla! 1.5
-	function onPrepareContent(&$row, &$params, $page = 0){
+	public function onPrepareContent(&$row, &$params, $page = 0){
 		$this->renderAllVideos($row, $params, $page = 0);
 	}
 
 	// Joomla! 2.5+
-	function onContentPrepare($context, &$row, &$params, $page = 0){
+	public function onContentPrepare($context, &$row, &$params, $page = 0){
 		$this->renderAllVideos($row, $params, $page = 0);
 	}
 
@@ -65,8 +56,8 @@ class plgContentJw_allvideos extends JPlugin {
 		JPlugin::loadLanguage('plg_content_'.$this->plg_name, JPATH_ADMINISTRATOR);
 
 		// Includes
-		require_once(dirname(__FILE__).DS.$this->plg_name.DS.'includes'.DS.'helper.php');
-		require(dirname(__FILE__).DS.$this->plg_name.DS.'includes'.DS.'sources.php');
+		require_once(dirname(__FILE__).'/'.$this->plg_name.'/includes/helper.php');
+		require(dirname(__FILE__).'/'.$this->plg_name.'/includes/sources.php');
 
 		// Simple performance check to determine whether plugin should process further
 		$grabTags = strtolower(implode(array_keys($tagReplace),"|"));
@@ -144,16 +135,16 @@ class plgContentJw_allvideos extends JPlugin {
 			}
 
 			if ($gzipScripts) {
-				$document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.7.1');
+				$document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.8.0');
 			} else {
-				$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.7.1');
-				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.7.1');
-				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.7.1');
-				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/ac_quicktime.js?v=4.7.1');
+				$document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.8.0');
+				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.8.0');
+				$document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.8.0');
+				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/ac_quicktime.js?v=4.8.0');
 			}
 
 			if($jwPlayerLoading=='local'){
-				$document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.7.1');
+				$document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.8.0');
 				$document->addScriptDeclaration('
 					/* JW Player API Key */
 					jwplayer.key="'.$jwPlayerAPIKey.'";
@@ -399,12 +390,12 @@ class plgContentJw_allvideos extends JPlugin {
 					}
 
 					// Poster frame
-					$posterFramePath = $sitePath.DS.str_replace('/',DS,$vfolder);
-					if (JFile::exists($posterFramePath.DS.$tagsource.'.jpg')) {
+					$posterFramePath = $sitePath.'/'.$vfolder;
+					if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
 						$output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.jpg';
-					} elseif (JFile::exists($posterFramePath.DS.$tagsource.'.png')) {
+					} elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
 						$output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.png';
-					} elseif (JFile::exists($posterFramePath.DS.$tagsource.'.gif')) {
+					} elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
 						$output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.gif';
 					} else {
 						$output->posterFrame = '';
