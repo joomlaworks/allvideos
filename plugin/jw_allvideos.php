@@ -23,12 +23,12 @@ class plgContentJw_allvideos extends JPlugin {
 	var $plg_copyrights_end			= "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.8.0) ends here -->\n\n";
 
 	// Joomla! 1.5
-	public function onPrepareContent(&$row, &$params, $page = 0){
+	public function onPrepareContent(&$row, &$params, $page = 0) {
 		$this->renderAllVideos($row, $params, $page = 0);
 	}
 
 	// Joomla! 2.5+
-	public function onContentPrepare($context, &$row, &$params, $page = 0){
+	public function onContentPrepare($context, &$row, &$params, $page = 0) {
 		$this->renderAllVideos($row, $params, $page = 0);
 	}
 
@@ -73,6 +73,9 @@ class plgContentJw_allvideos extends JPlugin {
 		// Control external parameters and set variable for controlling plugin layout within modules
 		if (!$params) {
 			$params = class_exists('JParameter') ? new JParameter(null) : new JRegistry(null);
+		}
+		if(is_string($params)) {
+			$params = class_exists('JParameter') ? new JParameter($params) : new JRegistry($params);
 		}
 		$parsedInModule = $params->get('parsedInModule');
 
@@ -143,7 +146,7 @@ class plgContentJw_allvideos extends JPlugin {
 				$document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/ac_quicktime.js?v=4.8.0');
 			}
 
-			if($jwPlayerLoading=='local'){
+			if($jwPlayerLoading=='local') {
 				$document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.8.0');
 				$document->addScriptDeclaration('
 					/* JW Player API Key */
@@ -353,22 +356,22 @@ class plgContentJw_allvideos extends JPlugin {
 								$ytParam = explode('=',$ytParam);
 								$ytParams[$ytParam[0]] = $ytParam[1];
 							}
-							if(array_key_exists('v', $ytParams)){
+							if(array_key_exists('v', $ytParams)) {
 								$tagsource = $ytParams['v'];
-							} elseif(array_key_exists('list', $ytParams)){
+							} elseif(array_key_exists('list', $ytParams)) {
 								$tagsource = 'videoseries?list='.$ytParams['list'];
 							}
 						} elseif (strpos($ytQuery,'=')!==false) {
 							$ytQuery = explode('=',$ytQuery);
 							$ytParams = array();
 							$ytParams[$ytQuery[0]] = $ytQuery[1];
-							if(array_key_exists('v', $ytParams)){
+							if(array_key_exists('v', $ytParams)) {
 								$tagsource = $ytParams['v'];
-							} elseif(array_key_exists('list', $ytParams)){
+							} elseif(array_key_exists('list', $ytParams)) {
 								$tagsource = 'videoseries?list='.$ytParams['list'];
 							}
 						} else {
-							if(substr($tagsource, 0, 2)=="PL"){
+							if(substr($tagsource, 0, 2)=="PL") {
 								$tagsource = 'videoseries?list='.$tagsource;
 							}
 						}
