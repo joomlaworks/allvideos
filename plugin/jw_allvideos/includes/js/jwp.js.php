@@ -13,7 +13,7 @@ ob_start("ob_gzhandler");
 
 // Includes
 echo "/* behaviour.js */\n";
-include(dirname( __FILE__ )"/behaviour.js");
+include(dirname( __FILE__ )."/behaviour.js");
 echo "/* silverlight.js */\n";
 include(dirname( __FILE__ )."/wmvplayer/silverlight.js");
 echo "\n\n";
