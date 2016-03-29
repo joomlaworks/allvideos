@@ -248,7 +248,7 @@ $tagReplace = array(
 // vine.co - https://vine.co/v/hr9OQTHJYPj
 "Vine" => "<iframe src=\"{SOURCE}/embed/simple?audio=1\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// soundcloud.com - http://soundcloud.com/sebastien-tellier/look
+// soundcloud.com - https://soundcloud.com/sebastien-tellier/look
 "SoundCloud" => "
 <script type=\"text/javascript\">
 	allvideos.ready(function(){
