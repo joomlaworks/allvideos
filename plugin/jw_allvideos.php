@@ -22,6 +22,10 @@ class plgContentJw_allvideos extends JPlugin {
 	var $plg_copyrights_start		= "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.8.0) starts here -->\n";
 	var $plg_copyrights_end			= "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.8.0) ends here -->\n\n";
 
+	public function __construct(&$subject, $params) {
+		parent::__construct($subject, $params);
+	}
+
 	// Joomla! 1.5
 	public function onPrepareContent(&$row, &$params, $page = 0) {
 		$this->renderAllVideos($row, $params, $page = 0);
