@@ -23,6 +23,10 @@
 	.avVideo .avPlayerContainer .avPlayerBlock embed,
 	.avVideo .avPlayerContainer .avPlayerBlock video,
 	.avVideo .avPlayerContainer .avPlayerBlock > div {position:absolute!important;top:0;left:0;min-width:100%!important;width:100%!important;height:100%!important;}
+	
+	/* Corrects the transform issue in mp4 videos by JWPlayer */
+	.avVideo .avPlayerContainer .avPlayerBlock video { transform: scale(1,1)!important; }
+	
 	/* SoundCloud container styling only */
 	.avSoundCloudSet .avPlayerContainer .avPlayerBlock {width:100%!important;position:relative!important;padding:0 0 56% 0!important;}
 	.avSoundCloudSet .avPlayerContainer .avPlayerBlock iframe,
