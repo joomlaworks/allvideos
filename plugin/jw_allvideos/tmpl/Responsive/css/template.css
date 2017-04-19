@@ -22,7 +22,7 @@
 	.avVideo .avPlayerContainer .avPlayerBlock object,
 	.avVideo .avPlayerContainer .avPlayerBlock embed,
 	.avVideo .avPlayerContainer .avPlayerBlock video,
-	.avVideo .avPlayerContainer .avPlayerBlock > div {position:absolute!important;top:0;left:0;min-width:100%!important;width:100%!important;height:100%!important;}
+	.avVideo .avPlayerContainer .avPlayerBlock > div {position:absolute!important;top:0;left:0;min-width:100%!important;width:100%!important;max-width:100%;height:100%!important;}
 	
 	/* Corrects the transform issue in mp4 videos by JWPlayer */
 	.avVideo .avPlayerContainer .avPlayerBlock video { transform: scale(1,1)!important; }
