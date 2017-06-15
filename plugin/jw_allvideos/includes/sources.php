@@ -44,7 +44,7 @@ $mediaplayerEmbedRemote = "
 
 /* -------------------------------- Embed templates for AUDIO -------------------------------- */
 $audioPlayerEmbed = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
+<div style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
 <script type=\"text/javascript\">
 	jwplayer('avID_{SOURCEID}').setup({
 		'file': '{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}',
@@ -59,7 +59,7 @@ $audioPlayerEmbed = "
 ";
 
 $audioPlayerEmbedRemote = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
+<div style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
 <script type=\"text/javascript\">
 	jwplayer('avID_{SOURCEID}').setup({
 		'file': '{SOURCE}',
