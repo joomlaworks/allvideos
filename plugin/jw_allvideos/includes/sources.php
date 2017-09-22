@@ -3,7 +3,7 @@
  * @version    4.8.0
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - http://www.joomlaworks.net
- * @copyright  Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.
+ * @copyright  Copyright (c) 2006 - 2017 JoomlaWorks Ltd. All rights reserved.
  * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -129,47 +129,47 @@ $tagReplace = array(
 /* --- Audio/Video formats --- */
 
 /* JW Player compatible media */
-"flv" 			=> $mediaplayerEmbed,
-"flvremote" 	=> $mediaplayerEmbedRemote,
-"mp4" 			=> $mediaplayerEmbed,
-"mp4remote" 	=> $mediaplayerEmbedRemote,
-"ogv" 			=> $mediaplayerEmbed,
-"ogvremote" 	=> $mediaplayerEmbedRemote,
-"webm" 			=> $mediaplayerEmbed,
-"webmremote" 	=> $mediaplayerEmbedRemote,
-"f4v" 			=> $mediaplayerEmbed,
-"f4vremote" 	=> $mediaplayerEmbedRemote,
-"m4v" 			=> $mediaplayerEmbed,
-"m4vremote" 	=> $mediaplayerEmbedRemote,
-"3gp" 			=> $mediaplayerEmbed,
-"3gpremote" 	=> $mediaplayerEmbedRemote,
-"3g2" 			=> $mediaplayerEmbed,
-"3g2remote" 	=> $mediaplayerEmbedRemote,
+"flv"          => $mediaplayerEmbed,
+"flvremote"    => $mediaplayerEmbedRemote,
+"mp4"          => $mediaplayerEmbed,
+"mp4remote"    => $mediaplayerEmbedRemote,
+"ogv"          => $mediaplayerEmbed,
+"ogvremote"    => $mediaplayerEmbedRemote,
+"webm"         => $mediaplayerEmbed,
+"webmremote"   => $mediaplayerEmbedRemote,
+"f4v"          => $mediaplayerEmbed,
+"f4vremote"    => $mediaplayerEmbedRemote,
+"m4v"          => $mediaplayerEmbed,
+"m4vremote"    => $mediaplayerEmbedRemote,
+"3gp"          => $mediaplayerEmbed,
+"3gpremote"    => $mediaplayerEmbedRemote,
+"3g2"          => $mediaplayerEmbed,
+"3g2remote"    => $mediaplayerEmbedRemote,
 
-"mp3" 			=> $audioPlayerEmbed,
-"mp3remote" 	=> $audioPlayerEmbedRemote,
-"aac" 			=> $audioPlayerEmbed,
-"aacremote" 	=> $audioPlayerEmbedRemote,
-"m4a" 			=> $audioPlayerEmbed,
-"m4aremote" 	=> $audioPlayerEmbedRemote,
-"ogg" 			=> $audioPlayerEmbed,
-"oggremote" 	=> $audioPlayerEmbedRemote,
+"mp3"          => $audioPlayerEmbed,
+"mp3remote"    => $audioPlayerEmbedRemote,
+"aac"          => $audioPlayerEmbed,
+"aacremote"    => $audioPlayerEmbedRemote,
+"m4a"          => $audioPlayerEmbed,
+"m4aremote"    => $audioPlayerEmbedRemote,
+"ogg"          => $audioPlayerEmbed,
+"oggremote"    => $audioPlayerEmbedRemote,
 
 /* Quicktime */
-"mov" 			=> $qtEmbed,
-"movremote"		=> $qtEmbedRemote,
-"mpeg" 			=> $qtEmbed,
-"mpegremote" 	=> $qtEmbedRemote,
-"mpg" 			=> $qtEmbed,
-"mpgremote" 	=> $qtEmbedRemote,
-"avi" 			=> $qtEmbed,
-"aviremote" 	=> $qtEmbedRemote,
+"mov"          => $qtEmbed,
+"movremote"    => $qtEmbedRemote,
+"mpeg"         => $qtEmbed,
+"mpegremote"   => $qtEmbedRemote,
+"mpg"          => $qtEmbed,
+"mpgremote"    => $qtEmbedRemote,
+"avi"          => $qtEmbed,
+"aviremote"    => $qtEmbedRemote,
 
 /* Windows Media */
-"wmv" 			=> $wmEmbed,
-"wma" 			=> $wmEmbed,
-"wmvremote" 	=> $wmEmbedRemote,
-"wmaremote" 	=> $wmEmbedRemote,
+"wmv"          => $wmEmbed,
+"wma"          => $wmEmbed,
+"wmvremote"    => $wmEmbedRemote,
+"wmaremote"    => $wmEmbedRemote,
 
 /* DivX */
 "divx" => "

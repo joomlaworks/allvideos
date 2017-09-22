@@ -3,7 +3,7 @@
  * @version    4.8.0
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - http://www.joomlaworks.net
- * @copyright  Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.
+ * @copyright  Copyright (c) 2006 - 2017 JoomlaWorks Ltd. All rights reserved.
  * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -13,15 +13,15 @@ ob_start("ob_gzhandler");
 
 // Includes
 echo "/* behaviour.js */\n";
-include(dirname( __FILE__ )."/behaviour.js");
+include(dirname(__FILE__)."/behaviour.js");
 echo "/* silverlight.js */\n";
-include(dirname( __FILE__ )."/wmvplayer/silverlight.js");
+include(dirname(__FILE__)."/wmvplayer/silverlight.js");
 echo "\n\n";
 echo "/* wmvplayer.js */\n";
-include(dirname( __FILE__ )."/wmvplayer/wmvplayer.js");
+include(dirname(__FILE__)."/wmvplayer/wmvplayer.js");
 echo "\n\n";
 echo "/* ac_quicktime.js */\n";
-include(dirname( __FILE__ )."/quicktimeplayer/ac_quicktime.js");
+include(dirname(__FILE__)."/quicktimeplayer/ac_quicktime.js");
 echo "\n\n";
 
 $bufferSize = ob_get_length(); // Required to close the connection
