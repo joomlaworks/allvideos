@@ -157,8 +157,9 @@ class plgContentJw_allvideos extends JPlugin
             }
 
             // Clappr
-            $document->addScript('https://cdn.jsdelivr.net/clappr/latest/clappr.min.js');
+            $document->addScript('https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js');
 
+            // JW Player v7
             if ($jwPlayerLoading=='local') {
                 $document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.8.0');
                 if (!defined('ALLVIDEOS_JW_PLAYER_KEY')) {

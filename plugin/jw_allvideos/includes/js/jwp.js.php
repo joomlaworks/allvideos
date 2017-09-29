@@ -7,7 +7,7 @@
  * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
-$expires = 60; // Time in minutes to cache this file
+$expires = 24; // Time in hours to cache this file
 
 ob_start("ob_gzhandler");
 
@@ -27,8 +27,8 @@ echo "\n\n";
 $bufferSize = ob_get_length(); // Required to close the connection
 
 header("Content-type: text/javascript; charset=utf-8");
-header("Cache-Control: max-age=".($expires*60));
-header("Expires: ".gmdate("D, d M Y H:i:s", time() + ($expires*60))." GMT");
+header("Cache-Control: max-age=".($expires*3600));
+header("Expires: ".gmdate("D, d M Y H:i:s", time() + ($expires*3600))." GMT");
 header("Content-Length: $bufferSize");
 header("Connection: close");
 
