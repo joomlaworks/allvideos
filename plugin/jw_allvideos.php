@@ -117,8 +117,8 @@ class plgContentJw_allvideos extends JPlugin
         $gzipScripts                    = $pluginParams->get('gzipScripts', 0);
         /* Advanced */
         $jwPlayerLoading                = $pluginParams->get('jwPlayerLoading', 'local'); // local | cdn
-        $jwPlayerAPIKey                 = $pluginParams->get('jwPlayerAPIKey', 'plXkZcoHeQXVlRo0nD6AUscwEXmFJCmIpGL3kw==');
-        $jwPlayerCDNUrl                 = $pluginParams->get('jwPlayerCDNUrl', 'https://jwpsrv.com/library/n9Po9gncEeOKaBIxOUCPzg.js');
+        $jwPlayerAPIKey                 = $pluginParams->get('jwPlayerAPIKey', 'ABCdeFG123456SeVenABCdeFG123456SeVen==');
+        $jwPlayerCDNUrl                 = $pluginParams->get('jwPlayerCDNUrl', 'https://content.jwplatform.com/libraries/VudZEfME.js');
 
         // Variable cleanups for K2
         if (JRequest::getCmd('format')=='raw') {
