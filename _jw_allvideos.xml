@@ -70,7 +70,7 @@
 					<option value="1">JW_PLG_AV_YES</option>
 				</field>
 				<field name="" type="header" default="JW_PLG_AV_JWPLAYER_PARAMETERS" label="" description="" />
-				<field name="jwPlayerLoading" type="radio" class="btn-group btn-group-yesno" default="local" label="JW_PLG_AV_JWPLAYER_LOADING" description="JW_PLG_AV_JWPLAYER_LOADING_DESC">
+				<field name="jwPlayerLoading" type="radio" class="btn-group btn-group-yesno" default="cdn" label="JW_PLG_AV_JWPLAYER_LOADING" description="JW_PLG_AV_JWPLAYER_LOADING_DESC">
 					<option value="local">JW_PLG_AV_LOCAL</option>
 					<option value="cdn">JW_PLG_AV_CDN</option>
 				</field>

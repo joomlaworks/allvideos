@@ -68,7 +68,7 @@
 			<option value="1">JW_PLG_AV_YES</option>
 		</param>
 		<param name="" type="header" default="JW_PLG_AV_JWPLAYER_PARAMETERS" label="" description="" />
-		<param name="jwPlayerLoading" type="radio" default="local" label="JW_PLG_AV_JWPLAYER_LOADING" description="JW_PLG_AV_JWPLAYER_LOADING_DESC">
+		<param name="jwPlayerLoading" type="radio" default="cdn" label="JW_PLG_AV_JWPLAYER_LOADING" description="JW_PLG_AV_JWPLAYER_LOADING_DESC">
 			<option value="local">JW_PLG_AV_LOCAL</option>
 			<option value="cdn">JW_PLG_AV_CDN</option>
 		</param>

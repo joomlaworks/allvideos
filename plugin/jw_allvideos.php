@@ -116,7 +116,7 @@ class plgContentJw_allvideos extends JPlugin
         /* Performance Parameters */
         $gzipScripts                    = $pluginParams->get('gzipScripts', 0);
         /* Advanced */
-        $jwPlayerLoading                = $pluginParams->get('jwPlayerLoading', 'local'); // local | cdn
+        $jwPlayerLoading                = $pluginParams->get('jwPlayerLoading', 'cdn'); // local | cdn
         $jwPlayerAPIKey                 = $pluginParams->get('jwPlayerAPIKey', 'ABCdeFG123456SeVenABCdeFG123456SeVen==');
         $jwPlayerCDNUrl                 = $pluginParams->get('jwPlayerCDNUrl', 'https://content.jwplatform.com/libraries/VudZEfME.js');
 
@@ -155,6 +155,9 @@ class plgContentJw_allvideos extends JPlugin
                 $document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.8.0');
                 $document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/ac_quicktime.js?v=4.8.0');
             }
+
+            // Clappr
+            $document->addScript('https://cdn.jsdelivr.net/clappr/latest/clappr.min.js');
 
             if ($jwPlayerLoading=='local') {
                 $document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.8.0');
@@ -198,12 +201,30 @@ class plgContentJw_allvideos extends JPlugin
                         'aacremote',
                         'm4a',
                         'm4aremote',
+                        'oga',
+                        'ogaremote',
                         'ogg',
                         'oggremote',
                         'wma',
                         'wmaremote',
                         'soundcloud'
                     ))) {
+                        // Poster frame
+                        $posterFramePath = $sitePath.'/'.$afolder;
+                        if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
+                            $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.jpg';
+                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
+                            $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.png';
+                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
+                            $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.gif';
+                        } else {
+                            $output->posterFrame = '';
+                        }
+
+                        if ($output->posterFrame) {
+                            $aheight = ($awidth * 9 / 16);
+                        }
+
                         $final_awidth = (@$tagparams[1]) ? $tagparams[1] : $awidth;
                         $final_aheight = (@$tagparams[2]) ? $tagparams[2] : $aheight;
 
@@ -231,6 +252,18 @@ class plgContentJw_allvideos extends JPlugin
                             $output->source = '';
                         }
                     } else {
+                        // Poster frame
+                        $posterFramePath = $sitePath.'/'.$vfolder;
+                        if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
+                            $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.jpg';
+                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
+                            $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.png';
+                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
+                            $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.gif';
+                        } else {
+                            $output->posterFrame = '';
+                        }
+
                         $final_vwidth = (@$tagparams[1]) ? $tagparams[1] : $vwidth;
                         $final_vheight = (@$tagparams[2]) ? $tagparams[2] : $vheight;
 
@@ -397,18 +430,6 @@ class plgContentJw_allvideos extends JPlugin
                         if ($final_loop=='true') {
                             $tagsource = $tagsource.'&amp;loop=1';
                         }
-                    }
-
-                    // Poster frame
-                    $posterFramePath = $sitePath.'/'.$vfolder;
-                    if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
-                        $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.jpg';
-                    } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
-                        $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.png';
-                    } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
-                        $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.gif';
-                    } else {
-                        $output->posterFrame = '';
                     }
 
                     // Poster frame (remote)
