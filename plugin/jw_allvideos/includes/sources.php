@@ -75,37 +75,6 @@ $jwPlayerEmbedRemote = "
 </script>
 ";
 
-$jwPlayerAudioEmbed = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
-<script type=\"text/javascript\">
-    jwplayer('avID_{SOURCEID}').setup({
-        'file': '{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}',
-        'image': '{PLAYER_POSTER_FRAME}',
-        'height': '{HEIGHT}',
-        'width': '{WIDTH}',
-        'autostart': '{PLAYER_AUTOPLAY}',
-        'repeat': '{PLAYER_LOOP}',
-        'controls': '{JWPLAYER_CONTROLS}'
-    });
-</script>
-";
-
-$jwPlayerAudioEmbedRemote = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
-<script type=\"text/javascript\">
-    jwplayer('avID_{SOURCEID}').setup({
-        'file': '{SOURCE}',
-        'image': '{PLAYER_POSTER_FRAME_REMOTE}',
-        'height': '{HEIGHT}',
-        'width': '{WIDTH}',
-        'type': '{FILE_TYPE}',
-        'autostart': '{PLAYER_AUTOPLAY}',
-        'repeat': '{PLAYER_LOOP}',
-        'controls': '{JWPLAYER_CONTROLS}'
-    });
-</script>
-";
-
 /* -------------------------------- Embed templates for Quicktime Media -------------------------------- */
 $qtEmbed = "
 <script type=\"text/javascript\">
@@ -185,14 +154,14 @@ $tagReplace = array(
 
 "mp3"           => $clapprEmbed,
 "mp3remote"     => $clapprEmbedRemote,
-"aac"           => $jwPlayerAudioEmbed,
-"aacremote"     => $jwPlayerAudioEmbedRemote,
-"m4a"           => $jwPlayerAudioEmbed,
-"m4aremote"     => $jwPlayerAudioEmbedRemote,
-"ogg"           => $jwPlayerAudioEmbed,
-"oggremote"     => $jwPlayerAudioEmbedRemote,
-"oga"           => $jwPlayerAudioEmbed,
-"ogaremote"     => $jwPlayerAudioEmbedRemote,
+"aac"           => $jwPlayerEmbed,
+"aacremote"     => $jwPlayerEmbedRemote,
+"m4a"           => $jwPlayerEmbed,
+"m4aremote"     => $jwPlayerEmbedRemote,
+"ogg"           => $jwPlayerEmbed,
+"oggremote"     => $jwPlayerEmbedRemote,
+"oga"           => $jwPlayerEmbed,
+"ogaremote"     => $jwPlayerEmbedRemote,
 
 /* Quicktime */
 "mov"           => $qtEmbed,
