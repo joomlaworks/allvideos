@@ -158,10 +158,10 @@ class plgContentJw_allvideos extends JPlugin
 
             if ($jwPlayerLoading=='local') {
                 $document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.8.0');
-                $document->addScriptDeclaration('
-					/* JW Player API Key */
-					jwplayer.key="'.$jwPlayerAPIKey.'";
-				');
+                if (!defined('ALLVIDEOS_JW_PLAYER_KEY')) {
+                    define('ALLVIDEOS_JW_PLAYER_KEY', true);
+                    $document->addScriptDeclaration('jwplayer.key="'.$jwPlayerAPIKey.'"; /* JW Player API Key */');
+                }
             } else {
                 $document->addScript($jwPlayerCDNUrl);
             }
