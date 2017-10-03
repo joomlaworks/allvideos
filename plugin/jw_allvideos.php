@@ -24,13 +24,13 @@ class plgContentJw_allvideos extends JPlugin
         parent::__construct($subject, $params);
     }
 
-    // Joomla! 1.5
+    // Joomla 1.5
     public function onPrepareContent(&$row, &$params, $page = 0)
     {
         $this->renderAllVideos($row, $params, $page = 0);
     }
 
-    // Joomla! 2.5+
+    // Joomla 2.5+
     public function onContentPrepare($context, &$row, &$params, $page = 0)
     {
         $this->renderAllVideos($row, $params, $page = 0);

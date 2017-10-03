@@ -16,16 +16,12 @@
 		<param name="vfolder" type="text" default="images/stories/videos" size="40" label="JW_PLG_AV_LOCAL_VIDEO_FOLDER" description="JW_PLG_AV_THIS_IS_THE_FOLDER_WHERE_YOU_STORE_ALL_THE_VIDEO_FILES_THAT_YOU_WANT_TO_STREAMPLAY_FROM_YOUR_WEBSITE_IT_IS_BETTER_IF_THIS_FOLDER_IS_INSIDE_THE_IMAGESSTORIES_FOLDER_SO_THAT_YOU_WONT_STUMBLE_INTO_ANY_PERMISSION_ISSUES_IN_THIS_LOCAL_VIDEO_FOLDER_YOU_CAN_THEN_UPLOAD_VIDEO_FILES_OF_THE_FOLLOWING_TYPE_FLV_SWF_MOV_MP4_WMV_DIVX" />
 		<param name="vwidth" type="text" default="400" size="4" label="JW_PLG_AV_DEFAULT_WIDTH_IN_PX_FOR_VIDEOS" description="JW_PLG_AV_THE_PRESELECTED_WIDTH_OF_THE_VIDEO_IN_PIXELS_TO_SHOW_INSIDE_YOUR_CONTENT_IT_SHOULD_BE_SMALLER_THAN_THE_WIDTH_OF_THE_SURROUNDING_BOX_IF_ANY_IN_ORDER_NOT_TO_BREAK_YOUR_LAYOUT" />
 		<param name="vheight" type="text" default="300" size="4" label="JW_PLG_AV_DEFAULT_HEIGHT_IN_PX_FOR_VIDEOS" description="JW_PLG_AV_THE_PRESELECTED_HEIGHT_OF_THE_VIDEO_IN_PIXELS_TO_SHOW_INSIDE_YOUR_CONTENT" />
-		<param name="transparency" type="radio" default="transparent" label="JW_PLG_AV_FLASHMP4WEBMOGG_THEORA_VIDEO_PLAYER_TRANSPARENCY" description="JW_PLG_AV_SHOULD_FLASHMP4WEBMOGG_THEORA_BASED_MEDIA_BE_REPRODUCED_IN_A_TRANSPARENT_MODE_OR_NOT_IF_YOU_USE_ANY_LIGHTBOX_GALLERIES_OR_PLUGINS_LIKE_SIMPLE_IMAGE_GALLERY_FREE_OR_PRO_ITS_BEST_TO_LEAVE_THIS_OPTION_SET_TO_YES">
+		<param name="transparency" type="radio" default="transparent" label="JW_PLG_AV_VIDEO_PLAYER_TRANSPARENCY" description="JW_PLG_AV_VIDEO_PLAYER_TRANSPARENCY_DESC">
 			<option value="opaque">JW_PLG_AV_NO</option>
 			<option value="transparent">JW_PLG_AV_YES</option>
 		</param>
-		<param name="background" type="text" default="#010101" size="8" label="JW_PLG_AV_FLASHMP4WEBMOGG_THEORA_VIDEO_PLAYER_BACKGROUND_COLOR" description="JW_PLG_AV_SET_THE_BACKGROUND_COLOR_OF_THE_PLAYER_ONLY_IF_THE_TRANSPARENCY_IS_SET_TO_NO_VALUES_SHOULD_BE_GIVEN_IN_HEXADECIMAL_FORMAT_EG_000000_FOR_BLACK" />
-		<param name="controls" type="radio" default="1" label="JW_PLG_AV_CONTROLS" description="">
-			<option value="0">JW_PLG_AV_NO</option>
-			<option value="1">JW_PLG_AV_YES</option>
-		</param>
-		<param name="backgroundQT" type="list" default="black" label="JW_PLG_AV_PLAYER_BACKGROUND_COLOR_FOR_MEDIA_REPRODUCED_BY_THE_QUICKTIME_PLAYER" description="JW_PLG_AV_SET_THE_BACKGROUND_COLOR_OF_THE_PLAYER_FOR_ALL_MEDIA_TYPES_REPRODUCED_BY_THE_QUICKTIME_PLAYER_MOV_3GP_3G2_MPEG_MPG_AND_AVI">
+		<param name="background" type="text" default="#010101" size="8" label="JW_PLG_AV_VIDEO_PLAYER_BACKGROUND_COLOR" description="JW_PLG_AV_VIDEO_PLAYER_BACKGROUND_COLOR_DESC" />
+		<param name="backgroundQT" type="list" default="black" label="JW_PLG_AV_PLAYER_BACKGROUND_COLOR_FOR_QUICKTIME" description="JW_PLG_AV_PLAYER_BACKGROUND_COLOR_FOR_QUICKTIME_DESC">
 			<option value="black">JW_PLG_AV_BLACK_000000</option>
 			<option value="green">JW_PLG_AV_GREEN_008000</option>
 			<option value="silver">JW_PLG_AV_SILVER_C0C0C0</option>
@@ -65,6 +61,10 @@
 			<option value="1">JW_PLG_AV_YES</option>
 		</param>
 		<param name="" type="header" default="JW_PLG_AV_JWPLAYER_PARAMETERS" label="" description="" />
+		<param name="controls" type="radio" default="1" label="JW_PLG_AV_CONTROLS" description="">
+			<option value="0">JW_PLG_AV_NO</option>
+			<option value="1">JW_PLG_AV_YES</option>
+		</param>
 		<param name="jwPlayerLoading" type="radio" default="cdn" label="JW_PLG_AV_JWPLAYER_LOADING" description="JW_PLG_AV_JWPLAYER_LOADING_DESC">
 			<option value="local">JW_PLG_AV_LOCAL</option>
 			<option value="cdn">JW_PLG_AV_CDN</option>
