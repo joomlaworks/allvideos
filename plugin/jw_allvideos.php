@@ -297,6 +297,19 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
+                    if ($plg_tag=="collegehumor") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = urlencode($tagsource);
+                        }
+                    }
+
+                    if ($plg_tag=="dotsub") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = explode('/view/', $tagsource);
+                            $tagsource = $tagsource[1];
+                        }
+                    }
+
                     if ($plg_tag=="facebook") {
                         $tagsource = urlencode($tagsource);
                     }
@@ -534,7 +547,7 @@ class plgContentJw_allvideos extends JPlugin
                     );
 
                     // Do the element replace
-                    $output->player = JFilterOutput::ampReplace(str_replace($findAVparams, $replaceAVparams, $tagReplace[$cloned_plg_tag]));
+                    $output->player = str_replace($findAVparams, $replaceAVparams, $tagReplace[$cloned_plg_tag]);
 
                     // Post processing
                     // For YouTube

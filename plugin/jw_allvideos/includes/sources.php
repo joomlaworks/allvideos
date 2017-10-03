@@ -246,7 +246,7 @@ $tagReplace = array(
 /* --- Major 3rd party video providers --- */
 
 // dailymotion.com - http://www.dailymotion.com/featured/video/x35714_cap-nord-projet-1_creation
-"Dailymotion" => "<iframe src=\"https://www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Dailymotion" => "<iframe src=\"https://www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // facebook.com - https://www.facebook.com/Channel4News/videos/10155042102006939/
 "Facebook" => "<iframe src=\"https://www.facebook.com/plugins/video.php?href={SOURCE}&show_text=0&width={WIDTH}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" style=\"border:none;overflow:hidden;\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\" allowFullScreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
@@ -278,22 +278,21 @@ $tagReplace = array(
 
 /* --- Other 3rd party video providers --- */
 // collegehumor.com - http://www.collegehumor.com/video/6961115/should-we-do-a-bitcoin-sketch
-"CollegeHumor" => "<iframe src=\"http://www.collegehumor.com/e/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
-
-// dotsub.com - http://dotsub.com/view/9518104c-aa15-4646-9a39-a789e5586cdb
-"Dotsub" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://dotsub.com/static/players/portalplayer.swf?v=3407\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://dotsub.com/static/players/portalplayer.swf?v=3407\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-    <param name=\"flashvars\" value=\"type=flv&plugins=dotsub&debug=none&tid=UA-3684979-1&uuid={SOURCE}&lang=eng\" />
-</object>
+"CollegeHumor" => "
+<script type=\"text/javascript\">
+    allvideos.ready(function(){
+        allvideos.embed({
+            'url': 'https://json2jsonp.com/?callback=collegeHumor{SOURCEID}&url=http%3A%2F%2Fwww.collegehumor.com%2Foembed.json%3Fmaxwidth%3D{WIDTH}%26url%3D{SOURCE}',
+            'callback': 'collegeHumor{SOURCEID}',
+            'playerID': 'avID_{SOURCEID}'
+        });
+    });
+</script>
+<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
 ",
+
+// dotsub.com - https://dotsub.com/view/6c5d7514-5656-476a-9504-07dd4e2f6509
+"Dotsub" => "<iframe src=\"https://dotsub.com/media/{SOURCE}/embed/\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // flickr.com - https://www.flickr.com/photos/bswise/5930051523/in/pool-726923@N23/
 "Flickr" => "
