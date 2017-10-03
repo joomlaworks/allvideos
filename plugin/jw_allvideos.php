@@ -100,7 +100,7 @@ class plgContentJw_allvideos extends JPlugin
         $transparency                   = $pluginParams->get('transparency', 'transparent');
         $background                     = $pluginParams->get('background', '#010101');
         $backgroundQT                   = $pluginParams->get('backgroundQT', 'black');
-        $controls                       = $pluginParams->get('controls', 1);
+        $jwPlayerControls               = $pluginParams->get('controls', 1);
         /* Audio Parameters */
         $afolder                        = $pluginParams->get('afolder', 'images/stories/audio');
         $awidth                         = ($params->get('awidth')) ? $params->get('awidth') : $pluginParams->get('awidth', 480);
@@ -474,7 +474,7 @@ class plgContentJw_allvideos extends JPlugin
                         $transparency,
                         $background,
                         $backgroundQT,
-                        $controls,
+                        $jwPlayerControls,
                         $siteUrl,
                         substr(JURI::root(false), 0, -1),
                         $plg_tag,

@@ -63,7 +63,7 @@
 					<option value="1">JW_PLG_AV_YES</option>
 				</field>
 				<field name="" type="header" default="JW_PLG_AV_JWPLAYER_PARAMETERS" label="" description="" />
-				<field name="controls" type="radio" class="btn-group btn-group-yesno" default="1" label="JW_PLG_AV_CONTROLS" description="">
+				<field name="controls" type="radio" class="btn-group btn-group-yesno" default="1" label="JW_PLG_AV_JW_PLAYER_CONTROLS" description="">
 					<option value="0">JW_PLG_AV_NO</option>
 					<option value="1">JW_PLG_AV_YES</option>
 				</field>

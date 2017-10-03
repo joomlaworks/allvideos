@@ -61,7 +61,7 @@
 			<option value="1">JW_PLG_AV_YES</option>
 		</param>
 		<param name="" type="header" default="JW_PLG_AV_JWPLAYER_PARAMETERS" label="" description="" />
-		<param name="controls" type="radio" default="1" label="JW_PLG_AV_CONTROLS" description="">
+		<param name="controls" type="radio" default="1" label="JW_PLG_AV_JW_PLAYER_CONTROLS" description="">
 			<option value="0">JW_PLG_AV_NO</option>
 			<option value="1">JW_PLG_AV_YES</option>
 		</param>
