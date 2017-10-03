@@ -431,8 +431,8 @@ $tagReplace = array(
 </object>
 ",
 
-// ku6.com (China) - http://v.ku6.com/special/show_4416694/SaBUoSwhqBgcuTd1.html
-"Ku6" => "<script data-vid=\"{SOURCE}\" src=\"http://player.ku6.com/out/v.js\" data-width=\"{WIDTH}\" data-height=\"{HEIGHT}\"></script>",
+// ku6.com (China) - http://ku6.com/2017/detail.html?vid=MY8_sA92OcjFb4EezXaFZQ
+"Ku6" => $clapprEmbedRemote,
 
 // liveleak.com - https://www.liveleak.com/view?i=ea0_1506997861
 "LiveLeak" => "<iframe src=\"https://www.liveleak.com/ll_embed?i={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",

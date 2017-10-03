@@ -242,9 +242,9 @@ class plgContentJw_allvideos extends JPlugin
                             $output->mediaType = 'audio';
                         }
 
-                        if (in_array($plg_tag, array('mp3','aac','m4a','ogg','wma'))) {
+                        if (in_array($plg_tag, array('mp3','aac','m4a','oga','ogg','wma'))) {
                             $output->source = "$siteUrl/$afolder/$tagsource.$plg_tag";
-                        } elseif (in_array($plg_tag, array('mp3remote','aacremote','m4aremote','oggremote','wmaremote'))) {
+                        } elseif (in_array($plg_tag, array('mp3remote','aacremote','m4aremote','ogaremote','oggremote','wmaremote'))) {
                             $output->source = $tagsource;
                         } else {
                             $output->source = '';
@@ -299,7 +299,10 @@ class plgContentJw_allvideos extends JPlugin
                     }
 
                     if ($plg_tag=="ku6") {
-                        $tagsource = str_replace('.html', '', $tagsource);
+	                    if (strpos($tagsource, 'http')===false) {
+                        	$tagsource = explode('?vid=', $tagsource);
+                        	$tagsource = 'https://rbv01.ku6.com/'.$tagsource[1].'.mp4';
+                        }
                     }
 
                     if ($plg_tag=="liveleak") {
