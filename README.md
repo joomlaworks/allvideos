@@ -10,14 +10,14 @@ Additionally, it allows you to playback almost any video/audio file format hoste
 
 ## WHY ALLVIDEOS?
 - You don't have to copy/paste huge blocks of HTML code, just to get a video from YouTube to playback on your Joomla website! Your WYSIWYG editor loves it and so will you and your clients!
-- You use simple and descriptive plugin tags like {youtube}heu37ej3qs{/youtube}, {flv}batman_darknight{/flv} or {mp3}pixies_bonemachine{/mp3}.
+- You use simple and descriptive plugin tags like {youtube}http://www.youtube.com/watch?v=g5lGNkS5TE0{/youtube} (or just {youtube}g5lGNkS5TE0{/youtube}), {flv}batman_darknight{/flv} or {mp3}pixies_bonemachine{/mp3}.
 - Allows for mobile/tablet compatible media embedding where supported.
 
 AllVideos means dead-simple & inexpensive media streaming for anyone. You can use, for example, YouTube to upload your videos and then embed them inside your site without consuming your server's bandwidth or having to spend money on expensive video conversion software!
 
 
 ## FEATURES
-1. Dozens of media providers supported like YouTube, Vimeo, Dailymotion, Metacafe, MySpace, Flickr Video, Blip.tv, TwitVid, yFrog, SoundCloud & more.
+1. Dozens of media providers supported like YouTube (videos & playlists), Vimeo, Dailymotion, Facebook Videos, SoundCloud, MySpace, Flickr Videos, Yahoo, Twitch, Ustream, Funny Or Die, Vine & more.
 2. Stream your own media content, using the 20+ web compatible video and audio formats like flv, swf, mov, mp4, wmv, wma, mp3, 3gp, webm, ogv, ogg, divx and more.
 3. Easily embed your media content either directly from your server or a remote server!
 4. Simple controls inside the plugin's parameters page provide layout consistency on all the videos shown in your Joomla website. Set your preferences in seconds, publish the plugin and you're ready to start streaming content!

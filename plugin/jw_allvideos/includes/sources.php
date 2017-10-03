@@ -302,20 +302,6 @@ $tagReplace = array(
 </object>
 ",
 
-// blip.tv - http://blip.tv/joomlaworks/k2-for-joomla-dec-2010-4565453
-"Blip" => "
-<script type=\"text/javascript\">
-    allvideos.ready(function(){
-        allvideos.embed({
-            'url': 'https://blip.tv/oembed/?callback=bliptv{SOURCEID}&maxwidth={WIDTH}&maxheight={HEIGHT}&url={SOURCE}',
-            'callback': 'bliptv{SOURCEID}',
-            'playerID': 'avID_{SOURCEID}'
-        });
-    });
-</script>
-<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
-",
-
 // collegehumor.com - http://www.collegehumor.com/video/6961115/should-we-do-a-bitcoin-sketch
 "CollegeHumor" => "<iframe src=\"http://www.collegehumor.com/e/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
