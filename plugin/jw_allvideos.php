@@ -178,6 +178,9 @@ class plgContentJw_allvideos extends JPlugin
             // expression to search for
             $regex = "~{".$plg_tag."}.*?{/".$plg_tag."}~is";
 
+            // replacements for content to avoid issues with RegEx
+            $row->text = str_replace('~', '&#126;', $row->text);
+
             // process tags
             if (preg_match_all($regex, $row->text, $matches, PREG_PATTERN_ORDER)) {
 
