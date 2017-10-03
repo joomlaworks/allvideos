@@ -338,9 +338,18 @@ class plgContentJw_allvideos extends JPlugin
                         $tagsource = str_replace('.shtml', '', $tagsource[0]);
                     }
 
+                    if ($plg_tag=="ustream") {
+                        if (strpos($tagsource, 'http')===false) {
+                            $tagsource = explode('/recorded/', $tagsource);
+                            $tagsource = (int) $tagsource[0];
+                        }
+                    }
+
                     if ($plg_tag=="vbox7") {
-                        $tagsource = explode('play:', $tagsource);
-                        $tagsource = $tagsource[1];
+                        if (strpos($tagsource, 'http')===false) {
+                            $tagsource = explode('play:', $tagsource);
+                            $tagsource = $tagsource[1];
+                        }
                     }
 
                     if ($plg_tag=="vimeo") {

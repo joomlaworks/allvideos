@@ -547,20 +547,8 @@ $tagReplace = array(
 </object>
 ",
 
-// ustream.tv - http://www.ustream.tv/recorded/15746278
-"ustream" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.ustream.tv/flash/viewer.swf\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://www.ustream.tv/flash/viewer.swf\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-    <param name=\"flashVars\" value=\"loc=%2F&amp;autoplay={PLAYER_AUTOPLAY}&amp;vid={SOURCE}&amp;locale=en_US&amp;hasticket=false&amp;v3=1\" />
-</object>
-",
+// ustream.tv - http://www.ustream.tv/recorded/108521696
+"ustream" => "<iframe src=\"http://www.ustream.tv/embed/recorded/{SOURCE}?html5ui\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // vbox7.com - https://www.vbox7.com/play:213e79223b
 "VBox7" => "<iframe src=\"https://www.vbox7.com/emb/external.php?vid={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
