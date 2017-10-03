@@ -302,6 +302,13 @@ class plgContentJw_allvideos extends JPlugin
                         $tagsource = str_replace('.html', '', $tagsource);
                     }
 
+                    if ($plg_tag=="liveleak") {
+	                    if (strpos($tagsource, 'http')===false) {
+                        	$tagsource = explode('?i=', $tagsource);
+                        	$tagsource = $tagsource[1];
+                        }
+                    }
+
                     if ($plg_tag=="metacafe") {
                         $tagsource = str_replace('/watch/', '/embed/', $tagsource);
                     }

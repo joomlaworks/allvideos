@@ -435,18 +435,7 @@ $tagReplace = array(
 "Ku6" => "<script data-vid=\"{SOURCE}\" src=\"http://player.ku6.com/out/v.js\" data-width=\"{WIDTH}\" data-height=\"{HEIGHT}\"></script>",
 
 // liveleak.com - http://www.liveleak.com/view?i=2eb_1217374911
-"LiveLeak" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.liveleak.com/e/{SOURCE}\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://www.liveleak.com/e/{SOURCE}\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-</object>
-",
+"LiveLeak" => "<iframe src=\"https://www.liveleak.com/ll_embed?i={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // livevideo.com - http://www.livevideo.com/video/EuroChild/5EEFC251BB0C43229FB0C9C70A30AF69/speakswedishstupid-a-furry-s.aspx
 "LiveVideo" => "
