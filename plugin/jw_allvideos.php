@@ -319,6 +319,14 @@ class plgContentJw_allvideos extends JPlugin
                         $tagsource = str_replace('/watch/', '/embed/', $tagsource);
                     }
 
+                    if ($plg_tag=="myspace") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = explode('/', $tagsource);
+                            $tagsource = array_reverse($tagsource);
+                            $tagsource = $tagsource[0];
+                        }
+                    }
+
                     if ($plg_tag=="myvideo") {
                         if (strpos($tagsource, 'myvideo.de')!==false) {
                             if (strpos($tagsource, 'myvideo.de/watch')!==false) {

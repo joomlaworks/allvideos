@@ -440,19 +440,8 @@ $tagReplace = array(
 // metacafe.com - http://www.metacafe.com/watch/11498826/amazing-girl-pours-rainbow-shots/
 "Metacafe" => "<iframe width=\"{WIDTH}\" height=\"{HEIGHT}\" src=\"{SOURCE}\" frameborder=\"0\" allowFullScreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// myspace.com - http://www.myspace.com/video/vid/37910278
-"myspace" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://mediaservices.myspace.com/services/media/embed.aspx/m={SOURCE},t=1,mt=video\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://mediaservices.myspace.com/services/media/embed.aspx/m={SOURCE},t=1,mt=video\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"sameDomain\" />
-</object>
-",
+// myspace.com - https://myspace.com/myspace/video/the-pedicab-interviews-chris-cole/109546118
+"Myspace" => "<iframe src=\"//media.myspace.com/play/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // myvideo.de - http://www.myvideo.de/musik/christina-stuermer/wir-leben-den-moment-video-m-7713020 OR http://www.myvideo.de/watch/8198664/Der_komplette_Tanz_zum_Song
 "MyVideo" => "<iframe src=\"http://www.myvideo.de/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
