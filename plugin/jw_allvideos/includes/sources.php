@@ -505,7 +505,7 @@ $tagReplace = array(
 </object>
 ",
 
-// southparkstudios.com (clips only) - http://www.southparkstudios.com/clips/388728/it-sounds-like-poo
+// southparkstudios.com (clips only) - http://www.southparkstudios.com/clips/388728/it-sounds-like-poo (http://southpark.cc.com/clips/388728/it-sounds-like-poo)
 "SouthPark" => "
 <object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://media.mtvnservices.com/mgid:cms:item:southparkstudios.com:{SOURCE}\" title=\"JoomlaWorks AllVideos Player\">
     <param name=\"movie\" value=\"http://media.mtvnservices.com/mgid:cms:item:southparkstudios.com:{SOURCE}\" />
@@ -537,7 +537,7 @@ $tagReplace = array(
 ",
 
 // ustream.tv - http://www.ustream.tv/recorded/108521696
-"ustream" => "<iframe src=\"https://www.ustream.tv/embed/recorded/{SOURCE}?html5ui\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Ustream" => "<iframe src=\"https://www.ustream.tv/embed/recorded/{SOURCE}?html5ui\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // vbox7.com - https://www.vbox7.com/play:213e79223b
 "VBox7" => "<iframe src=\"https://www.vbox7.com/emb/external.php?vid={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
@@ -555,6 +555,9 @@ $tagReplace = array(
     <param name=\"allowscriptaccess\" value=\"always\" />
 </object>
 ",
+
+// videa.hu - http://videa.hu/videok/filmklub/film-animacio/tom-cruise-tancol-kockazatos-uzlet-pmd0e3xAJUEbJird
+"Videa" => "<iframe src=\"//videa.hu/player?v={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // yahoo.com - https://uk.news.yahoo.com/video/catalan-protesters-block-roads-general-114436805.html
 "Yahoo" => "<iframe src=\"{SOURCE}?format=embed\" width=\"{WIDTH}\" height=\"{HEIGHT}\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allowtransparency=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",

@@ -364,6 +364,12 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
+                    if ($plg_tag=="videa") {
+                        $tagsource = explode('-', $tagsource);
+                        $tagsource = array_reverse($tagsource);
+                        $tagsource = $tagsource[0];
+                    }
+
                     if ($plg_tag=="vimeo") {
                         $tagsource = preg_replace("~(http|https):(.+?)vimeo.com\/~s", "", $tagsource);
                         if (strpos($tagsource, '?')!==false) {
