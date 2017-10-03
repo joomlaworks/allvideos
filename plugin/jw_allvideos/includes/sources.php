@@ -434,22 +434,8 @@ $tagReplace = array(
 // ku6.com (China) - http://v.ku6.com/special/show_4416694/SaBUoSwhqBgcuTd1.html
 "Ku6" => "<script data-vid=\"{SOURCE}\" src=\"http://player.ku6.com/out/v.js\" data-width=\"{WIDTH}\" data-height=\"{HEIGHT}\"></script>",
 
-// liveleak.com - http://www.liveleak.com/view?i=2eb_1217374911
+// liveleak.com - https://www.liveleak.com/view?i=ea0_1506997861
 "LiveLeak" => "<iframe src=\"https://www.liveleak.com/ll_embed?i={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
-
-// livevideo.com - http://www.livevideo.com/video/EuroChild/5EEFC251BB0C43229FB0C9C70A30AF69/speakswedishstupid-a-furry-s.aspx
-"LiveVideo" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.livevideo.com/flvplayer/embed/{SOURCE}&autoStart={PLAYER_AUTOPLAY}\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://www.livevideo.com/flvplayer/embed/{SOURCE}&autoStart={PLAYER_AUTOPLAY}\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-</object>
-",
 
 // metacafe.com - http://www.metacafe.com/watch/11498826/amazing-girl-pours-rainbow-shots/
 "Metacafe" => "<iframe width=\"{WIDTH}\" height=\"{HEIGHT}\" src=\"{SOURCE}\" frameborder=\"0\" allowFullScreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
