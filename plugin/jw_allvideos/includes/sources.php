@@ -277,18 +277,6 @@ $tagReplace = array(
 
 
 /* --- Other 3rd party video providers --- */
-// 123video.nl - http://www.123video.nl/playvideos.asp?MovieID=248020
-"123video" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.123video.nl/123video_emb.swf?mediaSrc={SOURCE}\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://www.123video.nl/123video_emb.swf?mediaSrc={SOURCE}\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-</object>
-",
-
 // aniboom.com - http://www.aniboom.com/video/28604/Kashe-Li-Its-Hard/
 "Aniboom" => "
 <object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://api.aniboom.com/e/{SOURCE}\" title=\"JoomlaWorks AllVideos Player\">
