@@ -277,19 +277,6 @@ $tagReplace = array(
 
 
 /* --- Other 3rd party video providers --- */
-// aniboom.com - http://www.aniboom.com/video/28604/Kashe-Li-Its-Hard/
-"Aniboom" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://api.aniboom.com/e/{SOURCE}\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://api.aniboom.com/e/{SOURCE}\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowscriptaccess\" value=\"sameDomain\" />
-</object>
-",
-
 // collegehumor.com - http://www.collegehumor.com/video/6961115/should-we-do-a-bitcoin-sketch
 "CollegeHumor" => "<iframe src=\"http://www.collegehumor.com/e/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
