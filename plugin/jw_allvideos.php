@@ -65,8 +65,9 @@ class plgContentJw_allvideos extends JPlugin
         JPlugin::loadLanguage('plg_content_'.$this->plg_name, JPATH_ADMINISTRATOR);
 
         // Includes
+        $tagReplace = array();
         require_once dirname(__FILE__).'/'.$this->plg_name.'/includes/helper.php';
-        require_once dirname(__FILE__).'/'.$this->plg_name.'/includes/sources.php';
+        require dirname(__FILE__).'/'.$this->plg_name.'/includes/sources.php';
 
         // Simple performance check to determine whether plugin should process further
         $grabTags = strtolower(implode(array_keys($tagReplace), "|"));
@@ -299,16 +300,16 @@ class plgContentJw_allvideos extends JPlugin
                     }
 
                     if ($plg_tag=="ku6") {
-	                    if (strpos($tagsource, 'http')===false) {
-                        	$tagsource = explode('?vid=', $tagsource);
-                        	$tagsource = 'https://rbv01.ku6.com/'.$tagsource[1].'.mp4';
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = explode('?vid=', $tagsource);
+                            $tagsource = 'https://rbv01.ku6.com/'.$tagsource[1].'.mp4';
                         }
                     }
 
                     if ($plg_tag=="liveleak") {
-	                    if (strpos($tagsource, 'http')===false) {
-                        	$tagsource = explode('?i=', $tagsource);
-                        	$tagsource = $tagsource[1];
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = explode('?i=', $tagsource);
+                            $tagsource = $tagsource[1];
                         }
                     }
 
@@ -349,7 +350,7 @@ class plgContentJw_allvideos extends JPlugin
                     }
 
                     if ($plg_tag=="twitch") {
-                        if (strpos($tagsource, '/videos/')===false) {
+                        if (strpos($tagsource, '/videos/')!==false) {
                             // Video
                             $tagsource = explode('/videos/', $tagsource);
                             $tagsource = 'video='.$tagsource[1];
@@ -361,14 +362,14 @@ class plgContentJw_allvideos extends JPlugin
                     }
 
                     if ($plg_tag=="ustream") {
-                        if (strpos($tagsource, 'http')===false) {
+                        if (strpos($tagsource, 'http')!==false) {
                             $tagsource = explode('/recorded/', $tagsource);
                             $tagsource = (int) $tagsource[1];
                         }
                     }
 
                     if ($plg_tag=="vbox7") {
-                        if (strpos($tagsource, 'http')===false) {
+                        if (strpos($tagsource, 'http')!==false) {
                             $tagsource = explode('play:', $tagsource);
                             $tagsource = $tagsource[1];
                         }
@@ -402,14 +403,18 @@ class plgContentJw_allvideos extends JPlugin
                     }
 
                     if ($plg_tag=="youku") {
-                        $tagsource = explode('v_show/id_', $tagsource);
-                        $tagsource = explode('.html', $tagsource[1]);
-                        $tagsource = $tagsource[0];
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = explode('v_show/id_', $tagsource);
+                            $tagsource = explode('.html', $tagsource[1]);
+                            $tagsource = $tagsource[0];
+                        }
                     }
 
                     if ($plg_tag=="youmaker") {
-                        $tagsource = explode('/video/', $tagsource);
-                        $tagsource = $tagsource[1];
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = explode('/video/', $tagsource);
+                            $tagsource = $tagsource[1];
+                        }
                     }
 
                     if ($plg_tag=="youtube") {
