@@ -186,7 +186,7 @@ class plgContentJw_allvideos extends JPlugin
                 // start the replace loop
                 foreach ($matches[0] as $key => $match) {
                     $tagcontent = preg_replace("/{.+?}/", "", $match);
-                    //$tagcontent = strip_tags($tagcontent);
+                    $tagcontent = strip_tags($tagcontent);
                     $tagcontent = str_replace(array('"','\'','`'), array('&quot;','&apos;','&#x60;'), $tagcontent); // Address potential XSS attacks
                     $tagparams = explode('|', $tagcontent);
                     $tagsource = trim(strip_tags($tagparams[0]));
@@ -295,6 +295,10 @@ class plgContentJw_allvideos extends JPlugin
                                 $tagsource = $tagsource.'?autoplay=1';
                             }
                         }
+                    }
+
+                    if ($plg_tag=="facebook") {
+                        $tagsource = urlencode($tagsource);
                     }
 
                     if ($plg_tag=="ku6") {
