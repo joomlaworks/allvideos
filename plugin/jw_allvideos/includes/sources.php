@@ -296,17 +296,16 @@ $tagReplace = array(
 
 // flickr.com - https://www.flickr.com/photos/bswise/5930051523/in/pool-726923@N23/
 "Flickr" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"https://www.flickr.com/apps/video/stewart.swf?v=109786\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"https://www.flickr.com/apps/video/stewart.swf?v=109786\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-    <param name=\"flashvars\" value=\"intl_lang=en-us&amp;div_id=stewart_swf{SOURCE}_div&amp;flickr_notracking=true&amp;flickr_target=_self&amp;flickr_h={HEIGHT}&amp;flickr_w={WIDTH}&amp;flickr_no_logo=true&amp;onsite=true&amp;flickr_noAutoPlay=false&amp;in_photo_gne=true&amp;photo_secret=&amp;photo_id={SOURCE}&amp;flickr_doSmall=true\" />
-</object>
+<script type=\"text/javascript\">
+    allvideos.ready(function(){
+        allvideos.embed({
+            'url': 'https://json2jsonp.com/?callback=flickr{SOURCEID}&url=https%3A%2F%2Fwww.flickr.com%2Fservices%2Foembed%2F%3Fformat%3Djson%26maxwidth%3D{WIDTH}%26maxheight%3D{HEIGHT}%26url%3D{SOURCE}',
+            'callback': 'flickr{SOURCEID}',
+            'playerID': 'avID_{SOURCEID}'
+        });
+    });
+</script>
+<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
 ",
 
 // funnyordie.com - http://www.funnyordie.com/videos/7c52bd0f81/the-pussy-patch-from-lil-jon

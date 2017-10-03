@@ -314,6 +314,12 @@ class plgContentJw_allvideos extends JPlugin
                         $tagsource = urlencode($tagsource);
                     }
 
+                    if ($plg_tag=="flickr") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = urlencode($tagsource);
+                        }
+                    }
+
                     if ($plg_tag=="ku6") {
                         if (strpos($tagsource, 'http')!==false) {
                             $tagsource = explode('?vid=', $tagsource);
