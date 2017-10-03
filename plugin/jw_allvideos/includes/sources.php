@@ -533,7 +533,10 @@ $tagReplace = array(
 </object>
 ",
 
-// tudou.com - http://www.tudou.com/programs/view/vHRA5NP3ge8/
+// twitch.tv - https://go.twitch.tv/rom_bik (channel) or https://www.twitch.tv/videos/179343513 (video)
+"Twitch" => "<iframe src=\"https://player.twitch.tv/?{SOURCE}&autoplay=false\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+
+// tudou.com - http://video.tudou.com/v/XMzA1NzY5NzM2NA==.html?spm=a2h28.8313475.c1.dimg13
 "tudou" => "
 <object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.tudou.com/v/{SOURCE}\" title=\"JoomlaWorks AllVideos Player\">
     <param name=\"movie\" value=\"http://www.tudou.com/v/{SOURCE}\" />
@@ -548,7 +551,7 @@ $tagReplace = array(
 ",
 
 // ustream.tv - http://www.ustream.tv/recorded/108521696
-"ustream" => "<iframe src=\"http://www.ustream.tv/embed/recorded/{SOURCE}?html5ui\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"ustream" => "<iframe src=\"https://www.ustream.tv/embed/recorded/{SOURCE}?html5ui\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // vbox7.com - https://www.vbox7.com/play:213e79223b
 "VBox7" => "<iframe src=\"https://www.vbox7.com/emb/external.php?vid={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",

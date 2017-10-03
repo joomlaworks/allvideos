@@ -338,10 +338,22 @@ class plgContentJw_allvideos extends JPlugin
                         $tagsource = str_replace('.shtml', '', $tagsource[0]);
                     }
 
+                    if ($plg_tag=="twitch") {
+                        if (strpos($tagsource, '/videos/')===false) {
+                            // Video
+                            $tagsource = explode('/videos/', $tagsource);
+                            $tagsource = 'video='.$tagsource[1];
+                        } else {
+                            // Channel
+                            $tagsource = explode('twitch.tv/', $tagsource);
+                            $tagsource = 'channel='.$tagsource[1];
+                        }
+                    }
+
                     if ($plg_tag=="ustream") {
                         if (strpos($tagsource, 'http')===false) {
                             $tagsource = explode('/recorded/', $tagsource);
-                            $tagsource = (int) $tagsource[0];
+                            $tagsource = (int) $tagsource[1];
                         }
                     }
 
