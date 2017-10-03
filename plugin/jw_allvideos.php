@@ -338,9 +338,9 @@ class plgContentJw_allvideos extends JPlugin
                         $tagsource = str_replace('.shtml', '', $tagsource[0]);
                     }
 
-                    if ($plg_tag=="vidiac") {
-                        $tagsourceVidiac = explode(';', $tagsource);
-                        $tagsource = $tagsourceVidiac[0];
+                    if ($plg_tag=="vbox7") {
+                        $tagsource = explode('play:', $tagsource);
+                        $tagsource = $tagsource[1];
                     }
 
                     if ($plg_tag=="vimeo") {
@@ -364,18 +364,15 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
-                    if ($plg_tag=="yfrog") {
-                        $tagsource = preg_replace("~(http|https):(.+?)yfrog.com\/~s", "", $tagsource);
+                    if ($plg_tag=="youku") {
+                        $tagsource = explode('v_show/id_', $tagsource);
+                        $tagsource = explode('.html', $tagsource[1]);
+                        $tagsource = $tagsource[0];
                     }
 
                     if ($plg_tag=="youmaker") {
-                        $tagsourceYoumaker = explode('-', str_replace('.html', '', $tagsource));
-                        $tagsource = $tagsourceYoumaker[1];
-                    }
-
-                    if ($plg_tag=="youku") {
-                        $tagsource = str_replace('.html', '', $tagsource);
-                        $tagsource = substr($tagsource, 3);
+                        $tagsource = explode('/video/', $tagsource);
+                        $tagsource = $tagsource[1];
                     }
 
                     if ($plg_tag=="youtube") {

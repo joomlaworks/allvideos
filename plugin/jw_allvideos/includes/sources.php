@@ -562,22 +562,8 @@ $tagReplace = array(
 </object>
 ",
 
-// vbox7.com - http://vbox7.com/play:1cbe43e895
-"vbox7" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://i47.vbox7.com/player/ext.swf?vid={SOURCE}\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://i47.vbox7.com/player/ext.swf?vid={SOURCE}\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-</object>
-",
-
-// veevr.com - http://veevr.com/videos/T5THb081f
-"veevr" => "<iframe src=\"http://veevr.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+// vbox7.com - https://www.vbox7.com/play:213e79223b
+"VBox7" => "<iframe src=\"https://www.vbox7.com/emb/external.php?vid={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // veoh.com - http://www.veoh.com/watch/v21091373cQe4FGa9
 "veoh" => "
@@ -593,42 +579,13 @@ $tagReplace = array(
 </object>
 ",
 
-// vidiac.com - http://www.vidiac.com/video/Dating-Stupid-Girls;Funny-Stuff
-"vidiac" => "<iframe src=\"http://www.vidiac.com/video/{SOURCE}/player?layout=&read_more=1\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+// yahoo.com - https://uk.news.yahoo.com/video/catalan-protesters-block-roads-general-114436805.html
+"Yahoo" => "<iframe src=\"{SOURCE}?format=embed\" width=\"{WIDTH}\" height=\"{HEIGHT}\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allowtransparency=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// screen.yahoo.com - https://screen.yahoo.com/comedy/sad-dog-does-not-baths-103338320.html
-"yahoo" => "<iframe width=\"{WIDTH}\" height=\"{HEIGHT}\" scrolling=\"no\" frameborder=\"0\" src=\"{SOURCE}?format=embed\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allowtransparency=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+// youku.com (China) - http://v.youku.com/v_show/id_XMzAyNjcxNDkzNg==.html?spm=a2hww.20027244.ykRecommend.5~5!2~5~5~A
+"Youku" => "<iframe src=\"https://player.youku.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// yfrog.com - http://yfrog.com/0ia9mcz
-"yfrog" => "<iframe src=\"http://yfrog.com/{SOURCE}:embed\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
-
-// youku.com (China) - http://v.youku.com/v_show/id_XNzAxNDM3Ng==.html
-"youku" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://player.youku.com/player.php/sid/{SOURCE}/v.swf\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://player.youku.com/player.php/sid/{SOURCE}/v.swf\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"sameDomain\" />
-</object>
-",
-
-// youmaker.com - http://www.youmaker.com/video/svb5-ac21c98f0eb1467faa423c52fe90ee9f0020.html
-"youmaker" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.youmaker.com/v.swf\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://www.youmaker.com/v.swf\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-    <param name=\"flashvars\" value=\"file=http://www.youmaker.com/video/v/nu/{SOURCE}.xml&showdigits=true&overstretch=fit&autostart={PLAYER_AUTOPLAY}&linkfromdisplay=false&rotatetime=12&repeat=list&shuffle=false&showfsbutton=false&fsreturnpage=&fullscreenpage=\" />
-</object>
-",
+// youmaker.com - https://www.youmaker.com/video/722db6ac-1ce4-4beb-7385-9621278e738a
+"YouMaker" => "<iframe src=\"https://www.youmaker.com/api/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 );
