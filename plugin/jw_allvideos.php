@@ -105,9 +105,6 @@ class plgContentJw_allvideos extends JPlugin
         $afolder                        = $pluginParams->get('afolder', 'images/stories/audio');
         $awidth                         = ($params->get('awidth')) ? $params->get('awidth') : $pluginParams->get('awidth', 480);
         $aheight                        = ($params->get('aheight')) ? $params->get('aheight') : $pluginParams->get('aheight', 24);
-        $abackground                    = $pluginParams->get('abackground', '#010101');
-        $afrontcolor                    = $pluginParams->get('afrontcolor', '#FFFFFF');
-        $alightcolor                    = $pluginParams->get('alightcolor', '#00ADE3');
         $allowAudioDownloading          = $pluginParams->get('allowAudioDownloading', 0);
         /* Global Parameters */
         $autoplay                       = ($params->get('autoplay')) ? $params->get('autoplay') : $pluginParams->get('autoplay', 0);
@@ -305,8 +302,8 @@ class plgContentJw_allvideos extends JPlugin
                         $tagsource = str_replace('.html', '', $tagsource);
                     }
 
-                    if ($plg_tag=="metacafe" && substr($tagsource, -1, 1)=='/') {
-                        $tagsource = substr($tagsource, 0, -1);
+                    if ($plg_tag=="metacafe") {
+                        $tagsource = str_replace('/watch/', '/embed/', $tagsource);
                     }
 
                     if ($plg_tag=="myvideo") {
@@ -462,10 +459,7 @@ class plgContentJw_allvideos extends JPlugin
                         "{FILE_TYPE}",
                         "{PLUGIN_PATH}",
                         "{PLAYER_POSTER_FRAME}",
-                        "{PLAYER_POSTER_FRAME_REMOTE}",
-                        "{PLAYER_ABACKGROUND}",
-                        "{PLAYER_AFRONTCOLOR}",
-                        "{PLAYER_ALIGHTCOLOR}"
+                        "{PLAYER_POSTER_FRAME_REMOTE}"
                     );
 
                     // Replacement elements
@@ -487,10 +481,7 @@ class plgContentJw_allvideos extends JPlugin
                         str_replace("remote", "", $plg_tag),
                         $pluginLivePath,
                         $output->posterFrame,
-                        $output->posterFrameRemote,
-                        $abackground,
-                        $afrontcolor,
-                        $alightcolor
+                        $output->posterFrameRemote
                     );
 
                     // Do the element replace

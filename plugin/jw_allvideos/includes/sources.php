@@ -245,9 +245,6 @@ $tagReplace = array(
 
 /* --- Major 3rd party video providers --- */
 
-
-
-
 // dailymotion.com - http://www.dailymotion.com/featured/video/x35714_cap-nord-projet-1_creation
 "Dailymotion" => "<iframe src=\"https://www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
@@ -465,19 +462,8 @@ $tagReplace = array(
 </object>
 ",
 
-// metacafe.com - http://www.metacafe.com/watch/6758278/senna_movie_trailer/
-"Metacafe" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.metacafe.com/fplayer/{SOURCE}.swf\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://www.metacafe.com/fplayer/{SOURCE}.swf\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-</object>
-",
+// metacafe.com - http://www.metacafe.com/watch/11498826/amazing-girl-pours-rainbow-shots/
+"Metacafe" => "<iframe width=\"{WIDTH}\" height=\"{HEIGHT}\" src=\"{SOURCE}\" frameborder=\"0\" allowFullScreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // myspace.com - http://www.myspace.com/video/vid/37910278
 "myspace" => "
