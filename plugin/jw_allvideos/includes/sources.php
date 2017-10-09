@@ -329,6 +329,20 @@ $tagReplace = array(
 // myspace.com - https://myspace.com/myspace/video/the-pedicab-interviews-chris-cole/109546118
 "Myspace" => "<iframe src=\"//media.myspace.com/play/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
+// rutube.ru - https://rutube.ru/video/2e311cf4495d9b69304b50a6aafe72cb/
+"Rutube" => "
+<script type=\"text/javascript\">
+    allvideos.ready(function(){
+        allvideos.embed({
+            'url': 'https://json2jsonp.com/?callback=rutube{SOURCEID}&url=https%3A%2F%2Frutube.ru%2Fapi%2Foembed%2F%3Fformat%3Djson%26maxwidth%3D{WIDTH}%26maxheight%3D{HEIGHT}%26url%3D{SOURCE}',
+            'callback': 'rutube{SOURCEID}',
+            'playerID': 'avID_{SOURCEID}'
+        });
+    });
+</script>
+<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
+",
+
 // sapo.pt - http://videos.sapo.pt/A9AWbpCMRmFKA2ZZIdNm - oEmbed API: https://rd3.videos.sapo.pt/oembed?format=json&url=http://videos.sapo.pt/A9AWbpCMRmFKA2ZZIdNm
 "SAPO" => "<iframe src=\"https://rd3.videos.sapo.pt/playhtml?file=https://rd3.videos.sapo.pt/{SOURCE}/mov/1\" frameborder=\"0\" scrolling=\"no\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
@@ -337,20 +351,6 @@ $tagReplace = array(
 
 // twitch.tv - https://go.twitch.tv/rom_bik (channel) or https://www.twitch.tv/videos/179343513 (video)
 "Twitch" => "<iframe src=\"https://player.twitch.tv/?{SOURCE}&autoplay=false\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
-
-// tudou.com - http://video.tudou.com/v/XMzA1NzY5NzM2NA==.html?spm=a2h28.8313475.c1.dimg13
-"tudou" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://www.tudou.com/v/{SOURCE}\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://www.tudou.com/v/{SOURCE}\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-</object>
-",
 
 // ustream.tv - http://www.ustream.tv/recorded/108521696
 "Ustream" => "<iframe src=\"https://www.ustream.tv/embed/recorded/{SOURCE}?html5ui\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",

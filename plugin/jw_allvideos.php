@@ -375,25 +375,17 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
+                    if ($plg_tag=="rutube") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = urlencode($tagsource);
+                        }
+                    }
+                    
                     if ($plg_tag=="sapo") {
                         if (strpos($tagsource, 'http')!==false) {
                             $tagsource = explode('.pt/', $tagsource);
                             $tagsource = $tagsource[1];
                         }
-                    }
-
-                    if ($plg_tag=="sevenload") {
-                        $tagsource = parse_url($tagsource);
-                        $tagsource = explode('-', $tagsource['query']);
-                        $tagsource = array_reverse($tagsource);
-                        $tagsource = $tagsource[0];
-                    }
-
-                    if ($plg_tag=="sohu") {
-                        $tagsource = parse_url($tagsource);
-                        $tagsource = explode('/', $tagsource['query']);
-                        $tagsource = array_reverse($tagsource);
-                        $tagsource = str_replace('.shtml', '', $tagsource[0]);
                     }
 
                     if ($plg_tag=="twitch") {
