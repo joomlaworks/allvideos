@@ -330,20 +330,6 @@ $tagReplace = array(
 // gloria.tv - http://gloria.tv/?media=509392
 "Gloria" => "<iframe src=\"http://gloria.tv/?embed=frame&amp;media={SOURCE}&amp;width={WIDTH}&amp;height={HEIGHT}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// goal4replay.net - http://www.goal4replay.net/VideoWatchF.asp?ID=56215&Ln=En
-"goal4replay" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{VWIDTH}px;height:{VHEIGHT}px;\" data=\"http://www.goal4replay.net/videoEmbedLa.swf?ID={AVSOURCE}&amp;MediaID=1\">
-    <param name=\"movie\" value=\"http://www.goal4replay.net/videoEmbedLa.swf?ID={AVSOURCE}&amp;MediaID=1\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-</object>
-",
-
 // godtube.com - http://www.godtube.com/watch/?v=FJ219MNU
 "GodTube" => "<iframe src=\"https://www.godtube.com/embed/watch/{SOURCE}/?w=728&h=408&ap=true&sl=true&title=true&dp=true\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
