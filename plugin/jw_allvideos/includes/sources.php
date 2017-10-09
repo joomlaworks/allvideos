@@ -373,23 +373,6 @@ $tagReplace = array(
 </object>
 ",
 
-// kewego.com - http://www.kewego.com/video/iLyROoafYcaT.html
-"Kewego" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://sll.kewego.com/swf/kp.swf\" title=\"JoomlaWorks AllVideos Player\" name=\"kplayer_{SOURCE}\" id=\"kplayer_{SOURCE}\">
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-    <param name=\"flashVars\" value=\"language_code=en&playerKey=902e0deec887&configKey=&suffix=&sig={SOURCE}&autostart={PLAYER_AUTOPLAY}\" />
-    <param name=\"movie\" value=\"http://sll.kewego.com/swf/kp.swf\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <video id=\"kewego_HTML5_{SOURCE}\" poster=\"http://api.kewego.com/video/getHTML5Thumbnail/?playerKey=902e0deec887&amp;sig={SOURCE}\" controls=\"true\" height=\"{HEIGHT}\" width=\"{WIDTH}\" preload=\"none\">
-        <source src=\"http://api.kewego.com/video/getHTML5Stream/?playerKey=902e0deec887&amp;sig={SOURCE}\" type=\"video/mp4\" width=\"{WIDTH}\" height=\"{HEIGHT}\" />
-    </video>
-</object>
-",
-
 // ku6.com (China) - http://ku6.com/2017/detail.html?vid=MY8_sA92OcjFb4EezXaFZQ
 "Ku6" => $clapprEmbedRemote,
 
