@@ -329,9 +329,6 @@ $tagReplace = array(
 // myspace.com - https://myspace.com/myspace/video/the-pedicab-interviews-chris-cole/109546118
 "Myspace" => "<iframe src=\"//media.myspace.com/play/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// myvideo.de - http://www.myvideo.de/musik/christina-stuermer/wir-leben-den-moment-video-m-7713020 OR http://www.myvideo.de/watch/8198664/Der_komplette_Tanz_zum_Song
-"MyVideo" => "<iframe src=\"http://www.myvideo.de/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
-
 // sapo.pt - http://videos.sapo.pt/34NipYH7bWgUzc3pZgwo
 "SAPO" => "<iframe src=\"http://videos.sapo.pt/playhtml?file=http://rd3.videos.sapo.pt/{SOURCE}/mov/1\" frameborder=\"0\" scrolling=\"no\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
