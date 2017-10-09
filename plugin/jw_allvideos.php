@@ -375,21 +375,10 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
-                    if ($plg_tag=="myvideo") {
-                        if (strpos($tagsource, 'myvideo.de')!==false) {
-                            if (strpos($tagsource, 'myvideo.de/watch')!==false) {
-                                $tagsource = parse_url($tagsource);
-                                $tagsource = explode('/', $tagsource['path']);
-                                $tagsource = $tagsource[2];
-                            } else {
-                                $tagsource = parse_url($tagsource);
-                                $tagsource = explode('/', $tagsource['path']);
-                                $tagsource = array_reverse($tagsource);
-                                $tagsource = $tagsource[0];
-                                $tagsource = explode('-', $tagsource);
-                                $tagsource = array_reverse($tagsource);
-                                $tagsource = $tagsource[0];
-                            }
+                    if ($plg_tag=="sapo") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = explode('.pt/', $tagsource);
+                            $tagsource = $tagsource[1];
                         }
                     }
 

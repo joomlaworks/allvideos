@@ -329,8 +329,8 @@ $tagReplace = array(
 // myspace.com - https://myspace.com/myspace/video/the-pedicab-interviews-chris-cole/109546118
 "Myspace" => "<iframe src=\"//media.myspace.com/play/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// sapo.pt - http://videos.sapo.pt/34NipYH7bWgUzc3pZgwo
-"SAPO" => "<iframe src=\"http://videos.sapo.pt/playhtml?file=http://rd3.videos.sapo.pt/{SOURCE}/mov/1\" frameborder=\"0\" scrolling=\"no\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+// sapo.pt - http://videos.sapo.pt/A9AWbpCMRmFKA2ZZIdNm
+"SAPO" => "<iframe src=\"https://rd3.videos.sapo.pt/playhtml?file=https://rd3.videos.sapo.pt/{SOURCE}/mov/1\" frameborder=\"0\" scrolling=\"no\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // screenr.com - http://www.screenr.com/LQ2s
 "Screenr" => "<iframe src=\"http://www.screenr.com/embed/{SOURCE}\" frameborder=\"0\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
