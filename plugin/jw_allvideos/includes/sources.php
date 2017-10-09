@@ -308,8 +308,8 @@ $tagReplace = array(
 <div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
 ",
 
-// funnyordie.com - http://www.funnyordie.com/videos/7c52bd0f81/the-pussy-patch-from-lil-jon
-"FunnyOrDie" => "<iframe src=\"http://www.funnyordie.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
+// funnyordie.com - https://www.funnyordie.com/videos/7c52bd0f81/the-pussy-patch-from-lil-jon
+"FunnyOrDie" => "<iframe src=\"https://www.funnyordie.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // gloria.tv - https://gloria.tv/video/radASVdUvido2xP8bd8n6zEpS
 "Gloria" => "<iframe src=\"https://gloria.tv/embed/+/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",

@@ -320,6 +320,14 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
+                    if ($plg_tag=="funnyordie") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = explode('/videos/', $tagsource);
+                            $tagsource = explode('/', $tagsource[1]);
+                            $tagsource = $tagsource[0];
+                        }
+                    }
+
                     if ($plg_tag=="gloria") {
                         if (strpos($tagsource, 'http')!==false) {
                             $tagsource = explode('/video/', $tagsource);
