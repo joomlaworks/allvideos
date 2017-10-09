@@ -335,20 +335,6 @@ $tagReplace = array(
 // screenr.com - http://www.screenr.com/LQ2s [retired but existing videos still work]
 "Screenr" => "<iframe src=\"http://www.screenr.com/embed/{SOURCE}\" frameborder=\"0\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// sohu.com (China) - http://my.tv.sohu.com/us/16361148/6854750.shtml
-"Sohu" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://share.vrs.sohu.com/my/v.swf&id={SOURCE}&topBar=1&autoplay={PLAYER_AUTOPLAY}\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://share.vrs.sohu.com/my/v.swf&id={SOURCE}&topBar=1&autoplay={PLAYER_AUTOPLAY}\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"Always\" />
-</object>
-",
-
 // twitch.tv - https://go.twitch.tv/rom_bik (channel) or https://www.twitch.tv/videos/179343513 (video)
 "Twitch" => "<iframe src=\"https://player.twitch.tv/?{SOURCE}&autoplay=false\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
