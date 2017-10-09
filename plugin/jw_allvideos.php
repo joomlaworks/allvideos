@@ -284,6 +284,12 @@ class plgContentJw_allvideos extends JPlugin
                     $final_loop = ($final_loop) ? 'true' : 'false';
 
                     // Special treatment for specific video providers
+                    if ($plg_tag=="collegehumor") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = urlencode($tagsource);
+                        }
+                    }
+                    
                     if ($plg_tag=="dailymotion") {
                         $tagsource = preg_replace("~(http|https):(.+?)dailymotion.com\/video\/~s", "", $tagsource);
                         $tagsourceDailymotion = explode('_', $tagsource);
@@ -294,12 +300,6 @@ class plgContentJw_allvideos extends JPlugin
                             } else {
                                 $tagsource = $tagsource.'?autoplay=1';
                             }
-                        }
-                    }
-
-                    if ($plg_tag=="collegehumor") {
-                        if (strpos($tagsource, 'http')!==false) {
-                            $tagsource = urlencode($tagsource);
                         }
                     }
 
@@ -317,6 +317,13 @@ class plgContentJw_allvideos extends JPlugin
                     if ($plg_tag=="flickr") {
                         if (strpos($tagsource, 'http')!==false) {
                             $tagsource = urlencode($tagsource);
+                        }
+                    }
+
+                    if ($plg_tag=="godtube") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = explode('?v=', $tagsource);
+                            $tagsource = $tagsource[1];
                         }
                     }
 

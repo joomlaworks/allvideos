@@ -345,19 +345,7 @@ $tagReplace = array(
 ",
 
 // godtube.com - http://www.godtube.com/watch/?v=FJ219MNU
-"GodTube" => "
-<object type=\"application/x-shockwave-flash\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" data=\"http://media.salemwebnetwork.com/godtube/resource/mediaplayer/5.6/player.swf\" title=\"JoomlaWorks AllVideos Player\">
-    <param name=\"movie\" value=\"http://media.salemwebnetwork.com/godtube/resource/mediaplayer/5.6/player.swf\" />
-    <param name=\"quality\" value=\"high\" />
-    <param name=\"wmode\" value=\"{PLAYER_TRANSPARENCY}\" />
-    <param name=\"bgcolor\" value=\"{PLAYER_BACKGROUND}\" />
-    <param name=\"autoplay\" value=\"{PLAYER_AUTOPLAY}\" />
-    <param name=\"loop\" value=\"{PLAYER_LOOP}\" />
-    <param name=\"allowfullscreen\" value=\"true\" />
-    <param name=\"allowscriptaccess\" value=\"always\" />
-    <param name=\"flashvars\" value=\"file=http://www.godtube.com/resource/mediaplayer/{SOURCE}.file&image=http://www.godtube.com/resource/mediaplayer/{SOURCE}.jpg&screencolor=000000&type=video&autostart={PLAYER_AUTOPLAY}&playonce=true&skin=http://media.salemwebnetwork.com/godtube/resource/mediaplayer/skin/default/videoskin.swf&logo.file=undefinedtheme/default/media/embed-logo.png&logo.link=http://www.godtube.com/watch/%3Fv%3D{SOURCE}&logo.position=top-left&logo.hide=false&controlbar.position=over\" />
-</object>
-",
+"GodTube" => "<iframe src=\"https://www.godtube.com/embed/watch/{SOURCE}/?w=728&h=408&ap=true&sl=true&title=true&dp=true\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // ku6.com (China) - http://ku6.com/2017/detail.html?vid=MY8_sA92OcjFb4EezXaFZQ
 "Ku6" => $clapprEmbedRemote,
