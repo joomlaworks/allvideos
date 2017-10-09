@@ -245,11 +245,17 @@ $tagReplace = array(
 
 /* --- Major 3rd party video providers --- */
 
+// youtube.com - https://www.youtube.com/watch?v=g5lGNkS5TE0 or https://www.youtube.com/playlist?list=PL0875C16C899A8DE6
+"YouTube" => "<iframe src=\"https://www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+
+// vimeo.com - http://www.vimeo.com/1319796
+"Vimeo" => "<iframe src=\"https://player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+
 // dailymotion.com - http://www.dailymotion.com/featured/video/x35714_cap-nord-projet-1_creation
-"Dailymotion" => "<iframe src=\"https://www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Dailymotion" => "<iframe src=\"https://www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // facebook.com - https://www.facebook.com/Channel4News/videos/10155042102006939/
-"Facebook" => "<iframe src=\"https://www.facebook.com/plugins/video.php?href={SOURCE}&show_text=0&width={WIDTH}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" style=\"border:none;overflow:hidden;\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\" allowFullScreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Facebook" => "<iframe src=\"https://www.facebook.com/plugins/video.php?href={SOURCE}&show_text=0&width={WIDTH}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // soundcloud.com - https://soundcloud.com/sebastien-tellier/look
 "SoundCloud" => "
@@ -264,15 +270,6 @@ $tagReplace = array(
 </script>
 <div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
 ",
-
-// vimeo.com - http://www.vimeo.com/1319796
-"Vimeo" => "<iframe src=\"https://player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
-
-// vine.co - https://vine.co/v/hr9OQTHJYPj
-"Vine" => "<iframe src=\"{SOURCE}/embed/simple?audio=1\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
-
-// youtube.com - http://www.youtube.com/watch?v=g5lGNkS5TE0 or https://www.youtube.com/playlist?list=PL0875C16C899A8DE6
-"YouTube" => "<iframe src=\"https://www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 
 
@@ -292,7 +289,7 @@ $tagReplace = array(
 ",
 
 // dotsub.com - https://dotsub.com/view/6c5d7514-5656-476a-9504-07dd4e2f6509
-"Dotsub" => "<iframe src=\"https://dotsub.com/media/{SOURCE}/embed/\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Dotsub" => "<iframe src=\"https://dotsub.com/media/{SOURCE}/embed/\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // flickr.com - https://www.flickr.com/photos/bswise/5930051523/in/pool-726923@N23/
 "Flickr" => "
@@ -309,25 +306,25 @@ $tagReplace = array(
 ",
 
 // funnyordie.com - https://www.funnyordie.com/videos/7c52bd0f81/the-pussy-patch-from-lil-jon
-"FunnyOrDie" => "<iframe src=\"https://www.funnyordie.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"FunnyOrDie" => "<iframe src=\"https://www.funnyordie.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // gloria.tv - https://gloria.tv/video/radASVdUvido2xP8bd8n6zEpS
-"Gloria" => "<iframe src=\"https://gloria.tv/embed/+/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Gloria" => "<iframe src=\"https://gloria.tv/embed/+/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // godtube.com - http://www.godtube.com/watch/?v=FJ219MNU
-"GodTube" => "<iframe src=\"https://www.godtube.com/embed/watch/{SOURCE}/?w=728&h=408&ap=true&sl=true&title=true&dp=true\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"GodTube" => "<iframe src=\"https://www.godtube.com/embed/watch/{SOURCE}/?w=728&h=408&ap=true&sl=true&title=true&dp=true\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // ku6.com (China) - http://ku6.com/2017/detail.html?vid=MY8_sA92OcjFb4EezXaFZQ
 "Ku6" => $clapprEmbedRemote,
 
 // liveleak.com - https://www.liveleak.com/view?i=ea0_1506997861
-"LiveLeak" => "<iframe src=\"https://www.liveleak.com/ll_embed?i={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"LiveLeak" => "<iframe src=\"https://www.liveleak.com/ll_embed?i={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // metacafe.com - http://www.metacafe.com/watch/11498826/amazing-girl-pours-rainbow-shots/
-"Metacafe" => "<iframe width=\"{WIDTH}\" height=\"{HEIGHT}\" src=\"{SOURCE}\" frameborder=\"0\" allowFullScreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Metacafe" => "<iframe src=\"{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // myspace.com - https://myspace.com/myspace/video/the-pedicab-interviews-chris-cole/109546118
-"Myspace" => "<iframe src=\"//media.myspace.com/play/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Myspace" => "<iframe src=\"//media.myspace.com/play/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // rutube.ru - https://rutube.ru/video/2e311cf4495d9b69304b50a6aafe72cb/
 "Rutube" => "
@@ -344,19 +341,19 @@ $tagReplace = array(
 ",
 
 // sapo.pt - http://videos.sapo.pt/A9AWbpCMRmFKA2ZZIdNm - oEmbed API: https://rd3.videos.sapo.pt/oembed?format=json&url=http://videos.sapo.pt/A9AWbpCMRmFKA2ZZIdNm
-"SAPO" => "<iframe src=\"https://rd3.videos.sapo.pt/playhtml?file=https://rd3.videos.sapo.pt/{SOURCE}/mov/1\" frameborder=\"0\" scrolling=\"no\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"SAPO" => "<iframe src=\"https://rd3.videos.sapo.pt/playhtml?file=https://rd3.videos.sapo.pt/{SOURCE}/mov/1\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // screenr.com - http://www.screenr.com/LQ2s [retired but existing videos still work]
-"Screenr" => "<iframe src=\"http://www.screenr.com/embed/{SOURCE}\" frameborder=\"0\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Screenr" => "<iframe src=\"http://www.screenr.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // twitch.tv - https://go.twitch.tv/rom_bik (channel) or https://www.twitch.tv/videos/179343513 (video)
-"Twitch" => "<iframe src=\"https://player.twitch.tv/?{SOURCE}&autoplay=false\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Twitch" => "<iframe src=\"https://player.twitch.tv/?{SOURCE}&autoplay=false\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // ustream.tv - http://www.ustream.tv/recorded/108521696
-"Ustream" => "<iframe src=\"https://www.ustream.tv/embed/recorded/{SOURCE}?html5ui\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Ustream" => "<iframe src=\"https://www.ustream.tv/embed/recorded/{SOURCE}?html5ui\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // vbox7.com - https://www.vbox7.com/play:213e79223b
-"VBox7" => "<iframe src=\"https://www.vbox7.com/emb/external.php?vid={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"VBox7" => "<iframe src=\"https://www.vbox7.com/emb/external.php?vid={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // veoh.com - http://www.veoh.com/watch/v21091373cQe4FGa9
 "veoh" => "
@@ -373,15 +370,18 @@ $tagReplace = array(
 ",
 
 // videa.hu - http://videa.hu/videok/filmklub/film-animacio/tom-cruise-tancol-kockazatos-uzlet-pmd0e3xAJUEbJird
-"Videa" => "<iframe src=\"//videa.hu/player?v={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Videa" => "<iframe src=\"//videa.hu/player?v={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+
+// vine.co - https://vine.co/v/hr9OQTHJYPj
+"Vine" => "<iframe src=\"{SOURCE}/embed/simple?audio=1\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // yahoo.com - https://uk.news.yahoo.com/video/catalan-protesters-block-roads-general-114436805.html
-"Yahoo" => "<iframe src=\"{SOURCE}?format=embed\" width=\"{WIDTH}\" height=\"{HEIGHT}\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allowtransparency=\"true\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Yahoo" => "<iframe src=\"{SOURCE}?format=embed\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // youku.com (China) - http://v.youku.com/v_show/id_XMzAyNjcxNDkzNg==.html?spm=a2hww.20027244.ykRecommend.5~5!2~5~5~A
-"Youku" => "<iframe src=\"https://player.youku.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"Youku" => "<iframe src=\"https://player.youku.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // youmaker.com - https://www.youmaker.com/video/722db6ac-1ce4-4beb-7385-9621278e738a
-"YouMaker" => "<iframe src=\"https://www.youmaker.com/api/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+"YouMaker" => "<iframe src=\"https://www.youmaker.com/api/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 );
