@@ -329,14 +329,11 @@ $tagReplace = array(
 // myspace.com - https://myspace.com/myspace/video/the-pedicab-interviews-chris-cole/109546118
 "Myspace" => "<iframe src=\"//media.myspace.com/play/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// sapo.pt - http://videos.sapo.pt/A9AWbpCMRmFKA2ZZIdNm
+// sapo.pt - http://videos.sapo.pt/A9AWbpCMRmFKA2ZZIdNm - oEmbed API: https://rd3.videos.sapo.pt/oembed?format=json&url=http://videos.sapo.pt/A9AWbpCMRmFKA2ZZIdNm
 "SAPO" => "<iframe src=\"https://rd3.videos.sapo.pt/playhtml?file=https://rd3.videos.sapo.pt/{SOURCE}/mov/1\" frameborder=\"0\" scrolling=\"no\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
-// screenr.com - http://www.screenr.com/LQ2s
+// screenr.com - http://www.screenr.com/LQ2s [retired but existing videos still work]
 "Screenr" => "<iframe src=\"http://www.screenr.com/embed/{SOURCE}\" frameborder=\"0\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
-
-// sevenload.com - http://www.sevenload.com/videos/mausepingel-par-excellence-512b6a3e32b0c28c5500035b
-"Sevenload" => "<iframe src=\"http://embed.sevenload.com/widgets/singlePlayer/{SOURCE}/?autoplay={PLAYER_AUTOPLAY}&env=slcom-ext\" width=\"{WIDTH}\" height=\"{HEIGHT}\" title=\"JoomlaWorks AllVideos Player\" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>",
 
 // sohu.com (China) - http://my.tv.sohu.com/us/16361148/6854750.shtml
 "Sohu" => "
