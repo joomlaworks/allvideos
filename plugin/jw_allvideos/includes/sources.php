@@ -327,8 +327,8 @@ $tagReplace = array(
 </object>
 ",
 
-// gloria.tv - http://gloria.tv/?media=509392
-"Gloria" => "<iframe src=\"http://gloria.tv/?embed=frame&amp;media={SOURCE}&amp;width={WIDTH}&amp;height={HEIGHT}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
+// gloria.tv - https://gloria.tv/video/radASVdUvido2xP8bd8n6zEpS
+"Gloria" => "<iframe src=\"https://gloria.tv/embed/+/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" allowfullscreen title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
 // godtube.com - http://www.godtube.com/watch/?v=FJ219MNU
 "GodTube" => "<iframe src=\"https://www.godtube.com/embed/watch/{SOURCE}/?w=728&h=408&ap=true&sl=true&title=true&dp=true\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
