@@ -349,7 +349,14 @@ class plgContentJw_allvideos extends JPlugin
                     }
 
                     if ($plg_tag=="metacafe") {
-                        $tagsource = str_replace('/watch/', '/embed/', $tagsource);
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = str_replace('/watch/', '/embed/', $tagsource);
+                        } elseif (is_int($tagsource)) {
+                            $tagsource = 'http://www.metacafe.com/embed/'.$tagsource.'/';
+                        } else {
+                            $tagsource = explode('?i=', $tagsource);
+                            $tagsource = 'http://www.metacafe.com/embed/'.$tagsource[1].'/';
+                        }
                     }
 
                     if ($plg_tag=="myspace") {
