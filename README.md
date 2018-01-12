@@ -27,7 +27,7 @@ AllVideos means dead-simple media embedding and/or streaming for anyone. You can
 8. Includes 3 templates: Classic, Framed and Responsive
 9. Fully responsive players when using the "Responsive" template.
 10. Uses the core Joomla updater (since version 4.5.0).
-11. Since v4.8.0, you can now use entire video URLs for any sypported video provider, without having to cut video IDs or other "identifier" elements for a video URL. This feature will pave the path for simpler embedding in upcoming updates of AllVideos.
+11. Since v4.8.0, you can now use entire video URLs for any supported video provider, without having to cut video IDs or other "identifier" elements for a video URL. This feature will pave the path for simpler embedding in upcoming updates of AllVideos.
 
 
 ## COMPATIBILITY

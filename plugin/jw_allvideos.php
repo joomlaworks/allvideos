@@ -461,6 +461,9 @@ class plgContentJw_allvideos extends JPlugin
                         // Check the presence of fully pasted URLs
                         if (strpos($tagsource, 'youtube.com')!==false) {
                             $ytQuery = parse_url($tagsource, PHP_URL_QUERY);
+                            if (is_array($ytQuery)) {
+                                $ytQuery = implode("&", $ytQuery);
+                            }
                             $ytQuery = str_replace('&amp;', '&', $ytQuery);
                         } elseif (strpos($tagsource, 'youtu.be')!==false) {
                             $ytQuery = explode('youtu.be/', $tagsource);
