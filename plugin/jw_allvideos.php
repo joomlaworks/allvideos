@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    4.8.2
+ * @version    4.8.1
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - http://www.joomlaworks.net
  * @copyright  Copyright (c) 2006 - 2018 JoomlaWorks Ltd. All rights reserved.
@@ -16,8 +16,8 @@ class plgContentJw_allvideos extends JPlugin
 {
     // JoomlaWorks reference parameters
     public $plg_name              = "jw_allvideos";
-    public $plg_copyrights_start  = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.8.2) starts here -->\n";
-    public $plg_copyrights_end    = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.8.2) ends here -->\n\n";
+    public $plg_copyrights_start  = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.8.1) starts here -->\n";
+    public $plg_copyrights_end    = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v4.8.1) ends here -->\n\n";
 
     public function __construct(&$subject, $params)
     {
@@ -146,12 +146,12 @@ class plgContentJw_allvideos extends JPlugin
             }
 
             if ($gzipScripts) {
-                $document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.8.2');
+                $document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.8.1');
             } else {
-                $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.8.2');
-                $document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.8.2');
-                $document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.8.2');
-                $document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/ac_quicktime.js?v=4.8.2');
+                $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=4.8.1');
+                $document->addScript($pluginLivePath.'/includes/js/wmvplayer/silverlight.js?v=4.8.1');
+                $document->addScript($pluginLivePath.'/includes/js/wmvplayer/wmvplayer.js?v=4.8.1');
+                $document->addScript($pluginLivePath.'/includes/js/quicktimeplayer/ac_quicktime.js?v=4.8.1');
             }
 
             // Clappr
@@ -159,7 +159,7 @@ class plgContentJw_allvideos extends JPlugin
 
             // JW Player v7
             if ($jwPlayerLoading=='local') {
-                $document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.8.2');
+                $document->addScript($pluginLivePath.'/includes/js/jwplayer/jwplayer.js?v=4.8.1');
                 if (!defined('ALLVIDEOS_JW_PLAYER_KEY')) {
                     define('ALLVIDEOS_JW_PLAYER_KEY', true);
                     $document->addScriptDeclaration('jwplayer.key="'.$jwPlayerAPIKey.'"; /* JW Player API Key */');
