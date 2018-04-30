@@ -39,7 +39,7 @@
 	.avSoundCloudSong .avPlayerContainer .avPlayerBlock embed {min-width:100%!important;width:100%!important;height:168px!important;}
 	/* Audio container styling only */
 	.avAudio .avPlayerContainer .avPlayerBlock {width:100%!important;padding:0!important;}
-	.avAudio .avPlayerContainer .avPlayerBlock > div {min-width:100%!important;width:100%!important;height:24px!important;}
+	.avAudio .avPlayerContainer .avPlayerBlock > div {min-width:100%!important;width:100%!important;}
 
 	.avPlayerWrapper .avPlayerContainer .avPlayerBlock > div {text-align:center!important;}
 	.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink {text-align:center;padding:4px;font-size:11px;}
