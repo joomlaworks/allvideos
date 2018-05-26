@@ -155,7 +155,11 @@ class plgContentJw_allvideos extends JPlugin
             }
 
             // Clappr
-            $document->addScript('https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js');
+            if (version_compare(JVERSION, '2.5.0', 'ge')) {
+                $document->addScript('https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js?v=4.8.1');
+            } else {
+                $document->addScript('https://cdnjs.cloudflare.com/ajax/libs/clappr/0.2.68/clappr.min.js?v=4.8.1');
+            }
 
             // JW Player v7
             if ($jwPlayerLoading=='local') {
@@ -380,7 +384,7 @@ class plgContentJw_allvideos extends JPlugin
                             $tagsource = urlencode($tagsource);
                         }
                     }
-                    
+
                     if ($plg_tag=="sapo") {
                         if (strpos($tagsource, 'http')!==false) {
                             $tagsource = explode('.pt/', $tagsource);
