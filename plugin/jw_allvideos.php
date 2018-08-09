@@ -155,7 +155,7 @@ class plgContentJw_allvideos extends JPlugin
             }
 
             // Clappr
-            if (version_compare(JVERSION, '2.5.0', 'ge')) {
+            if (version_compare(JVERSION, '3.0.0', 'ge')) {
                 $document->addScript('https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js?v=4.8.1');
             } else {
                 $document->addScript('https://cdnjs.cloudflare.com/ajax/libs/clappr/0.2.68/clappr.min.js?v=4.8.1');
