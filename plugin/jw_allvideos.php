@@ -139,12 +139,6 @@ class plgContentJw_allvideos extends JPlugin
             $document->addStyleSheet($avCSS);
 
             // JS
-            if (version_compare(JVERSION, '2.5.0', 'ge')) {
-                JHtml::_('behavior.framework');
-            } else {
-                JHTML::_('behavior.mootools');
-            }
-
             if ($gzipScripts) {
                 $document->addScript($pluginLivePath.'/includes/js/jwp.js.php?v=4.8.1');
             } else {
