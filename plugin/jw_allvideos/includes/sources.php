@@ -21,7 +21,6 @@ $clapprEmbed = "
         width: '{WIDTH}',
         autoPlay: {PLAYER_AUTOPLAY},
         loop: {PLAYER_LOOP},
-        //hideMediaControl: {JWPLAYER_CONTROLS},
         parentId: '#avID_{SOURCEID}'
     });
 </script>
@@ -37,7 +36,38 @@ $clapprEmbedRemote = "
         width: '{WIDTH}',
         autoPlay: {PLAYER_AUTOPLAY},
         loop: {PLAYER_LOOP},
-        //hideMediaControl: {JWPLAYER_CONTROLS},
+        parentId: '#avID_{SOURCEID}'
+    });
+</script>
+";
+
+$clapprAudioEmbed = "
+<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
+<script type=\"text/javascript\">
+    var player = new Clappr.Player({
+        source: '{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}',
+        poster: '{PLAYER_POSTER_FRAME}',
+        height: '{HEIGHT}',
+        width: '{WIDTH}',
+        autoPlay: {PLAYER_AUTOPLAY},
+        loop: {PLAYER_LOOP},
+        hideMediaControl: {AUDIO_CONTROLS},
+        parentId: '#avID_{SOURCEID}'
+    });
+</script>
+";
+
+$clapprAudioEmbedRemote = "
+<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
+<script type=\"text/javascript\">
+    var player = new Clappr.Player({
+        source: '{SOURCE}',
+        poster: '{PLAYER_POSTER_FRAME_REMOTE}',
+        height: '{HEIGHT}',
+        width: '{WIDTH}',
+        autoPlay: {PLAYER_AUTOPLAY},
+        loop: {PLAYER_LOOP},
+        hideMediaControl: {AUDIO_CONTROLS},
         parentId: '#avID_{SOURCEID}'
     });
 </script>
@@ -152,8 +182,8 @@ $tagReplace = array(
 "f4v"           => $jwPlayerEmbed,
 "f4vremote"     => $jwPlayerEmbedRemote,
 
-"mp3"           => $clapprEmbed,
-"mp3remote"     => $clapprEmbedRemote,
+"mp3"           => $clapprAudioEmbed,
+"mp3remote"     => $clapprAudioEmbedRemote,
 "aac"           => $jwPlayerEmbed,
 "aacremote"     => $jwPlayerEmbedRemote,
 "m4a"           => $jwPlayerEmbed,

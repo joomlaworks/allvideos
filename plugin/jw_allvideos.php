@@ -107,6 +107,8 @@ class plgContentJw_allvideos extends JPlugin
         $awidth                         = ($params->get('awidth')) ? $params->get('awidth') : $pluginParams->get('awidth', 480);
         $aheight                        = ($params->get('aheight')) ? $params->get('aheight') : $pluginParams->get('aheight', 24);
         $allowAudioDownloading          = $pluginParams->get('allowAudioDownloading', 0);
+        $audioControls                  = $pluginParams->get('audioControls', 'autohide');
+        $hideMediaControl               = ($audioControls == 'autohide') ? true : false;
         /* Global Parameters */
         $autoplay                       = ($params->get('autoplay')) ? $params->get('autoplay') : $pluginParams->get('autoplay', 0);
         $loop                           = ($params->get('loop')) ? $params->get('loop') : $pluginParams->get('loop', 0);
@@ -531,6 +533,7 @@ class plgContentJw_allvideos extends JPlugin
                         "{PLAYER_TRANSPARENCY}",
                         "{PLAYER_BACKGROUND}",
                         "{PLAYER_BACKGROUNDQT}",
+                        "{AUDIO_CONTROLS}",
                         "{JWPLAYER_CONTROLS}",
                         "{SITEURL}",
                         "{SITEURL_ABS}",
@@ -553,6 +556,7 @@ class plgContentJw_allvideos extends JPlugin
                         $transparency,
                         $background,
                         $backgroundQT,
+                        $hideMediaControl,
                         $jwPlayerControls,
                         $siteUrl,
                         substr(JURI::root(false), 0, -1),
