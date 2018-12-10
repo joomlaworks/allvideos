@@ -108,7 +108,7 @@ class plgContentJw_allvideos extends JPlugin
         $aheight                        = ($params->get('aheight')) ? $params->get('aheight') : $pluginParams->get('aheight', 24);
         $allowAudioDownloading          = $pluginParams->get('allowAudioDownloading', 0);
         $audioControls                  = $pluginParams->get('audioControls', 'autohide');
-        $hideMediaControl               = ($audioControls == 'autohide') ? true : false;
+        $hideMediaControl               = ($audioControls == 'autohide') ? 'true' : 'false';
         /* Global Parameters */
         $autoplay                       = ($params->get('autoplay')) ? $params->get('autoplay') : $pluginParams->get('autoplay', 0);
         $loop                           = ($params->get('loop')) ? $params->get('loop') : $pluginParams->get('loop', 0);
