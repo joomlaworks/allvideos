@@ -21,7 +21,7 @@ class JWElementTemplate extends JWElement
         $plgTemplatesFolders = JFolder::folders($plgTemplatesPath);
         $db = JFactory::getDBO();
         if (version_compare(JVERSION, '2.5.0', 'ge')) {
-            $query = "SELECT template FROM #__template_styles WHERE client_id = 0 AND home = 1";
+            $query = "SELECT template FROM #__template_styles WHERE client_id = 0 AND home = '1'";
         } else {
             $query = "SELECT template FROM #__templates_menu WHERE client_id = 0 AND menuid = 0";
         }
