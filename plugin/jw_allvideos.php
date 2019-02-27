@@ -467,7 +467,8 @@ class plgContentJw_allvideos extends JPlugin
                             $ytQuery = str_replace('&amp;', '&', $ytQuery);
                         } elseif (strpos($tagsource, 'youtu.be')!==false) {
                             $ytQuery = explode('youtu.be/', $tagsource);
-                            $tagsource = $ytQuery[1];
+                            $ytQuery = $ytQuery[1];
+                            $tagsource = $ytQuery;
                         } else {
                             $ytQuery = $tagsource;
                         }
