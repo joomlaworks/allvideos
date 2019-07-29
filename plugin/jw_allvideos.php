@@ -105,6 +105,7 @@ class plgContentJw_allvideos extends JPlugin
         $allowAudioDownloading  = $pluginParams->get('allowAudioDownloading', 0);
         /* Global Parameters */
         $controls               = $pluginParams->get('controls', '1');
+        $controls               = ($controls) ? ' controls' : '';
         $autoplay               = ($params->get('autoplay')) ? $params->get('autoplay') : $pluginParams->get('autoplay', 0);
         $loop                   = ($params->get('loop')) ? $params->get('loop') : $pluginParams->get('loop', 0);
         $ytnocookie             = ($params->get('ytnocookie')) ? $params->get('ytnocookie') : $pluginParams->get('ytnocookie', 0);
@@ -296,7 +297,6 @@ class plgContentJw_allvideos extends JPlugin
                     }
 
                     if ($plg_tag=="youtube") {
-
                         // Check the presence of fully pasted URLs
                         if (strpos($tagsource, 'youtube.com')!==false) {
                             $ytQuery = parse_url($tagsource, PHP_URL_QUERY);
@@ -370,7 +370,7 @@ class plgContentJw_allvideos extends JPlugin
                         "{HEIGHT}",
                         "{PLAYER_AUTOPLAY}",
                         "{PLAYER_LOOP}",
-                        "{CONTROLS}",
+                        "{PLAYER_CONTROLS}",
                         "{SITEURL}",
                         "{SITEURL_ABS}",
                         "{FILE_EXT}",

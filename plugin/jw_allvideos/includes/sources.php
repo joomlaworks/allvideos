@@ -14,25 +14,25 @@ defined('_JEXEC') or die('Restricted access');
 
 $nativeVideo = "
 <div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <video id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" autoplay=\"{PLAYER_AUTOPLAY}\" controls=\"controls\" preload=\"metadata\"></video>
+    <video id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" autoplay=\"{PLAYER_AUTOPLAY}\" preload=\"metadata\"{PLAYER_CONTROLS}></video>
 </div>
 ";
 
 $nativeVideoRemote = "
 <div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <video id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SOURCE}\" autoplay=\"{PLAYER_AUTOPLAY}\" controls=\"controls\" preload=\"metadata\"></video>
+    <video id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SOURCE}\" autoplay=\"{PLAYER_AUTOPLAY}\" preload=\"metadata\"{PLAYER_CONTROLS}></video>
 </div>
 ";
 
 $nativeAudio = "
 <div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <audio id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" autoplay=\"{PLAYER_AUTOPLAY}\" controls=\"controls\" preload=\"metadata\"></audio>
+    <audio id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" autoplay=\"{PLAYER_AUTOPLAY}\" preload=\"metadata\"{PLAYER_CONTROLS}></audio>
 </div>
 ";
 
 $nativeAudioRemote = "
 <div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <audio id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SOURCE}\" autoplay=\"{PLAYER_AUTOPLAY}\" controls=\"controls\" preload=\"metadata\"></audio>
+    <audio id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SOURCE}\" autoplay=\"{PLAYER_AUTOPLAY}\" preload=\"metadata\"{PLAYER_CONTROLS}></audio>
 </div>
 ";
 
@@ -40,6 +40,7 @@ $deprecated = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SITEURL}
 
 $deprecatedRemote = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SOURCE}\" download><span>Download media file</span></a>";
 
+/*
 $clapprEmbed = "
 <div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
 <script type=\"text/javascript\">
@@ -101,6 +102,7 @@ $clapprAudioEmbedRemote = "
     });
 </script>
 ";
+*/
 
 
 
@@ -115,7 +117,7 @@ $tagReplace = array(
     "mp4remote"   => $nativeVideoRemote,
     "ogv"         => $nativeVideo,
     "ogvremote"   => $nativeVideoRemote,
-    "webm"        => $clapprEmbed,
+    "webm"        => $nativeVideo,
     "webmremote"  => $nativeVideoRemote,
 
     "flac"        => $nativeAudio,
