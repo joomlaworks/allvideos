@@ -15,15 +15,15 @@
 /* Framed Layout */
 .avPlayerWrapper {display:block;text-align:center;clear:both;}
 .avPlayerWrapper .avPlayerContainer {display:block;padding:0;margin:0 auto;}
-	/* Video container styling only */
-	.avVideo .avPlayerContainer {padding:16px 20px 14px;border-radius:4px;background:url(../images/allvideos_v4_bg_1000x550.jpg) repeat 50% 50%;}
-	/* Audio container styling only */
-	.avAudio .avPlayerContainer {}
+    /* Video container styling only */
+    .avVideo .avPlayerContainer {padding:16px 20px 14px;border-radius:4px;background:url(../images/allvideos_v4_bg_1000x550.jpg) repeat 50% 50%;}
+    /* Audio container styling only */
+    .avAudio .avPlayerContainer {}
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock {display:block;padding:0;margin:0;line-height:normal;text-align:center;}
-	.avPlayerWrapper .avPlayerContainer .avPlayerBlock div {text-align:center!important;}
-	.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink {text-align:center;padding:4px;font-size:11px;}
-		.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a {}
-		.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a:hover {}
-			.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a span {}
-			.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a:hover span {}
-		.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink span.hint {padding-left:4px;color:#999;font-style:italic;}
+    .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avPlayer {object-fit:contain;text-align:center !important;}
+    .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink {text-align:center;padding:4px;font-size:11px;}
+        .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a {}
+        .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a:hover {}
+            .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a span {}
+            .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a:hover span {}
+        .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink span.hint {padding-left:4px;color:#999;font-style:italic;}

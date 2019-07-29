@@ -45,3 +45,60 @@ var allvideos = {
         head.appendChild(jsonp);
     }
 }
+
+function allVideosMakeVideoPoster(source, container) {
+    if (source.autoplay) {
+        return;
+    }
+    var videoClass = source.getAttribute('class');
+    var videoStyle = source.getAttribute('style');
+    var videoURL = source.getAttribute('src');
+    var videoControls = (source.controls ? ' controls' : '');
+    var videoPoster = '';
+    var secToSeek = 5;
+
+    var v = document.createElement('video');
+    v.setAttribute('preload', 'metadata');
+    v.src = videoURL + '#t=' + secToSeek;
+    v.onseeked = function(e) {
+        var canvas = document.createElement('canvas');
+        canvas.width = v.videoWidth;
+        canvas.height = v.videoHeight;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(v, 0, 0, canvas.width, canvas.height);
+        videoPoster = canvas.toDataURL();
+        container.innerHTML = '<video id="' + videoClass + '" style="' + videoStyle + '" src="' + videoURL + '" poster="' + videoPoster + '" preload="metadata"' + videoControls + '></video>';
+    };
+}
+
+function allVideosHelper() {
+    var i = 0,
+        j = 0,
+        videos = document.querySelectorAll("video.avPlayer"),
+        videosCount = videos.length;
+    deprecated = document.querySelectorAll(".avDeprecated"),
+        deprecatedCount = deprecated.length;
+
+    if (videosCount) {
+        for (i; i < videosCount; i++) {
+            var container = videos[i].parentNode;
+            allVideosMakeVideoPoster(videos[i], container);
+        }
+    }
+
+    if (deprecatedCount) {
+        for (j; j < deprecatedCount; j++) {
+            var parent = deprecated[j].parentNode;
+            parent.setAttribute('class', 'avPlayerBlockDisabled');
+            parent.setAttribute('style', 'width:auto;height:auto;line-height:200%;padding:20px;');
+        }
+    }
+}
+
+if (window.addEventListener) {
+    window.addEventListener("DOMContentLoaded", allVideosHelper, false);
+} else if (window.attachEvent) {
+    window.attachEvent("onload", allVideosHelper);
+} else {
+    window.onload = allVideosHelper;
+}

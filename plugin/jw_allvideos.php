@@ -250,8 +250,9 @@ class plgContentJw_allvideos extends JPlugin
                     }
 
                     // Autoplay
-                    $final_autoplay = (@$tagparams[3]) ? $tagparams[3] : $autoplay;
-                    $final_autoplay = ($final_autoplay) ? 'true' : 'false';
+                    $tag_autoplay = (@$tagparams[3]) ? $tagparams[3] : $autoplay;
+                    $final_autoplay = ($tag_autoplay) ? 'true' : 'false';
+                    $player_autoplay = ($tag_autoplay) ? ' autoplay' : '';
 
                     // Loop
                     $final_loop = (@$tagparams[4]) ? $tagparams[4] : $loop;
@@ -368,9 +369,11 @@ class plgContentJw_allvideos extends JPlugin
                         "{FOLDER}",
                         "{WIDTH}",
                         "{HEIGHT}",
-                        "{PLAYER_AUTOPLAY}",
+                        "{PROVIDER_AUTOPLAY}",
+                        "{CLAPPR_AUTOPLAY}",
                         "{PLAYER_LOOP}",
                         "{PLAYER_CONTROLS}",
+                        "{PLAYER_AUTOPLAY}",
                         "{SITEURL}",
                         "{SITEURL_ABS}",
                         "{FILE_EXT}",
@@ -388,8 +391,10 @@ class plgContentJw_allvideos extends JPlugin
                         $output->playerWidth,
                         $output->playerHeight,
                         $final_autoplay,
+                        $final_autoplay,
                         $final_loop,
                         $controls,
+                        $player_autoplay,
                         $siteUrl,
                         substr(JURI::root(false), 0, -1),
                         $plg_tag,

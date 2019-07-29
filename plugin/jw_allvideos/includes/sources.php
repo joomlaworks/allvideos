@@ -14,25 +14,25 @@ defined('_JEXEC') or die('Restricted access');
 
 $nativeVideo = "
 <div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <video id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" autoplay=\"{PLAYER_AUTOPLAY}\" preload=\"metadata\"{PLAYER_CONTROLS}></video>
+    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
 </div>
 ";
 
 $nativeVideoRemote = "
 <div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <video id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SOURCE}\" autoplay=\"{PLAYER_AUTOPLAY}\" preload=\"metadata\"{PLAYER_CONTROLS}></video>
+    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
 </div>
 ";
 
 $nativeAudio = "
 <div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <audio id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" autoplay=\"{PLAYER_AUTOPLAY}\" preload=\"metadata\"{PLAYER_CONTROLS}></audio>
+    <audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>
 </div>
 ";
 
 $nativeAudioRemote = "
 <div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <audio id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;object-fit:contain;\" src=\"{SOURCE}\" autoplay=\"{PLAYER_AUTOPLAY}\" preload=\"metadata\"{PLAYER_CONTROLS}></audio>
+    <audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>
 </div>
 ";
 
@@ -49,7 +49,7 @@ $clapprEmbed = "
         poster: '{PLAYER_POSTER_FRAME}',
         height: '{HEIGHT}',
         width: '{WIDTH}',
-        autoPlay: {PLAYER_AUTOPLAY},
+        autoPlay: {CLAPPR_AUTOPLAY},
         loop: {PLAYER_LOOP},
         parentId: '#avID_{SOURCEID}'
     });
@@ -64,7 +64,7 @@ $clapprEmbedRemote = "
         poster: '{PLAYER_POSTER_FRAME_REMOTE}',
         height: '{HEIGHT}',
         width: '{WIDTH}',
-        autoPlay: {PLAYER_AUTOPLAY},
+        autoPlay: {CLAPPR_AUTOPLAY},
         loop: {PLAYER_LOOP},
         parentId: '#avID_{SOURCEID}'
     });
@@ -79,7 +79,7 @@ $clapprAudioEmbed = "
         poster: '{PLAYER_POSTER_FRAME}',
         height: '{HEIGHT}',
         width: '{WIDTH}',
-        autoPlay: {PLAYER_AUTOPLAY},
+        autoPlay: {CLAPPR_AUTOPLAY},
         loop: {PLAYER_LOOP},
         hideMediaControl: {AUDIO_CONTROLS},
         parentId: '#avID_{SOURCEID}'
@@ -95,7 +95,7 @@ $clapprAudioEmbedRemote = "
         poster: '{PLAYER_POSTER_FRAME_REMOTE}',
         height: '{HEIGHT}',
         width: '{WIDTH}',
-        autoPlay: {PLAYER_AUTOPLAY},
+        autoPlay: {CLAPPR_AUTOPLAY},
         loop: {PLAYER_LOOP},
         hideMediaControl: {AUDIO_CONTROLS},
         parentId: '#avID_{SOURCEID}'
@@ -194,7 +194,7 @@ $tagReplace = array(
     <script type=\"text/javascript\">
         allvideos.ready(function(){
             allvideos.embed({
-                'url': 'https://soundcloud.com/oembed?format=js&iframe=true&callback=soundcloud{SOURCEID}&auto_play={PLAYER_AUTOPLAY}&maxwidth={WIDTH}&url={SOURCE}',
+                'url': 'https://soundcloud.com/oembed?format=js&iframe=true&callback=soundcloud{SOURCEID}&auto_play={PROVIDER_AUTOPLAY}&maxwidth={WIDTH}&url={SOURCE}',
                 'callback': 'soundcloud{SOURCEID}',
                 'playerID': 'avID_{SOURCEID}'
             });
