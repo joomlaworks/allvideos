@@ -193,6 +193,7 @@ class plgContentJw_allvideos extends JPlugin
                             if (strpos($plg_tag, 'remote') !== false) {
                                 $output->source = $tagsource;
                                 $output->posterFrame = ($plg_tag == 'flacremote') ? substr($tagsource, 0, -4).'jpg' : substr($tagsource, 0, -3).'jpg';
+                                $output->posterFrame = 'background-image:url("'.$output->posterFrame.'");';
                             } else {
                                 $output->source = "$siteUrl/$afolder/$tagsource.$plg_tag";
                                 $posterFramePath = $sitePath.'/'.$afolder;
@@ -209,6 +210,7 @@ class plgContentJw_allvideos extends JPlugin
                                     $output->mediaTypeClass .= ' avNoPoster';
                                 }
                                 if ($output->posterFrame) {
+                                    $output->posterFrame = 'background-image:url("'.$output->posterFrame.'");';
                                     $aheight = ($awidth * 9 / 16);
                                 }
                             }
