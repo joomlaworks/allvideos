@@ -105,6 +105,8 @@ class plgContentJw_allvideos extends JPlugin
         $aheight                = ($params->get('aheight')) ? $params->get('aheight') : $pluginParams->get('aheight', 24);
         $allowAudioDownloading  = $pluginParams->get('allowAudioDownloading', 0);
         /* Global Parameters */
+        $maxwidth               = trim($pluginParams->get('maxwidth', ''));
+        $maxwidth               = ($maxwidth) ? ' style="max-width:'.$maxwidth.';"' : '';
         $controls               = $pluginParams->get('controls', '1');
         $controls               = ($controls) ? ' controls' : '';
         $autoplay               = ($params->get('autoplay')) ? $params->get('autoplay') : $pluginParams->get('autoplay', 0);

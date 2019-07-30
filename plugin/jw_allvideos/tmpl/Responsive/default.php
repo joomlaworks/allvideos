@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 
 <div class="avPlayerWrapper<?php echo $output->mediaTypeClass; ?>">
-    <div class="avPlayerContainer">
+    <div class="avPlayerContainer"<?php echo $maxwidth; ?>>
         <div id="<?php echo $output->playerID; ?>" class="avPlayerBlock">
             <?php echo $output->player; ?>
         </div>
