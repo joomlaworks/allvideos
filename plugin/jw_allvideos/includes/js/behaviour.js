@@ -47,7 +47,7 @@ var allvideos = {
 }
 
 function allVideosMakeVideoPoster(source, container) {
-    if (source.autoplay || source.poster.length) {
+    if (source.autoplay || source.poster) {
         return;
     }
     var videoClass = source.getAttribute('class');
