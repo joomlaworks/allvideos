@@ -16,6 +16,7 @@
 .avDownloadLink a {display:block;background:#eee;padding:10px;text-align:center;font-weight:bold;font-size:12px;color:#999;text-decoration:none;}
 .avDownloadLink a:hover {background:#ddd;color:#666;text-decoration:none;}
 
+.avPlayerBlockDisabled {width:auto;height:auto;padding:20px;}
 a.avDeprecated {display:block;background:#eee;padding:20px;text-align:center;font-weight:bold;font-size:16px;color:#999;text-decoration:none;}
 a.avDeprecated:hover {background:#ddd;color:#666;text-decoration:none;}
 

@@ -74,23 +74,22 @@ function allVideosMakeVideoPoster(source, container) {
 function allVideosHelper() {
     var i = 0,
         j = 0,
+        deprecated = document.querySelectorAll(".avDeprecated"),
+        deprecatedCount = deprecated.length,
         videos = document.querySelectorAll("video.avPlayer"),
         videosCount = videos.length;
-    deprecated = document.querySelectorAll(".avDeprecated"),
-        deprecatedCount = deprecated.length;
-
-    if (videosCount) {
-        for (i; i < videosCount; i++) {
-            var container = videos[i].parentNode;
-            allVideosMakeVideoPoster(videos[i], container);
-        }
-    }
 
     if (deprecatedCount) {
         for (j; j < deprecatedCount; j++) {
             var parent = deprecated[j].parentNode;
             parent.setAttribute('class', 'avPlayerBlockDisabled');
-            parent.setAttribute('style', 'width:auto;height:auto;line-height:200%;padding:20px;');
+        }
+    }
+
+    if (videosCount) {
+        for (i; i < videosCount; i++) {
+            var container = videos[i].parentNode;
+            allVideosMakeVideoPoster(videos[i], container);
         }
     }
 }
