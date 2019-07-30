@@ -184,6 +184,8 @@ class plgContentJw_allvideos extends JPlugin
                             $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.png';
                         } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
                             $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.gif';
+                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
+                            $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.webp';
                         } else {
                             $output->posterFrame = '';
                         }
@@ -227,6 +229,8 @@ class plgContentJw_allvideos extends JPlugin
                             $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.png';
                         } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
                             $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.gif';
+                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
+                            $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.webp';
                         } else {
                             $output->posterFrame = '';
                         }
