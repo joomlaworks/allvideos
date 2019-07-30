@@ -9,40 +9,28 @@
 /* General */
 .avPlayerWrapper div,
 .avPlayerWrapper iframe,
-.avPlayerWrapper object,
-.avPlayerWrapper embed {outline:0;}
+.avPlayerWrapper video,
+.avPlayerWrapper audio {outline:0;}
+
+.avDownloadLink {}
+.avDownloadLink a {display:block;background:#eee;padding:10px;text-align:center;font-weight:bold;font-size:12px;color:#999;text-decoration:none;}
+.avDownloadLink a:hover {background:#ddd;color:#666;text-decoration:none;}
+
+a.avDeprecated {display:block;background:#eee;padding:20px;text-align:center;font-weight:bold;font-size:16px;color:#999;text-decoration:none;}
+a.avDeprecated:hover {background:#ddd;color:#666;text-decoration:none;}
 
 /* Responsive Layout */
-.avPlayerWrapper {display:block;text-align:center;clear:both;}
+.avPlayerWrapper {display:block;clear:both;}
 .avPlayerWrapper .avPlayerContainer {display:block;padding:0;margin:0 auto;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock {width:100% !important;position:relative !important;padding:58% 0 0 0 !important;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock iframe,
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock video,
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {position:absolute !important;top:0;left:0;width:100% !important;height:100% !important;box-sizing:border-box;}
 
-    /* Video container styling only */
-    .avVideo .avPlayerContainer .avPlayerBlock {width:100%!important;position:relative!important;padding:0 0 56% 0!important;}
-    .avVideo .avPlayerContainer .avPlayerBlock iframe,
-    .avVideo .avPlayerContainer .avPlayerBlock object,
-    .avVideo .avPlayerContainer .avPlayerBlock embed,
-    .avVideo .avPlayerContainer .avPlayerBlock video,
-    .avVideo .avPlayerContainer .avPlayerBlock > div {position:absolute!important;top:0;left:0;min-width:100%!important;width:100%!important;max-width:100%;height:100%!important;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock video {background:#000;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {background-color:#000;background-repeat:no-repeat;background-position:50% 50%;background-size:cover;padding:10px;}
 
-    /* SoundCloud container styling only */
-    .avSoundCloudSet .avPlayerContainer .avPlayerBlock {width:100%!important;position:relative!important;padding:0 0 56% 0!important;}
-    .avSoundCloudSet .avPlayerContainer .avPlayerBlock iframe,
-    .avSoundCloudSet .avPlayerContainer .avPlayerBlock object,
-    .avSoundCloudSet .avPlayerContainer .avPlayerBlock embed {position:absolute!important;top:0;left:0;min-width:100%!important;width:100%!important;height:100%!important;}
-
-    .avSoundCloudSong .avPlayerContainer .avPlayerBlock {width:100%!important;padding:0!important;}
-    .avSoundCloudSong .avPlayerContainer .avPlayerBlock iframe,
-    .avSoundCloudSong .avPlayerContainer .avPlayerBlock object,
-    .avSoundCloudSong .avPlayerContainer .avPlayerBlock embed {min-width:100%!important;width:100%!important;height:168px!important;}
-
-    /* Audio container styling only */
-    .avAudio .avPlayerContainer .avPlayerBlock {width:100%!important;padding:0!important;}
-    .avAudio .avPlayerContainer .avPlayerBlock > div {min-width:100%!important;width:100%!important;}
-
-.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avPlayer {object-fit:contain;text-align:center !important;}
-.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink {text-align:center;padding:4px;font-size:11px;}
-    .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a {}
-    .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a:hover {}
-        .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a span {}
-        .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink a:hover span {}
-    .avPlayerWrapper .avPlayerContainer .avPlayerBlock .avDownloadLink span.hint {padding-left:4px;color:#999;font-style:italic;}
+.avPlayerWrapper.avSoundCloudSet .avPlayerContainer .avPlayerBlock,
+.avPlayerWrapper.avSoundCloudSong .avPlayerContainer .avPlayerBlock {padding:0!important;}
+.avPlayerWrapper.avSoundCloudSet .avPlayerContainer .avPlayerBlock iframe {position:relative !important;height:336px !important;}
+.avPlayerWrapper.avSoundCloudSong .avPlayerContainer .avPlayerBlock iframe {position:relative !important;height:168px !important;}

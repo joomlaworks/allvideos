@@ -98,6 +98,7 @@ class plgContentJw_allvideos extends JPlugin
         $vfolder                = ($params->get('vfolder')) ? $params->get('vfolder') : $pluginParams->get('vfolder', 'images/stories/videos');
         $vwidth                 = ($params->get('vwidth')) ? $params->get('vwidth') : $pluginParams->get('vwidth', 400);
         $vheight                = ($params->get('vheight')) ? $params->get('vheight') : $pluginParams->get('vheight', 300);
+        $allowVideoDownloading  = $pluginParams->get('allowVideoDownloading', 0);
         /* Audio Parameters */
         $afolder                = $pluginParams->get('afolder', 'images/stories/audio');
         $awidth                 = ($params->get('awidth')) ? $params->get('awidth') : $pluginParams->get('awidth', 480);
@@ -132,15 +133,6 @@ class plgContentJw_allvideos extends JPlugin
 
             // JS
             $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=5.0.0');
-
-            /*
-            // Clappr
-            if (version_compare(JVERSION, '3.0.0', 'ge')) {
-                $document->addScript('https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js?v=5.0.0');
-            } else {
-                $document->addScript('https://cdnjs.cloudflare.com/ajax/libs/clappr/0.2.68/clappr.min.js?v=5.0.0');
-            }
-            */
         }
 
         // Loop throught the found tags

@@ -13,26 +13,26 @@ defined('_JEXEC') or die('Restricted access');
 /* -------------------------------- Media Output Templates -------------------------------- */
 
 $nativeVideo = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
+<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
+    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" poster=\"{PLAYER_POSTER_FRAME}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
 </div>
 ";
 
 $nativeVideoRemote = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
+<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
+    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" poster=\"{PLAYER_POSTER_FRAME_REMOTE}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
 </div>
 ";
 
 $nativeAudio = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>
+<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
+    <audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;background-image:url('{PLAYER_POSTER_FRAME}');\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>
 </div>
 ";
 
 $nativeAudioRemote = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\">
-    <audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>
+<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
+    <audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;background-image:url('{PLAYER_POSTER_FRAME_REMOTE}');\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>
 </div>
 ";
 
@@ -40,69 +40,7 @@ $deprecated = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SITEURL}
 
 $deprecatedRemote = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SOURCE}\" download><span>Download media file</span></a>";
 
-/*
-$clapprEmbed = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
-<script type=\"text/javascript\">
-    var player = new Clappr.Player({
-        source: '{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}',
-        poster: '{PLAYER_POSTER_FRAME}',
-        height: '{HEIGHT}',
-        width: '{WIDTH}',
-        autoPlay: {CLAPPR_AUTOPLAY},
-        loop: {PLAYER_LOOP},
-        parentId: '#avID_{SOURCEID}'
-    });
-</script>
-";
 
-$clapprEmbedRemote = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
-<script type=\"text/javascript\">
-    var player = new Clappr.Player({
-        source: '{SOURCE}',
-        poster: '{PLAYER_POSTER_FRAME_REMOTE}',
-        height: '{HEIGHT}',
-        width: '{WIDTH}',
-        autoPlay: {CLAPPR_AUTOPLAY},
-        loop: {PLAYER_LOOP},
-        parentId: '#avID_{SOURCEID}'
-    });
-</script>
-";
-
-$clapprAudioEmbed = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
-<script type=\"text/javascript\">
-    var player = new Clappr.Player({
-        source: '{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}',
-        poster: '{PLAYER_POSTER_FRAME}',
-        height: '{HEIGHT}',
-        width: '{WIDTH}',
-        autoPlay: {CLAPPR_AUTOPLAY},
-        loop: {PLAYER_LOOP},
-        hideMediaControl: {AUDIO_CONTROLS},
-        parentId: '#avID_{SOURCEID}'
-    });
-</script>
-";
-
-$clapprAudioEmbedRemote = "
-<div id=\"avID_{SOURCEID}\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" title=\"JoomlaWorks AllVideos Player\"></div>
-<script type=\"text/javascript\">
-    var player = new Clappr.Player({
-        source: '{SOURCE}',
-        poster: '{PLAYER_POSTER_FRAME_REMOTE}',
-        height: '{HEIGHT}',
-        width: '{WIDTH}',
-        autoPlay: {CLAPPR_AUTOPLAY},
-        loop: {PLAYER_LOOP},
-        hideMediaControl: {AUDIO_CONTROLS},
-        parentId: '#avID_{SOURCEID}'
-    });
-</script>
-";
-*/
 
 
 
@@ -111,8 +49,12 @@ $tagReplace = array(
 
     /* --- Audio/Video formats --- */
 
+    "avi"         => $nativeVideo,
+    "aviremote"   => $nativeVideoRemote,
     "m4v"         => $nativeVideo,
     "m4vremote"   => $nativeVideoRemote,
+    "mkv"         => $nativeVideo,
+    "mkvremote"   => $nativeVideoRemote,
     "mp4"         => $nativeVideo,
     "mp4remote"   => $nativeVideoRemote,
     "ogv"         => $nativeVideo,
@@ -139,16 +81,12 @@ $tagReplace = array(
     "3gpremote"   => $deprecatedRemote,
     "aac"         => $deprecated,
     "aacremote"   => $deprecatedRemote,
-    "avi"         => $deprecated,
-    "aviremote"   => $deprecatedRemote,
     "divx"        => $deprecated,
     "divxremote"  => $deprecatedRemote,
     "f4v"         => $deprecated,
     "f4vremote"   => $deprecatedRemote,
     "flv"         => $deprecated,
     "flvremote"   => $deprecatedRemote,
-    "mkv"         => $deprecated,
-    "mkvremote"   => $deprecatedRemote,
     "mov"         => $deprecated,
     "movremote"   => $deprecatedRemote,
     "mpeg"        => $deprecated,
@@ -164,7 +102,7 @@ $tagReplace = array(
 
 
 
-    /* --- 3rd party video providers --- */
+    /* --- 3rd party media providers --- */
 
     // youtube.com - https://www.youtube.com/watch?v=g5lGNkS5TE0 or https://www.youtube.com/playlist?list=PL0875C16C899A8DE6
     "YouTube" => "<iframe src=\"https://www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; encrypted-media\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
