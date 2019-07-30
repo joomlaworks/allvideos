@@ -25,4 +25,5 @@ a.avDeprecated:hover {background:#ddd;color:#666;text-decoration:none;}
 .avPlayerWrapper .avPlayerContainer {display:block;padding:0;margin:0 auto;}
 .avPlayerWrapper.avVideo .avPlayerContainer {padding:16px 20px 14px;border-radius:4px;background:url(../images/allvideos_v4_bg_1000x550.jpg) repeat 50% 50%;}
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock {display:block;padding:0;margin:0;line-height:normal;text-align:center;}
-.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avPlayer {object-fit:contain;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock video {background:#000;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {background-color:#000;background-repeat:no-repeat;background-position:50% 50%;background-size:cover;padding:10px;}

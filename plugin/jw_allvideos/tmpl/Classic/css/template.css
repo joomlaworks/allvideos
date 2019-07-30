@@ -24,4 +24,5 @@ a.avDeprecated:hover {background:#ddd;color:#666;text-decoration:none;}
 .avPlayerWrapper {display:block;padding:0;margin:0 auto;clear:both;}
 .avPlayerWrapper .avPlayerContainer {display:block;padding:0;margin:0 auto;}
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock {display:block;padding:0;margin:0;line-height:normal;text-align:center;}
-.avPlayerWrapper .avPlayerContainer .avPlayerBlock .avPlayer {object-fit:contain;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock video {background:#000;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {background-color:#000;background-repeat:no-repeat;background-position:50% 50%;background-size:cover;padding:10px;}
