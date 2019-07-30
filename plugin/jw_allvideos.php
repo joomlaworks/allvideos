@@ -212,7 +212,7 @@ class plgContentJw_allvideos extends JPlugin
                             } else {
                                 $output->mediaTypeClass = ' avSoundCloudSong';
                             }
-                            $output->mediaType = '';
+                            $output->mediaType = 'provider';
                         } else {
                             $output->mediaTypeClass = ' avAudio';
                             $output->mediaType = 'audio';
@@ -240,7 +240,7 @@ class plgContentJw_allvideos extends JPlugin
                             $output->posterFrame = '';
                         }
 
-                        if($output->posterFrame) {
+                        if ($output->posterFrame) {
                             $output->posterFrame = ' poster="'.$output->posterFrame.'"';
                         }
 
@@ -252,8 +252,14 @@ class plgContentJw_allvideos extends JPlugin
                         $output->playerWidth = $final_vwidth;
                         $output->playerHeight = $final_vheight;
                         $output->folder = $vfolder;
-                        $output->mediaType = 'video';
-                        $output->mediaTypeClass = ' avVideo';
+
+                        if (in_array($plg_tag, array('dailymotion','facebook','flickr','vimeo','youtube'))) {
+                            $output->mediaTypeClass = ' avVideo';
+                            $output->mediaType = 'provider';
+                        } else {
+                            $output->mediaTypeClass = ' avVideo';
+                            $output->mediaType = 'video';
+                        }
                     }
 
                     // Autoplay
