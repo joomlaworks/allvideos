@@ -12,35 +12,17 @@ defined('_JEXEC') or die('Restricted access');
 
 /* -------------------------------- Media Output Templates -------------------------------- */
 
-$nativeVideo = "
-<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
-    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_POSTER_FRAME}{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
-</div>
-";
+$nativeVideo = "<video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_POSTER_FRAME}{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>";
 
-$nativeVideoRemote = "
-<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
-    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_POSTER_FRAME_REMOTE}{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
-</div>
-";
+$nativeVideoRemote = "<video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_POSTER_FRAME_REMOTE}{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>";
 
-$nativeAudio = "
-<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
-    <audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;background-image:url('{PLAYER_POSTER_FRAME}');\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>
-</div>
-";
+$nativeAudio = "<audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;background-image:url('{PLAYER_POSTER_FRAME}');\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>";
 
-$nativeAudioRemote = "
-<div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
-    <audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;background-image:url('{PLAYER_POSTER_FRAME_REMOTE}');\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>
-</div>
-";
+$nativeAudioRemote = "<audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;background-image:url('{PLAYER_POSTER_FRAME_REMOTE}');\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></audio>";
 
 $deprecated = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" download><span>".JText::_('JW_PLG_AV_DEPRECATED_DOWNLOAD')."</span></a>";
 
 $deprecatedRemote = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SOURCE}\" download><span>".JText::_('JW_PLG_AV_DEPRECATED_DOWNLOAD')."</span></a>";
-
-
 
 
 

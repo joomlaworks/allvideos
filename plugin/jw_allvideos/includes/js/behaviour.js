@@ -67,7 +67,7 @@ function allVideosMakeVideoPoster(source, container) {
         var ctx = canvas.getContext('2d');
         ctx.drawImage(v, 0, 0, canvas.width, canvas.height);
         videoPoster = canvas.toDataURL();
-        container.innerHTML = '<video id="' + videoClass + '" style="' + videoStyle + '" src="' + videoURL + '" poster="' + videoPoster + '" preload="metadata"' + videoControls + '></video>';
+        container.innerHTML = '<video class="' + videoClass + '" style="' + videoStyle + '" src="' + videoURL + '" poster="' + videoPoster + '" preload="metadata"' + videoControls + '></video>';
     };
 }
 
