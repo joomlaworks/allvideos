@@ -14,7 +14,7 @@
 
 .avDownloadLink {}
 .avDownloadLink a,
-.avDownloadLink a:linka {display:block;background:#eee;padding:10px;text-align:center;font-weight:bold;font-size:12px;color:#999;text-decoration:none;}
+.avDownloadLink a:link {display:block;background:#eee;padding:10px;text-align:center;font-weight:bold;font-size:12px;color:#999;text-decoration:none;}
 .avDownloadLink a:hover {background:#ddd;color:#666;text-decoration:none;}
 
 .avPlayerBlockDisabled {width:auto;height:auto;padding:20px;}
