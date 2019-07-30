@@ -256,9 +256,15 @@ class plgContentJw_allvideos extends JPlugin
                         if (in_array($plg_tag, array('dailymotion','facebook','flickr','vimeo','youtube'))) {
                             $output->mediaTypeClass = ' avVideo';
                             $output->mediaType = 'provider';
+                            $output->source = $tagsource;
                         } else {
                             $output->mediaTypeClass = ' avVideo';
                             $output->mediaType = 'video';
+                            if (strpos($plg_tag, 'remote') !== false) {
+                                $output->source = $tagsource;
+                            } else {
+                                $output->source = "$siteUrl/$vfolder/$tagsource.$plg_tag";
+                            }
                         }
                     }
 
