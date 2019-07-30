@@ -388,8 +388,7 @@ class plgContentJw_allvideos extends JPlugin
                         "{FILE_EXT}",
                         "{FILE_TYPE}",
                         "{PLUGIN_PATH}",
-                        "{PLAYER_POSTER_FRAME}",
-                        "{PLAYER_POSTER_FRAME_REMOTE}"
+                        "{PLAYER_POSTER_FRAME}"
                     );
 
                     // Replacement elements
@@ -409,8 +408,7 @@ class plgContentJw_allvideos extends JPlugin
                         $plg_tag,
                         str_replace("remote", "", $plg_tag),
                         $pluginLivePath,
-                        $output->posterFrame,
-                        $output->posterFrameRemote
+                        $output->posterFrame
                     );
 
                     // Do the element replace
