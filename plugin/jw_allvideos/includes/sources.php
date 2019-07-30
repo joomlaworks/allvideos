@@ -36,9 +36,9 @@ $nativeAudioRemote = "
 </div>
 ";
 
-$deprecated = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" download><span>Download media file</span></a>";
+$deprecated = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" download><span>".JText::_('JW_PLG_AV_DEPRECATED_DOWNLOAD')."</span></a>";
 
-$deprecatedRemote = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SOURCE}\" download><span>Download media file</span></a>";
+$deprecatedRemote = "<a id=\"avID_{SOURCEID}\" class=\"avDeprecated\" href=\"{SOURCE}\" download><span>".JText::_('JW_PLG_AV_DEPRECATED_DOWNLOAD')."</span></a>";
 
 
 
