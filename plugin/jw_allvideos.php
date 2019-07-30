@@ -131,7 +131,7 @@ class plgContentJw_allvideos extends JPlugin
             // CSS
             $avCSS = $AllVideosHelper->getTemplatePath($this->plg_name, 'css/template.css', $playerTemplate);
             $avCSS = $avCSS->http;
-            $document->addStyleSheet($avCSS);
+            $document->addStyleSheet($avCSS.'?v=5.0.0');
 
             // JS
             $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=5.0.0');
