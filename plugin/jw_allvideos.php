@@ -178,25 +178,40 @@ class plgContentJw_allvideos extends JPlugin
                         'wavremote',
                         'soundcloud'
                     ))) {
-                        // Poster frame
-                        $posterFramePath = $sitePath.'/'.$afolder;
-                        if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
-                            $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.jpg';
-                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
-                            $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.png';
-                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
-                            $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.gif';
-                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
-                            $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.webp';
-                        } else {
+                        if ($plg_tag=='soundcloud') {
+                            if (strpos($tagsource, '/sets/') !== false) {
+                                $output->mediaTypeClass = ' avSoundCloudSet';
+                            } else {
+                                $output->mediaTypeClass = ' avSoundCloudSong';
+                            }
+                            $output->mediaType = 'provider';
+                            $output->source = $tagsource;
                             $output->posterFrame = '';
-                        }
-
-                        // Poster frame (remote)
-                        $output->posterFrameRemote = substr($tagsource, 0, -3).'jpg';
-
-                        if ($output->posterFrame) {
-                            $aheight = ($awidth * 9 / 16);
+                        } else {
+                            $output->mediaTypeClass = ' avAudio';
+                            $output->mediaType = 'audio';
+                            if (strpos($plg_tag, 'remote') !== false) {
+                                $output->source = $tagsource;
+                                $output->posterFrame = ($plg_tag == 'flacremote') ? substr($tagsource, 0, -4).'jpg' : substr($tagsource, 0, -3).'jpg';
+                            } else {
+                                $output->source = "$siteUrl/$afolder/$tagsource.$plg_tag";
+                                $posterFramePath = $sitePath.'/'.$afolder;
+                                if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
+                                    $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.jpg';
+                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
+                                    $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.png';
+                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
+                                    $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.gif';
+                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
+                                    $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.webp';
+                                } else {
+                                    $output->posterFrame = '';
+                                    $output->mediaTypeClass .= ' avNoPoster';
+                                }
+                                if ($output->posterFrame) {
+                                    $aheight = ($awidth * 9 / 16);
+                                }
+                            }
                         }
 
                         $final_awidth = (@$tagparams[1]) ? $tagparams[1] : $awidth;
@@ -205,46 +220,38 @@ class plgContentJw_allvideos extends JPlugin
                         $output->playerWidth = $final_awidth;
                         $output->playerHeight = $final_aheight;
                         $output->folder = $afolder;
-
-                        if ($plg_tag=='soundcloud') {
-                            if (strpos($tagsource, '/sets/') !== false) {
-                                $output->mediaTypeClass = ' avSoundCloudSet';
-                            } else {
-                                $output->mediaTypeClass = ' avSoundCloudSong';
-                            }
-                            $output->mediaType = 'provider';
-                        } else {
-                            $output->mediaTypeClass = ' avAudio';
-                            $output->mediaType = 'audio';
-                        }
-
-                        if (in_array($plg_tag, array('mp3','m4a','oga','ogg','wav','flac'))) {
-                            $output->source = "$siteUrl/$afolder/$tagsource.$plg_tag";
-                        } elseif (in_array($plg_tag, array('mp3remote','m4aremote','ogaremote','oggremote','wavremote','flacremote'))) {
-                            $output->source = $tagsource;
-                        } else {
-                            $output->source = '';
-                        }
                     } else {
-                        // Poster frame
-                        $posterFramePath = $sitePath.'/'.$vfolder;
-                        if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
-                            $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.jpg';
-                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
-                            $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.png';
-                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
-                            $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.gif';
-                        } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
-                            $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.webp';
-                        } else {
+                        if (in_array($plg_tag, array('dailymotion','facebook','flickr','vimeo','youtube'))) {
+                            $output->mediaTypeClass = ' avVideo';
+                            $output->mediaType = 'provider';
+                            $output->source = $tagsource;
                             $output->posterFrame = '';
-                        }
+                        } else {
+                            $output->mediaTypeClass = ' avVideo';
+                            $output->mediaType = 'video';
+                            if (strpos($plg_tag, 'remote') !== false) {
+                                $output->source = $tagsource;
+                                $output->posterFrame = '';
+                            } else {
+                                $output->source = "$siteUrl/$vfolder/$tagsource.$plg_tag";
+                                $posterFramePath = $sitePath.'/'.$vfolder;
+                                if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
+                                    $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.jpg';
+                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
+                                    $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.png';
+                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
+                                    $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.gif';
+                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
+                                    $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.webp';
+                                } else {
+                                    $output->posterFrame = '';
+                                }
 
-                        if ($output->posterFrame) {
-                            $output->posterFrame = ' poster="'.$output->posterFrame.'"';
+                                if ($output->posterFrame) {
+                                    $output->posterFrame = ' poster="'.$output->posterFrame.'"';
+                                }
+                            }
                         }
-
-                        $output->posterFrameRemote = '';
 
                         $final_vwidth = (@$tagparams[1]) ? $tagparams[1] : $vwidth;
                         $final_vheight = (@$tagparams[2]) ? $tagparams[2] : $vheight;
@@ -252,20 +259,6 @@ class plgContentJw_allvideos extends JPlugin
                         $output->playerWidth = $final_vwidth;
                         $output->playerHeight = $final_vheight;
                         $output->folder = $vfolder;
-
-                        if (in_array($plg_tag, array('dailymotion','facebook','flickr','vimeo','youtube'))) {
-                            $output->mediaTypeClass = ' avVideo';
-                            $output->mediaType = 'provider';
-                            $output->source = $tagsource;
-                        } else {
-                            $output->mediaTypeClass = ' avVideo';
-                            $output->mediaType = 'video';
-                            if (strpos($plg_tag, 'remote') !== false) {
-                                $output->source = $tagsource;
-                            } else {
-                                $output->source = "$siteUrl/$vfolder/$tagsource.$plg_tag";
-                            }
-                        }
                     }
 
                     // Autoplay

@@ -32,6 +32,9 @@ a.avDeprecated:hover {background:#ddd;color:#666;text-decoration:none;}
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock video {background:#000;}
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {background-color:#000;background-repeat:no-repeat;background-position:50% 50%;background-size:cover;padding:10px;}
 
+.avPlayerWrapper.avNoPoster .avPlayerContainer .avPlayerBlock  {padding:0!important;}
+.avPlayerWrapper.avNoPoster .avPlayerContainer .avPlayerBlock audio {position:relative !important;height:40px !important;}
+
 .avPlayerWrapper.avSoundCloudSet .avPlayerContainer .avPlayerBlock,
 .avPlayerWrapper.avSoundCloudSong .avPlayerContainer .avPlayerBlock {padding:0!important;}
 .avPlayerWrapper.avSoundCloudSet .avPlayerContainer .avPlayerBlock iframe {position:relative !important;height:336px !important;}
