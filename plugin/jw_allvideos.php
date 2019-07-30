@@ -190,6 +190,9 @@ class plgContentJw_allvideos extends JPlugin
                             $output->posterFrame = '';
                         }
 
+                        // Poster frame (remote)
+                        $output->posterFrameRemote = substr($tagsource, 0, -3).'jpg';
+
                         if ($output->posterFrame) {
                             $aheight = ($awidth * 9 / 16);
                         }
@@ -234,6 +237,12 @@ class plgContentJw_allvideos extends JPlugin
                         } else {
                             $output->posterFrame = '';
                         }
+
+                        if($output->posterFrame) {
+                            $output->posterFrame = ' poster="'.$output->posterFrame.'"';
+                        }
+
+                        $output->posterFrameRemote = '';
 
                         $final_vwidth = (@$tagparams[1]) ? $tagparams[1] : $vwidth;
                         $final_vheight = (@$tagparams[2]) ? $tagparams[2] : $vheight;
@@ -351,9 +360,6 @@ class plgContentJw_allvideos extends JPlugin
                             $tagsource = $tagsource.'&amp;loop=1';
                         }
                     }
-
-                    // Poster frame (remote)
-                    $output->posterFrameRemote = substr($tagsource, 0, -3).'jpg';
 
                     // Set a unique ID
                     $output->playerID = 'AVPlayerID_'.$key.'_'.md5($tagsource);

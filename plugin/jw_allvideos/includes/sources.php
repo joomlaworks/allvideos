@@ -14,13 +14,13 @@ defined('_JEXEC') or die('Restricted access');
 
 $nativeVideo = "
 <div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
-    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" poster=\"{PLAYER_POSTER_FRAME}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
+    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_POSTER_FRAME}{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
 </div>
 ";
 
 $nativeVideoRemote = "
 <div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">
-    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" poster=\"{PLAYER_POSTER_FRAME_REMOTE}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
+    <video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_POSTER_FRAME_REMOTE}{PLAYER_AUTOPLAY}{PLAYER_CONTROLS}></video>
 </div>
 ";
 
