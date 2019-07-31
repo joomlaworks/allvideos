@@ -10,11 +10,11 @@ Additionally, it allows you to playback any web-native video/audio file format h
 
 ## WHY ALLVIDEOS?
 - You don't have to copy/paste huge blocks of HTML code, just to get a video from YouTube to playback on your Joomla website. Your WYSIWYG editor in Joomla loves it and so will you and your clients!
-- You use simple plugin tags like {youtube}[http://www.youtube.com/watch?v=g5lGNkS5TE0](http://www.youtube.com/watch?v=g5lGNkS5TE0){/youtube} (or just {youtube}g5lGNkS5TE0{/youtube}), {mp4}holiday\_in\_rome{/mp4} or {mp3}pixies\_bonemachine{/mp3}.
+- You use simple plugin tags like {youtube}[https://www.youtube.com/watch?v=0u_g6zNuP_I](https://www.youtube.com/watch?v=0u_g6zNuP_I){/youtube} (or just {youtube}0u\_g6zNuP\_I{/youtube}), {mp4}holiday\_in\_rome{/mp4} or {mp3}pixies\_bonemachine{/mp3}.
 
 
 ## FEATURES
-1. All major 3rd party media providers are supported: YouTube (single videos & playlists), Vimeo, Dailymotion, Facebook (for videos), Flickr (for videos) & SoundCloud. Use simple plugin tags utilizing the full media page URL (e.g. {youtube}[http://www.youtube.com/watch?v=g5lGNkS5TE0](http://www.youtube.com/watch?v=g5lGNkS5TE0){/youtube}) or just the ID from the media URL page (e.g {youtube}g5lGNkS5TE0{/youtube}).
+1. All major 3rd party media providers are supported: YouTube (single videos & playlists), Vimeo, Dailymotion, Facebook (for videos), Flickr (for videos) & SoundCloud. Use simple plugin tags utilizing the full media page URL (e.g. {youtube}[https://www.youtube.com/watch?v=0u_g6zNuP_I](https://www.youtube.com/watch?v=0u_g6zNuP_I){/youtube}) or just the ID from the media URL page (e.g {youtube}0u\_g6zNuP\_I{/youtube}).
 2. Stream your own media content using web-native video and audio formats like H.264/MPEG-4 (.mp4/.m4v/.m4a), WebM (.webm), Ogg Theora Vorbis (.ogg/.ogv/.oga), MP3 (.mp3), WAVE PCM (.wav) & FLAC (.flac), as well as generic containers like .avi & .mkv. For non web-native media embedded with older version of AllVideos (prior to version 5.0.0), which are not supported by modern browsers, a download message will be presented - this basically includes Flash Video (.flv/.f4v), ShockWave Flash (.swf), Windows Media (.wmv/.wma), QuickTime (.mov/.mpg/.mpeg/.3gp/.3g2/.aac), DivX (.divx) etc.
 3. Easily embed your media content either directly from your server or a remote server.
 4. Use custom poster/preview images for self-hosted or remote video & audio files, or for videos specifically, let AllVideos auto-generate these images from the 5th second of each video.
