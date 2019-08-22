@@ -123,6 +123,9 @@ $tagReplace = array(
     <div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
     ",
 
+    // twitch.com - https://www.twitch.tv/videos/470125293
+    "Twitch" => "<iframe src=\"https://player.twitch.tv/?autoplay=false&video=v{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+
     // vimeo.com - https://www.vimeo.com/1319796
     "Vimeo" => "<iframe src=\"https://player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>"
 

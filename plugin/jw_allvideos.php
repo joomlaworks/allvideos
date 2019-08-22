@@ -222,6 +222,10 @@ class plgContentJw_allvideos extends JPlugin
                         $output->playerWidth = $final_awidth;
                         $output->playerHeight = $final_aheight;
                         $output->folder = $afolder;
+
+                        if (!$allowAudioDownloading && $controls) {
+                            $controls = $controls.' controlsList="nodownload"';
+                        }
                     } else {
                         if (in_array($plg_tag, array('dailymotion','facebook','flickr','vimeo','youtube'))) {
                             $output->mediaTypeClass = ' avVideo';
@@ -261,6 +265,10 @@ class plgContentJw_allvideos extends JPlugin
                         $output->playerWidth = $final_vwidth;
                         $output->playerHeight = $final_vheight;
                         $output->folder = $vfolder;
+
+                        if (!$allowVideoDownloading && $controls) {
+                            $controls = $controls.' controlsList="nodownload"';
+                        }
                     }
 
                     // Autoplay
@@ -293,6 +301,12 @@ class plgContentJw_allvideos extends JPlugin
                     if ($plg_tag=="flickr") {
                         if (strpos($tagsource, 'http')!==false) {
                             $tagsource = urlencode($tagsource);
+                        }
+                    }
+
+                    if ($plg_tag=="twitch") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = preg_replace("~(http|https):(.+?)twitch.tv\/videos\/~s", "", $tagsource);
                         }
                     }
 
