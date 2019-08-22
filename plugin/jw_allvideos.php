@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    5.0.0
+ * @version    5.1.0
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - http://www.joomlaworks.net
  * @copyright  Copyright (c) 2006 - 2019 JoomlaWorks Ltd. All rights reserved.
@@ -16,8 +16,8 @@ class plgContentJw_allvideos extends JPlugin
 {
     // JoomlaWorks reference parameters
     public $plg_name              = "jw_allvideos";
-    public $plg_copyrights_start  = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v5.0.0) starts here -->\n";
-    public $plg_copyrights_end    = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v5.0.0) ends here -->\n\n";
+    public $plg_copyrights_start  = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v5.1.0) starts here -->\n";
+    public $plg_copyrights_end    = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v5.1.0) ends here -->\n\n";
 
     public function __construct(&$subject, $params)
     {
@@ -131,10 +131,10 @@ class plgContentJw_allvideos extends JPlugin
             // CSS
             $avCSS = $AllVideosHelper->getTemplatePath($this->plg_name, 'css/template.css', $playerTemplate);
             $avCSS = $avCSS->http;
-            $document->addStyleSheet($avCSS.'?v=5.0.0');
+            $document->addStyleSheet($avCSS.'?v=5.1.0');
 
             // JS
-            $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=5.0.0');
+            $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=5.1.0');
         }
 
         // Loop throught the found tags
