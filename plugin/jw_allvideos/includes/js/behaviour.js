@@ -54,6 +54,7 @@ function allVideosMakeVideoPoster(source, container) {
     var videoStyle = source.getAttribute('style');
     var videoURL = source.getAttribute('src');
     var videoControls = (source.controls ? ' controls' : '');
+    var videoControlsList = (source.controlsList ? ' controlsList="' + source.controlsList + '"' : '');
     var videoPoster = '';
     var secToSeek = 5;
 
@@ -67,7 +68,7 @@ function allVideosMakeVideoPoster(source, container) {
         var ctx = canvas.getContext('2d');
         ctx.drawImage(v, 0, 0, canvas.width, canvas.height);
         videoPoster = canvas.toDataURL();
-        container.innerHTML = '<video class="' + videoClass + '" style="' + videoStyle + '" src="' + videoURL + '" poster="' + videoPoster + '" preload="metadata"' + videoControls + '></video>';
+        container.innerHTML = '<video class="' + videoClass + '" style="' + videoStyle + '" src="' + videoURL + '" poster="' + videoPoster + '" preload="metadata"' + videoControls + '' + videoControlsList + '></video>';
     };
 }
 

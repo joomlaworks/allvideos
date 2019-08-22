@@ -162,6 +162,8 @@ class plgContentJw_allvideos extends JPlugin
                     // Prepare the HTML
                     $output = new JObject;
 
+                    $output->controls = $controls;
+
                     // Width/height/source folder split per media type
                     if (in_array($plg_tag, array(
                         'flac',
@@ -224,10 +226,10 @@ class plgContentJw_allvideos extends JPlugin
                         $output->folder = $afolder;
 
                         if (!$allowAudioDownloading && $controls) {
-                            $controls = $controls.' controlsList="nodownload"';
+                            $output->controls = $controls.' controlsList="nodownload"';
                         }
                     } else {
-                        if (in_array($plg_tag, array('dailymotion','facebook','flickr','vimeo','youtube'))) {
+                        if (in_array($plg_tag, array('dailymotion','facebook','flickr','twitch','vimeo','youtube'))) {
                             $output->mediaTypeClass = ' avVideo';
                             $output->mediaType = 'provider';
                             $output->source = $tagsource;
@@ -267,7 +269,7 @@ class plgContentJw_allvideos extends JPlugin
                         $output->folder = $vfolder;
 
                         if (!$allowVideoDownloading && $controls) {
-                            $controls = $controls.' controlsList="nodownload"';
+                            $output->controls = $controls.' controlsList="nodownload"';
                         }
                     }
 
@@ -417,7 +419,7 @@ class plgContentJw_allvideos extends JPlugin
                         $final_autoplay,
                         $final_autoplay,
                         $final_loop,
-                        $controls,
+                        $output->controls,
                         $player_autoplay,
                         $siteUrl,
                         substr(JURI::root(false), 0, -1),
