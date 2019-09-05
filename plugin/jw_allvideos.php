@@ -100,7 +100,7 @@ class plgContentJw_allvideos extends JPlugin
         $vheight                = ($params->get('vheight')) ? $params->get('vheight') : $pluginParams->get('vheight', 300);
         $allowVideoDownloading  = $pluginParams->get('allowVideoDownloading', 0);
         /* Audio Parameters */
-        $afolder                = $pluginParams->get('afolder', 'images/stories/audio');
+        $afolder                = ($params->get('afolder')) ? $params->get('afolder') : $pluginParams->get('afolder', 'images/stories/audio');
         $awidth                 = ($params->get('awidth')) ? $params->get('awidth') : $pluginParams->get('awidth', 480);
         $aheight                = ($params->get('aheight')) ? $params->get('aheight') : $pluginParams->get('aheight', 24);
         $allowAudioDownloading  = $pluginParams->get('allowAudioDownloading', 0);
