@@ -38,4 +38,4 @@ AllVideos is a Joomla plugin developed by JoomlaWorks, released under the GNU Ge
 ## LEARN MORE
 Visit the AllVideos product page at: [https://www.joomlaworks.net/allvideos](https://www.joomlaworks.net/allvideos)
 
-Last update: September 5th, 2019 - Version 5.1.0
+Last update: November 21st, 2019 - Version 5.2.0 (dev)
