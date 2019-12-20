@@ -70,7 +70,7 @@ class plgContentJw_allvideos extends JPlugin
         require dirname(__FILE__).'/'.$this->plg_name.'/includes/sources.php';
 
         // Simple performance check to determine whether plugin should process further
-        $grabTags = strtolower(implode(array_keys($tagReplace), "|"));
+        $grabTags = strtolower(implode("|", array_keys($tagReplace)));
         if (preg_match("~{(".$grabTags.")}~is", $row->text)==false) {
             return;
         }
@@ -280,7 +280,7 @@ class plgContentJw_allvideos extends JPlugin
 
                     // Loop
                     $final_loop = (@$tagparams[4]) ? $tagparams[4] : $loop;
-                    $final_loop = ($final_loop) ? 'true' : 'false';
+                    $final_loop = ($final_loop) ? 'loop' : '';
 
                     // Special treatment for specific video providers
                     if ($plg_tag=="dailymotion") {
@@ -322,7 +322,7 @@ class plgContentJw_allvideos extends JPlugin
                         if ($final_autoplay=='true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
-                        if ($final_loop=='true') {
+                        if ($final_loop) {
                             $tagsource = $tagsource.'&amp;loop=1';
                         }
                     }
@@ -381,7 +381,7 @@ class plgContentJw_allvideos extends JPlugin
                         if ($final_autoplay=='true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
-                        if ($final_loop=='true') {
+                        if ($final_loop) {
                             $tagsource = $tagsource.'&amp;loop=1';
                         }
                     }
@@ -418,7 +418,7 @@ class plgContentJw_allvideos extends JPlugin
                         $output->playerHeight,
                         $final_autoplay,
                         $final_autoplay,
-                        $final_loop,
+                        ' '.$final_loop,
                         $output->controls,
                         $player_autoplay,
                         $siteUrl,
