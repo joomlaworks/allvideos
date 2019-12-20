@@ -275,19 +275,19 @@ class plgContentJw_allvideos extends JPlugin
 
                     // Autoplay
                     $tag_autoplay = (@$tagparams[3]) ? $tagparams[3] : $autoplay;
-                    $final_autoplay = ($tag_autoplay) ? 'true' : 'false';
+                    $provider_autoplay = ($tag_autoplay) ? 'true' : 'false';
                     $player_autoplay = ($tag_autoplay) ? ' autoplay' : '';
 
                     // Loop
                     $final_loop = (@$tagparams[4]) ? $tagparams[4] : $loop;
-                    $final_loop = ($final_loop) ? 'loop' : '';
+                    $final_loop = ($final_loop) ? ' loop' : '';
 
                     // Special treatment for specific video providers
                     if ($plg_tag=="dailymotion") {
                         $tagsource = preg_replace("~(http|https):(.+?)dailymotion.com\/video\/~s", "", $tagsource);
                         $tagsourceDailymotion = explode('_', $tagsource);
                         $tagsource = $tagsourceDailymotion[0];
-                        if ($final_autoplay=='true') {
+                        if ($provider_autoplay=='true') {
                             if (strpos($tagsource, '?')!==false) {
                                 $tagsource = $tagsource.'&amp;autoplay=1';
                             } else {
@@ -319,7 +319,7 @@ class plgContentJw_allvideos extends JPlugin
                         } else {
                             $tagsource = $tagsource.'?portrait=0';
                         }
-                        if ($final_autoplay=='true') {
+                        if ($provider_autoplay=='true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
                         if ($final_loop) {
@@ -378,7 +378,7 @@ class plgContentJw_allvideos extends JPlugin
                         }
 
                         // Additional playback parameters
-                        if ($final_autoplay=='true') {
+                        if ($provider_autoplay=='true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
                         if ($final_loop) {
@@ -397,7 +397,6 @@ class plgContentJw_allvideos extends JPlugin
                         "{WIDTH}",
                         "{HEIGHT}",
                         "{PROVIDER_AUTOPLAY}",
-                        "{CLAPPR_AUTOPLAY}",
                         "{PLAYER_LOOP}",
                         "{PLAYER_CONTROLS}",
                         "{PLAYER_AUTOPLAY}",
@@ -416,9 +415,8 @@ class plgContentJw_allvideos extends JPlugin
                         $output->folder,
                         $output->playerWidth,
                         $output->playerHeight,
-                        $final_autoplay,
-                        $final_autoplay,
-                        ' '.$final_loop,
+                        $provider_autoplay,
+                        $final_loop,
                         $output->controls,
                         $player_autoplay,
                         $siteUrl,
