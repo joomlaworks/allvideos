@@ -12,9 +12,9 @@ defined('_JEXEC') or die('Restricted access');
 
 /* -------------------------------- Media Output Templates -------------------------------- */
 
-$nativeVideo = "<video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_POSTER_FRAME}{PLAYER_AUTOPLAY}{PLAYER_LOOP}{PLAYER_CONTROLS}></video>";
+$nativeVideo = "<video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_POSTER_FRAME}{PLAYER_AUTOPLAY}{PLAYER_LOOP}{PLAYER_CONTROLS}{PLAYER_MUTED}></video>";
 
-$nativeVideoRemote = "<video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_POSTER_FRAME}{PLAYER_AUTOPLAY}{PLAYER_LOOP}{PLAYER_CONTROLS}></video>";
+$nativeVideoRemote = "<video class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;\" src=\"{SOURCE}\" preload=\"metadata\"{PLAYER_POSTER_FRAME}{PLAYER_AUTOPLAY}{PLAYER_LOOP}{PLAYER_CONTROLS}{PLAYER_MUTED}></video>";
 
 $nativeAudio = "<audio class=\"avPlayer\" style=\"width:{WIDTH}px;height:{HEIGHT}px;{PLAYER_POSTER_FRAME}\" src=\"{SITEURL}/{FOLDER}/{SOURCE}.{FILE_EXT}\" preload=\"metadata\"{PLAYER_AUTOPLAY}{PLAYER_LOOP}{PLAYER_CONTROLS}></audio>";
 

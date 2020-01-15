@@ -104,6 +104,8 @@ class plgContentJw_allvideos extends JPlugin
         $vfolder                = ($params->get('vfolder')) ? $params->get('vfolder') : $pluginParams->get('vfolder', 'images/stories/videos');
         $vwidth                 = ($params->get('vwidth')) ? $params->get('vwidth') : $pluginParams->get('vwidth', 400);
         $vheight                = ($params->get('vheight')) ? $params->get('vheight') : $pluginParams->get('vheight', 300);
+        $muted                  = ($params->get('muted')) ? $params->get('muted') : $pluginParams->get('muted', 0);
+        $muted                  = ($muted) ? ' muted' : '';
         $allowVideoDownloading  = $pluginParams->get('allowVideoDownloading', 0);
         /* Audio Parameters */
         $afolder                = ($params->get('afolder')) ? $params->get('afolder') : $pluginParams->get('afolder', 'images/stories/audio');
@@ -290,12 +292,19 @@ class plgContentJw_allvideos extends JPlugin
                         $tagsource = preg_replace("~(http|https):(.+?)dailymotion.com\/video\/~s", "", $tagsource);
                         $tagsourceDailymotion = explode('_', $tagsource);
                         $tagsource = $tagsourceDailymotion[0];
+
+                        // Autoplay
                         if ($provider_autoplay=='true') {
                             if (strpos($tagsource, '?')!==false) {
                                 $tagsource = $tagsource.'&amp;autoplay=1';
                             } else {
                                 $tagsource = $tagsource.'?autoplay=1';
                             }
+                        }
+
+                        // Muted
+                        if ($muted) {
+                            $tagsource = $tagsource.'&amp;mute=1';
                         }
                     }
 
@@ -322,11 +331,20 @@ class plgContentJw_allvideos extends JPlugin
                         } else {
                             $tagsource = $tagsource.'?portrait=0';
                         }
+
+                        // Autoplay
                         if ($provider_autoplay=='true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
+
+                        // Loop
                         if ($final_loop) {
                             $tagsource = $tagsource.'&amp;loop=1';
+                        }
+
+                        // Muted
+                        if ($muted) {
+                            $tagsource = $tagsource.'&amp;background=1';
                         }
                     }
 
@@ -380,12 +398,19 @@ class plgContentJw_allvideos extends JPlugin
                             $tagsource = $tagsource.'?rel=0&amp;fs=1&amp;wmode=transparent';
                         }
 
-                        // Additional playback parameters
+                        // Autoplay
                         if ($provider_autoplay=='true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
+
+                        // Loop
                         if ($final_loop) {
                             $tagsource = $tagsource.'&amp;loop=1';
+                        }
+
+                        // Muted
+                        if ($muted) {
+                            $tagsource = $tagsource.'&amp;mute=1';
                         }
                     }
 
@@ -403,6 +428,7 @@ class plgContentJw_allvideos extends JPlugin
                         "{PLAYER_LOOP}",
                         "{PLAYER_CONTROLS}",
                         "{PLAYER_AUTOPLAY}",
+                        "{PLAYER_MUTED}",
                         "{SITEURL}",
                         "{SITEURL_ABS}",
                         "{FILE_EXT}",
@@ -422,6 +448,7 @@ class plgContentJw_allvideos extends JPlugin
                         $final_loop,
                         $output->controls,
                         $player_autoplay,
+                        $muted,
                         $siteUrl,
                         substr(JURI::root(false), 0, -1),
                         $plg_tag,
