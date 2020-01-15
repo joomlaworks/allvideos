@@ -75,11 +75,16 @@
 .com_plugins .form-horizontal .span9 .controls .chzn-container-multi {width:90% !important;}
 .com_plugins .form-horizontal .span9 .controls textarea {width:90%;}
 
+/* Header */
+.com_plugins .form-horizontal .span9 .control-group .control-label:empty {display:none;}
+.com_plugins .form-horizontal .span9 .control-group .control-label:empty + .controls {width:auto !important;padding:0 !important;margin:0 !important;}
+.com_plugins .form-horizontal .span9 .control-group div > small {padding:8px 16px;}
+
 
 /* --- Joomla 2.5 --- */
-.isJ25 .jwHeaderContainer {grid-column-start:span 2;background:#e5f7fd;color:#346b93;font-size:20px;margin:0;padding:24px 16px;border-radius:4px;font-weight:normal;float:left;width:100%;clear:both;box-sizing:border-box;}
+.jwHeaderContainer25 {grid-column-start:span 2;background:#e5f7fd;color:#346b93;font-size:20px;margin:0;padding:24px 16px;border-radius:4px;font-weight:normal;float:left;width:100%;clear:both;box-sizing:border-box;}
 
 
 /* --- Joomla 1.5 --- */
-.isJ15 .jpane-slider > table.admintable td.paramlist_value[colspan="2"] {padding:0;}
-.isJ15 .jpane-slider > table.admintable td.paramlist_value[colspan="2"] .jwHeaderContainer15 {background:#e5f7fd;color:#346b93;font-size:20px;margin:0;padding:24px 16px;border:0;font-weight:normal;float:left;width:100%;clear:both;box-sizing:border-box;}
+.jpane-slider > table.admintable td.paramlist_value[colspan="2"] {padding:0;}
+.jpane-slider > table.admintable td.paramlist_value[colspan="2"] .jwHeaderContainer15 {background:#e5f7fd;color:#346b93;font-size:20px;margin:0;padding:24px 16px;border:0;font-weight:normal;float:left;width:100%;clear:both;box-sizing:border-box;}

@@ -26,7 +26,11 @@ class JWElementHeader extends JWElement
         $document->addStyleSheet($pluginLivePath.'/includes/elements/header.css');
 
         $cssClass = '';
-        if (version_compare(JVERSION, '1.6.0', 'lt')) {
+        if (version_compare(JVERSION, '3.0.0', 'ge')) {
+            $cssClass = '';
+        } elseif (version_compare(JVERSION, '2.5.0', 'ge')) {
+            $cssClass = '25';
+        } elseif (version_compare(JVERSION, '1.6.0', 'lt')) {
             $cssClass = '15';
         }
         return '<div class="jwHeaderContainer'.$cssClass.'"><div class="jwHeaderContent">'.JText::_($value).'</div><div class="jwHeaderClr"></div></div>';
