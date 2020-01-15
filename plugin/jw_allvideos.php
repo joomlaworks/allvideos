@@ -218,7 +218,7 @@ class plgContentJw_allvideos extends JPlugin
                                     $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.webp';
                                 } else {
                                     if ($output->randomPosterFrame) {
-                                        $output->posterFrame = 'https://source.unsplash.com/800x450/?music,sound,audio,sing,dance';
+                                        $output->posterFrame = 'https://source.unsplash.com/800x450/?music,sound,audio,sing,dance&id=AVPlayerID_'.$key.'_'.md5($output->source);
                                     } else {
                                         $output->posterFrame = '';
                                         $output->mediaTypeClass .= ' avNoPoster';
