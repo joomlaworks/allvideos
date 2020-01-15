@@ -73,7 +73,6 @@ class plgContentJw_allvideos extends JPlugin
 
         // Includes
         $tagReplace = array();
-        require_once dirname(__FILE__).'/'.$this->plg_name.'/includes/helper.php';
         require dirname(__FILE__).'/'.$this->plg_name.'/includes/sources.php';
 
         // Simple performance check to determine whether plugin should process further
@@ -126,9 +125,6 @@ class plgContentJw_allvideos extends JPlugin
             $this->plg_copyrights_end = '';
         }
 
-        // Assign the AllVideos helper class
-        $AllVideosHelper = new AllVideosHelper;
-
 
 
         // ----------------------------------- Render the output -----------------------------------
@@ -136,7 +132,7 @@ class plgContentJw_allvideos extends JPlugin
         // Append head includes only when the document is in HTML mode
         if ($format == 'html' || $format == '') {
             // CSS
-            $avCSS = $AllVideosHelper->getTemplatePath($this->plg_name, 'css/template.css', $playerTemplate);
+            $avCSS = $this->getTemplatePath($this->plg_name, 'css/template.css', $playerTemplate);
             $avCSS = $avCSS->http;
             $document->addStyleSheet($avCSS.'?v=6.0.0');
 
@@ -445,7 +441,7 @@ class plgContentJw_allvideos extends JPlugin
 
                     // Fetch the template
                     ob_start();
-                    $getTemplatePath = $AllVideosHelper->getTemplatePath($this->plg_name, 'default.php', $playerTemplate);
+                    $getTemplatePath = $this->getTemplatePath($this->plg_name, 'default.php', $playerTemplate);
                     $getTemplatePath = $getTemplatePath->file;
                     include($getTemplatePath);
                     $getTemplate = $this->plg_copyrights_start.ob_get_contents().$this->plg_copyrights_end;
@@ -456,5 +452,29 @@ class plgContentJw_allvideos extends JPlugin
                 } // End second foreach
             } // End if
         } // End first foreach
-    } // End function
-} // End class
+    }
+
+    // Path overrides
+    public function getTemplatePath($pluginName, $file, $tmpl)
+    {
+        $app = JFactory::getApplication();
+
+        $p = new stdClass;
+
+        if (file_exists(JPATH_SITE.'/'.'templates'.'/'.$app->getTemplate().'/html/'.$pluginName.'/'.$tmpl.'/'.$file)) {
+            $p->file = JPATH_SITE.'/templates/'.$app->getTemplate().'/html/'.$pluginName.'/'.$tmpl.'/'.$file;
+            $p->http = JURI::root(true)."/templates/".$app->getTemplate()."/html/{$pluginName}/{$tmpl}/{$file}";
+        } else {
+            if (version_compare(JVERSION, '2.5.0', 'ge')) {
+                // Joomla 2.5 or newer
+                $p->file = JPATH_SITE.'/plugins/content/'.$pluginName.'/'.$pluginName.'/tmpl/'.$tmpl.'/'.$file;
+                $p->http = JURI::root(true)."/plugins/content/{$pluginName}/{$pluginName}/tmpl/{$tmpl}/{$file}";
+            } else {
+                // Joomla 1.5
+                $p->file = JPATH_SITE.'/plugins/content/'.$pluginName.'/tmpl/'.$tmpl.'/'.$file;
+                $p->http = JURI::root(true)."/plugins/content/{$pluginName}/tmpl/{$tmpl}/{$file}";
+            }
+        }
+        return $p;
+    }
+}
