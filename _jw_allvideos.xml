@@ -18,6 +18,10 @@
                 <field name="vfolder" type="text" default="images/videos" size="40" label="JW_PLG_AV_LOCAL_VIDEO_FOLDER" description="JW_PLG_AV_THIS_IS_THE_FOLDER_WHERE_YOU_STORE_ALL_THE_VIDEO_FILES_THAT_YOU_WANT_TO_STREAMPLAY_FROM_YOUR_WEBSITE_IT_IS_BETTER_IF_THIS_FOLDER_IS_INSIDE_THE_IMAGESSTORIES_FOLDER_SO_THAT_YOU_WONT_STUMBLE_INTO_ANY_PERMISSION_ISSUES_IN_THIS_LOCAL_VIDEO_FOLDER_YOU_CAN_THEN_UPLOAD_VIDEO_FILES_OF_THE_FOLLOWING_TYPE_FLV_SWF_MOV_MP4_WMV_DIVX" />
                 <field name="vwidth" type="text" default="600" size="4" label="JW_PLG_AV_DEFAULT_WIDTH_IN_PX_FOR_VIDEOS" description="JW_PLG_AV_THE_PRESELECTED_WIDTH_OF_THE_VIDEO_IN_PIXELS_TO_SHOW_INSIDE_YOUR_CONTENT_IT_SHOULD_BE_SMALLER_THAN_THE_WIDTH_OF_THE_SURROUNDING_BOX_IF_ANY_IN_ORDER_NOT_TO_BREAK_YOUR_LAYOUT" />
                 <field name="vheight" type="text" default="450" size="4" label="JW_PLG_AV_DEFAULT_HEIGHT_IN_PX_FOR_VIDEOS" description="JW_PLG_AV_THE_PRESELECTED_HEIGHT_OF_THE_VIDEO_IN_PIXELS_TO_SHOW_INSIDE_YOUR_CONTENT" />
+                <field name="muted" type="radio" class="btn-group btn-group-yesno" default="0" label="JW_PLG_AV_MUTED" description="JW_PLG_AV_MUTED_DESC">
+                    <option value="0">JW_PLG_AV_NO</option>
+                    <option value="1">JW_PLG_AV_YES</option>
+                </field>
                 <field name="allowVideoDownloading" type="radio" class="btn-group btn-group-yesno" default="0" label="JW_PLG_AV_ALLOW_VIDEO_DOWNLOADING" description="JW_PLG_AV_ALLOW_VIDEO_DOWNLOADING_DESC">
                     <option value="0">JW_PLG_AV_NO</option>
                     <option value="1">JW_PLG_AV_YES</option>
