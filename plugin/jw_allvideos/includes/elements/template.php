@@ -41,7 +41,14 @@ class JWElementTemplate extends JWElement
             $options[] = JHTML::_('select.option', $folder, $folder);
         }
         $fieldName = version_compare(JVERSION, '2.5.0', 'ge') ? $name : $control_name.'['.$name.']';
-        return JHTML::_('select.genericlist', $options, $fieldName, '', 'value', 'text', $value);
+
+        if (version_compare(JVERSION, '4', 'ge')) {
+            $attributes = 'class="custom-select" style="max-width:300px;"';
+        } else {
+            $attributes = '';
+        }
+
+        return JHTML::_('select.genericlist', $options, $fieldName, $attributes, 'value', 'text', $value);
     }
 }
 
