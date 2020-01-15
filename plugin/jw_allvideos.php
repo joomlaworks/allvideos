@@ -198,6 +198,9 @@ class plgContentJw_allvideos extends JPlugin
                         } else {
                             $output->mediaTypeClass = ' avAudio';
                             $output->mediaType = 'audio';
+
+                            $randomPosterForAudio = (@$tagparams[5]) ? $tagparams[5] : $randomPosterForAudio;
+
                             if (strpos($plg_tag, 'remote') !== false) {
                                 $output->source = $tagsource;
                                 $output->posterFrame = ($plg_tag == 'flacremote') ? substr($tagsource, 0, -4).'jpg' : substr($tagsource, 0, -3).'jpg';
