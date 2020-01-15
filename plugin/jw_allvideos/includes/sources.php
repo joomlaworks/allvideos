@@ -124,7 +124,7 @@ $tagReplace = array(
     ",
 
     // twitch.com - https://www.twitch.tv/videos/470125293
-    "Twitch" => "<iframe src=\"https://player.twitch.tv/?autoplay=false&video=v{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+    "Twitch" => "<iframe src=\"https://player.twitch.tv/?video=v{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
     // vimeo.com - https://www.vimeo.com/1319796
     "Vimeo" => "<iframe src=\"https://player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>"

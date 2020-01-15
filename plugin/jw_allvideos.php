@@ -302,6 +302,11 @@ class plgContentJw_allvideos extends JPlugin
                             }
                         }
 
+                        // Loop
+                        if ($final_loop) {
+                            $tagsource = $tagsource.'&amp;loop=1';
+                        }
+
                         // Muted
                         if ($muted) {
                             $tagsource = $tagsource.'&amp;mute=1';
@@ -310,6 +315,21 @@ class plgContentJw_allvideos extends JPlugin
 
                     if ($plg_tag=="facebook") {
                         $tagsource = urlencode($tagsource);
+
+                        // Autoplay
+                        if ($provider_autoplay=='true') {
+                            $tagsource = $tagsource.'&amp;autoplay=1';
+                        }
+
+                        // Loop
+                        if ($final_loop) {
+                            $tagsource = $tagsource.'&amp;loop=1';
+                        }
+
+                        // Muted
+                        if ($muted) {
+                            $tagsource = $tagsource.'&amp;mute=1';
+                        }
                     }
 
                     if ($plg_tag=="flickr") {
@@ -321,6 +341,21 @@ class plgContentJw_allvideos extends JPlugin
                     if ($plg_tag=="twitch") {
                         if (strpos($tagsource, 'http')!==false) {
                             $tagsource = preg_replace("~(http|https):(.+?)twitch.tv\/videos\/~s", "", $tagsource);
+                        }
+
+                        // Autoplay
+                        if ($provider_autoplay=='true') {
+                            $tagsource = $tagsource.'&amp;autoplay=1';
+                        }
+
+                        // Loop
+                        if ($final_loop) {
+                            $tagsource = $tagsource.'&amp;loop=1';
+                        }
+
+                        // Muted
+                        if ($muted) {
+                            $tagsource = $tagsource.'&amp;mute=1';
                         }
                     }
 
