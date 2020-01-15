@@ -199,7 +199,7 @@ class plgContentJw_allvideos extends JPlugin
                             $output->mediaTypeClass = ' avAudio';
                             $output->mediaType = 'audio';
 
-                            $randomPosterForAudio = (isset($tagparams[5])) ? $tagparams[5] : $randomPosterForAudio;
+                            $output->randomPosterFrame = (isset($tagparams[5])) ? $tagparams[5] : $randomPosterForAudio;
 
                             if (strpos($plg_tag, 'remote') !== false) {
                                 $output->source = $tagsource;
@@ -217,7 +217,7 @@ class plgContentJw_allvideos extends JPlugin
                                 } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
                                     $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.webp';
                                 } else {
-                                    if ($randomPosterForAudio) {
+                                    if ($output->randomPosterFrame) {
                                         $output->posterFrame = 'https://source.unsplash.com/800x450/?music,sound,audio,sing,dance';
                                     } else {
                                         $output->posterFrame = '';
