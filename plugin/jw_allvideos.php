@@ -111,6 +111,7 @@ class plgContentJw_allvideos extends JPlugin
         $afolder                = ($params->get('afolder')) ? $params->get('afolder') : $pluginParams->get('afolder', 'images/stories/audio');
         $awidth                 = ($params->get('awidth')) ? $params->get('awidth') : $pluginParams->get('awidth', 480);
         $aheight                = ($params->get('aheight')) ? $params->get('aheight') : $pluginParams->get('aheight', 24);
+        $randomPosterForAudio   = ($params->get('randomPosterForAudio')) ? $params->get('randomPosterForAudio') : $pluginParams->get('randomPosterForAudio', 0);
         $allowAudioDownloading  = $pluginParams->get('allowAudioDownloading', 0);
         /* Global Parameters */
         $maxwidth               = trim($pluginParams->get('maxwidth', ''));
@@ -213,8 +214,12 @@ class plgContentJw_allvideos extends JPlugin
                                 } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
                                     $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.webp';
                                 } else {
-                                    $output->posterFrame = '';
-                                    $output->mediaTypeClass .= ' avNoPoster';
+                                    if ($randomPosterForAudio) {
+                                        $output->posterFrame = 'https://source.unsplash.com/800x450/?music,sound,audio,sing,dance';
+                                    } else {
+                                        $output->posterFrame = '';
+                                        $output->mediaTypeClass .= ' avNoPoster';
+                                    }
                                 }
                                 if ($output->posterFrame) {
                                     $output->posterFrame = "background-image:url('".$output->posterFrame."');";
