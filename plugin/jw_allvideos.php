@@ -1,9 +1,9 @@
 <?php
 /**
- * @version    5.2.0
+ * @version    6.0.0
  * @package    AllVideos (plugin)
- * @author     JoomlaWorks - http://www.joomlaworks.net
- * @copyright  Copyright (c) 2006 - 2019 JoomlaWorks Ltd. All rights reserved.
+ * @author     JoomlaWorks - https://www.joomlaworks.net
+ * @copyright  Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
  */
 
@@ -16,8 +16,8 @@ class plgContentJw_allvideos extends JPlugin
 {
     // JoomlaWorks reference parameters
     public $plg_name              = "jw_allvideos";
-    public $plg_copyrights_start  = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v5.2.0) starts here -->\n";
-    public $plg_copyrights_end    = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v5.2.0) ends here -->\n\n";
+    public $plg_copyrights_start  = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v6.0.0) starts here -->\n";
+    public $plg_copyrights_end    = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v6.0.0) ends here -->\n\n";
 
     public function __construct(&$subject, $params)
     {
@@ -46,6 +46,13 @@ class plgContentJw_allvideos extends JPlugin
         jimport('joomla.filesystem.file');
         $app = JFactory::getApplication();
         $document  = JFactory::getDocument();
+        
+        if (version_compare(JVERSION, '4', 'ge')) {
+            $jinput = $app->input;
+            $format = $jinput->getCmd('format');
+        } else {
+            $format = JRequest::getCmd('format');
+        }
 
         // Assign paths
         $sitePath = JPATH_SITE;
@@ -114,7 +121,7 @@ class plgContentJw_allvideos extends JPlugin
         $ytnocookie             = ($params->get('ytnocookie')) ? $params->get('ytnocookie') : $pluginParams->get('ytnocookie', 0);
 
         // Variable cleanups for K2
-        if (JRequest::getCmd('format')=='raw') {
+        if ($format == 'raw') {
             $this->plg_copyrights_start = '';
             $this->plg_copyrights_end = '';
         }
@@ -127,14 +134,14 @@ class plgContentJw_allvideos extends JPlugin
         // ----------------------------------- Render the output -----------------------------------
 
         // Append head includes only when the document is in HTML mode
-        if (JRequest::getCmd('format')=='html' || JRequest::getCmd('format')=='') {
+        if ($format == 'html' || $format == '') {
             // CSS
             $avCSS = $AllVideosHelper->getTemplatePath($this->plg_name, 'css/template.css', $playerTemplate);
             $avCSS = $avCSS->http;
-            $document->addStyleSheet($avCSS.'?v=5.2.0');
+            $document->addStyleSheet($avCSS.'?v=6.0.0');
 
             // JS
-            $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=5.2.0');
+            $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=6.0.0');
         }
 
         // Loop throught the found tags

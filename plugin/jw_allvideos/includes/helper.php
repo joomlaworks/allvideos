@@ -1,9 +1,9 @@
 <?php
 /**
- * @version    5.2.0
+ * @version    6.0.0
  * @package    AllVideos (plugin)
- * @author     JoomlaWorks - http://www.joomlaworks.net
- * @copyright  Copyright (c) 2006 - 2019 JoomlaWorks Ltd. All rights reserved.
+ * @author     JoomlaWorks - https://www.joomlaworks.net
+ * @copyright  Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
  */
 
@@ -16,7 +16,7 @@ class AllVideosHelper
     public static function getTemplatePath($pluginName, $file, $tmpl)
     {
         $app = JFactory::getApplication();
-        $p = new JObject;
+        $p = new stdClass;
         $pluginGroup = 'content';
 
         if (file_exists(JPATH_SITE.'/'.'templates'.'/'.$app->getTemplate().'/html/'.$pluginName.'/'.$tmpl.'/'.$file)) {
