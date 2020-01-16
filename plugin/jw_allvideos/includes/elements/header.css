@@ -82,6 +82,40 @@
 
 
 /* --- Joomla 2.5 --- */
+/* Parameters rendered from XML (lists) */
+.width-40.fltrt .pane-slider > fieldset.panelform {padding:5px;margin:0;}
+.width-40.fltrt fieldset.panelform .adminformlist > li {position:relative;display:grid;grid-template-columns:1fr 2fr auto auto auto;align-items:center;min-height:0;max-height:none;clear:both;border-radius:4px;padding:0;margin:0;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > span.spacer {}
+.width-40.fltrt fieldset.panelform .adminformlist > li:nth-child(2n-1) {background:#f7f7f7;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > label {min-width:inherit;max-width:auto;width:auto;font-size:13px;float:none;padding:10px;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + input,
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + select,
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + textarea,
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + fieldset,
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + div,
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + span {float:none;font-size:13px;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + input,
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + select,
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + textarea {border-radius:3px;padding:5px 10px;font-size:13px;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + select {height:28px;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + select[multiple="multiple"] {height:auto;max-height:240px;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + div.k2SelectorButton + .k2SortableListContainer {grid-column:2 / span 1;margin-bottom:10px;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > label + div.k2SelectorButton + .k2SortableListContainer li {padding:5px 10px;margin:2px 0;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset {background:none;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset label,
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input {font-size:13px;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > label#jform_params_menu_image-lbl + .fltlft {padding-left:46px;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"] {opacity:0;position:absolute;clip:rect(0,0,0,0);}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"] + label {min-width:80px;width:auto;line-height:30px;height:30px;text-align:center;margin:0 -2px 0 0;padding:0 10px;color:#8a8c8c;display:inline-block;vertical-align:middle;white-space:nowrap;background:#eff1f1;cursor:pointer;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"]:first-child + label {border-radius:4px 0 0 4px;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"] + label:last-child {border-radius:0 4px 4px 0;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"]:checked + label {background:#63696f;color:#fff;} /* Generic */
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"]:checked + label:hover {background:#555;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"] + label:hover {background:#e8e8e8;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"][value="0"]:checked + label,
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"][value="none"]:checked + label {background:#bd362f;color:#fff;}
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"][value="1"]:checked + label,
+.width-40.fltrt fieldset.panelform .adminformlist > li > fieldset input[type="radio"][value="all"]:checked + label {background:#3fa800;color:#fff;}
 .jwHeaderContainer25 {grid-column-start:span 2;background:#e5f7fd;color:#346b93;font-size:20px;margin:0;padding:24px 16px;border-radius:4px;font-weight:normal;float:left;width:100%;clear:both;box-sizing:border-box;}
 
 
