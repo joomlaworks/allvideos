@@ -10,7 +10,7 @@ Additionally, it allows you to playback any web-native video/audio file format h
 
 ## WHY ALLVIDEOS?
 - You don't have to copy/paste huge blocks of HTML code, just to get a video from YouTube to playback on your Joomla website. Your WYSIWYG editor in Joomla loves it and so will you and your clients!
-- You use simple plugin tags like `{youtube}https://www.youtube.com/watch?v=0u_g6zNuP_I{/youtube}` (or just `{youtube}0u_g6zNuP_I{/youtube}`), `{mp4}holiday_in_rome{/mp4}` or `{mp3}pixies_bonemachine{/mp3}`.
+- You use simple plugin tags like `{youtube}https://www.youtube.com/watch?v=0u_g6zNuP_I{/youtube}` (or just `{youtube}0u_g6zNuP_I{/youtube}`), `{mp4}summer_vacation_in_rome{/mp4}` or `{mp3}pixies_bonemachine{/mp3}`.
 
 
 ## FEATURES
