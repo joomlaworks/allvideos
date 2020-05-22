@@ -26,7 +26,7 @@ a.avDeprecated:hover {background:#ddd;color:#666;text-decoration:none;}
 .avPlayerWrapper {display:block;padding:0;margin:0 auto;clear:both;}
 .avPlayerWrapper .avPlayerContainer {display:block;padding:0;margin:0 auto;}
 
-.avPlayerWrapper .avPlayerContainer .avPlayerBlock {width:100% !important;position:relative !important;padding:58% 0 0 0 !important;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock {width:100% !important;position:relative !important;padding:58% 0 0 0 !important;overflow:hidden;}
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock iframe,
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock video,
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {position:absolute !important;top:0;left:0;width:100% !important;height:100% !important;}
@@ -44,3 +44,10 @@ a.avDeprecated:hover {background:#ddd;color:#666;text-decoration:none;}
 
 .avPlayerWrapper.avMixcloud .avPlayerContainer .avPlayerBlock {padding:0 !important;}
 .avPlayerWrapper.avMixcloud .avPlayerContainer .avPlayerBlock iframe {position:relative !important;height:inherit !important;}
+
+@media screen and (max-width:1024px) {
+    .avPlayerWrapper.avFacebook .avPlayerContainer .avPlayerBlock iframe {top:-25%;height:125% !important;}
+}
+@media screen and (max-width:480px) {
+    .avPlayerWrapper.avFacebook .avPlayerContainer .avPlayerBlock iframe {top:-50%;height:150% !important;}
+}

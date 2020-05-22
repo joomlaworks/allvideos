@@ -263,6 +263,9 @@ class plgContentJw_allvideos extends JPlugin
                     } else {
                         if (in_array($plg_tag, array('dailymotion','facebook','flickr','twitch','vimeo','youtube'))) {
                             $output->mediaTypeClass = ' avVideo';
+                            if ($plg_tag=='facebook') {
+                                $output->mediaTypeClass .= ' avFacebook';
+                            }
                             $output->mediaType = 'provider';
                             $output->source = $tagsource;
                             $output->posterFrame = '';
