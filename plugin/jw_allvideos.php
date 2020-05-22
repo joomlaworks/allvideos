@@ -346,6 +346,13 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
+                    if ($plg_tag=="mixcloud") {
+                        if (strpos($tagsource, 'http')!==false) {
+                            $tagsource = str_replace('https://www.mixcloud.com/', '', $tagsource);
+                            $tagsource = urlencode($tagsource);
+                        }
+                    }
+
                     if ($plg_tag=="twitch") {
                         if (strpos($tagsource, 'http')!==false) {
                             $tagsource = preg_replace("~(http|https):(.+?)twitch.tv\/videos\/~s", "", $tagsource);
