@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    6.0.0
+ * @version    6.1.0
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - https://www.joomlaworks.net
  * @copyright  Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.
@@ -17,7 +17,7 @@ class JWElementTemplate extends JWElement
     public function fetchElement($name, $value, &$node, $control_name)
     {
         jimport('joomla.filesystem.folder');
-        $plgTemplatesPath = version_compare(JVERSION, '2.5.0', 'ge') ? JPATH_SITE.'/plugins/content/jw_allvideos/jw_allvideos/tmpl' : JPATH_SITE.'/plugins/content/jw_allvideos/tmpl';
+        $plgTemplatesPath = (version_compare(JVERSION, '2.5.0', 'ge')) ? JPATH_SITE.'/plugins/content/jw_allvideos/jw_allvideos/tmpl' : JPATH_SITE.'/plugins/content/jw_allvideos/tmpl';
         $plgTemplatesFolders = JFolder::folders($plgTemplatesPath);
         $db = JFactory::getDBO();
         if (version_compare(JVERSION, '2.5.0', 'ge')) {

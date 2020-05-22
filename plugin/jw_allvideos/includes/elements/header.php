@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    6.0.0
+ * @version    6.1.0
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - https://www.joomlaworks.net
  * @copyright  Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.
@@ -23,7 +23,7 @@ class JWElementHeader extends JWElement
             $pluginLivePath = JURI::root(true).'/plugins/content/'.$plg_name;
         }
         $document = JFactory::getDocument();
-        $document->addStyleSheet($pluginLivePath.'/includes/elements/header.css?v=6.0.0');
+        $document->addStyleSheet($pluginLivePath.'/includes/elements/header.css?v=6.1.0');
 
         $cssClass = '';
         if (version_compare(JVERSION, '3.0.0', 'ge')) {

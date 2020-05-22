@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    6.0.0
+ * @version    6.1.0
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - https://www.joomlaworks.net
  * @copyright  Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.
@@ -16,8 +16,8 @@ class plgContentJw_allvideos extends JPlugin
 {
     // JoomlaWorks reference parameters
     public $plg_name             = "jw_allvideos";
-    public $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v6.0.0) starts here -->\n";
-    public $plg_copyrights_end   = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v6.0.0) ends here -->\n\n";
+    public $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v6.1.0) starts here -->\n";
+    public $plg_copyrights_end   = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v6.1.0) ends here -->\n\n";
 
     public function __construct(&$subject, $params)
     {
@@ -137,10 +137,10 @@ class plgContentJw_allvideos extends JPlugin
             // CSS
             $avCSS = $this->getTemplatePath($this->plg_name, 'css/template.css', $playerTemplate);
             $avCSS = $avCSS->http;
-            $document->addStyleSheet($avCSS.'?v=6.0.0');
+            $document->addStyleSheet($avCSS.'?v=6.1.0');
 
             // JS
-            $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=6.0.0');
+            $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=6.1.0');
         }
 
         // Loop throught the found tags
@@ -408,22 +408,22 @@ class plgContentJw_allvideos extends JPlugin
                         }
 
                         // Process string
-                        if (strpos($ytQuery, '&')!==false) {
+                        if (strpos($ytQuery, '&') !== false) {
                             $ytQuery = explode('&', $ytQuery);
                             $ytParams = array();
                             foreach ($ytQuery as $ytParam) {
                                 $ytParam = explode('=', $ytParam);
-                                $ytParams[$ytParam[0]] = $ytParam[1];
+                                $ytParams[$ytParam[0]] = (!empty($ytParam[1])) ? $ytParam[1] : null;
                             }
                             if (array_key_exists('v', $ytParams)) {
                                 $tagsource = $ytParams['v'];
                             } elseif (array_key_exists('list', $ytParams)) {
                                 $tagsource = 'videoseries?list='.$ytParams['list'];
                             }
-                        } elseif (strpos($ytQuery, '=')!==false) {
+                        } elseif (strpos($ytQuery, '=') !== false) {
                             $ytQuery = explode('=', $ytQuery);
                             $ytParams = array();
-                            $ytParams[$ytQuery[0]] = $ytQuery[1];
+                            $ytParams[$ytQuery[0]] = (!empty($ytQuery[1])) ? $ytQuery[1] : null;
                             if (array_key_exists('v', $ytParams)) {
                                 $tagsource = $ytParams['v'];
                             } elseif (array_key_exists('list', $ytParams)) {
@@ -435,14 +435,14 @@ class plgContentJw_allvideos extends JPlugin
                             }
                         }
 
-                        if (strpos($tagsource, '?')!==false) {
+                        if (strpos($tagsource, '?') !== false) {
                             $tagsource = $tagsource.'&amp;rel=0&amp;fs=1&amp;wmode=transparent';
                         } else {
                             $tagsource = $tagsource.'?rel=0&amp;fs=1&amp;wmode=transparent';
                         }
 
                         // Autoplay
-                        if ($provider_autoplay=='true') {
+                        if ($provider_autoplay == 'true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
 

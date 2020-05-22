@@ -1,5 +1,5 @@
 /**
- * @version    6.0.0
+ * @version    6.1.0
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - https://www.joomlaworks.net
  * @copyright  Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.

@@ -5,9 +5,9 @@
     <authorEmail>please-use-the-contact-form@joomlaworks.net</authorEmail>
     <authorUrl>www.joomlaworks.net</authorUrl>
     <copyright>Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.</copyright>
-    <creationDate>January 17th, 2020</creationDate>
+    <creationDate>May 22nd, 2020</creationDate>
     <license>https://www.gnu.org/copyleft/gpl.html</license>
-    <version>6.0.0</version>
+    <version>6.1.0</version>
     <description>JW_PLG_AV_XML_DESC</description>
     <!-- Parameters -->
     <params addpath="/plugins/content/jw_allvideos/includes/elements">
