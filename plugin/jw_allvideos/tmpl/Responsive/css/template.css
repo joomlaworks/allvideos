@@ -44,12 +44,3 @@ a.avDeprecated:hover {background:#ddd;color:#666;text-decoration:none;}
 
 .avPlayerWrapper.avMixcloud .avPlayerContainer .avPlayerBlock {padding:0 !important;}
 .avPlayerWrapper.avMixcloud .avPlayerContainer .avPlayerBlock iframe {position:relative !important;height:inherit !important;}
-
-/*
-@media screen and ((pointer:none), (pointer:coarse)) and (max-width:1024px) {
-    .avPlayerWrapper.avFacebook .avPlayerContainer .avPlayerBlock iframe {top:-25%;height:125% !important;}
-}
-@media screen and ((pointer:none), (pointer:coarse)) and (max-width:480px) {
-    .avPlayerWrapper.avFacebook .avPlayerContainer .avPlayerBlock iframe {top:-50%;height:150% !important;}
-}
-*/
