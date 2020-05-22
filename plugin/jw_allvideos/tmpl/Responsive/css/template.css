@@ -25,13 +25,14 @@ a.avDeprecated:hover {background:#ddd;color:#666;text-decoration:none;}
 /* Responsive Layout */
 .avPlayerWrapper {display:block;padding:0;margin:0 auto;clear:both;}
 .avPlayerWrapper .avPlayerContainer {display:block;padding:0;margin:0 auto;}
+
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock {width:100% !important;position:relative !important;padding:58% 0 0 0 !important;}
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock iframe,
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock video,
-.avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {position:absolute !important;top:0;left:0;width:100% !important;height:100% !important;box-sizing:border-box;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {position:absolute !important;top:0;left:0;width:100% !important;height:100% !important;}
 
 .avPlayerWrapper .avPlayerContainer .avPlayerBlock video {background:#000;}
-.avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {background-color:#000;background-repeat:no-repeat;background-position:50% 50%;background-size:cover;padding:10px;}
+.avPlayerWrapper .avPlayerContainer .avPlayerBlock audio {background-color:#000;background-repeat:no-repeat;background-position:50% 50%;background-size:cover;padding:10px;box-sizing:border-box;}
 
 .avPlayerWrapper.avNoPoster .avPlayerContainer .avPlayerBlock  {padding:0 !important;}
 .avPlayerWrapper.avNoPoster .avPlayerContainer .avPlayerBlock audio {position:relative !important;height:60px !important;}
