@@ -16,13 +16,15 @@ if (version_compare(JVERSION, '3.5.0', 'ge')) {
     {
         public function getInput()
         {
-            return $this->fetchElement($this->name, $this->value, $this->element, $this->options['control']);
+            $controls = (!empty($this->options['control'])) ? $this->options['control'] : array();
+            return $this->fetchElement($this->name, $this->value, $this->element, $controls);
         }
 
         public function getLabel()
         {
             if (method_exists($this, 'fetchTooltip')) {
-                return $this->fetchTooltip($this->element['label'], $this->description, $this->element, $this->options['control'], $this->element['name'] = '');
+                $controls = (!empty($this->options['control'])) ? $this->options['control'] : array();
+                return $this->fetchTooltip($this->element['label'], $this->description, $this->element, $controls, $this->element['name'] = '');
             } else {
                 return parent::getLabel();
             }
