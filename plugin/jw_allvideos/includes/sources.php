@@ -109,6 +109,9 @@ $tagReplace = array(
     <div id=\"avID_{SOURCEID}\" title=\"JoomlaWorks AllVideos Player\">&nbsp;</div>
     ",
 
+    // mixcloud.com - https://www.mixcloud.com/worldwidefm/joao-gilberto-by-gilles-peterson-25-02-20/
+    "Mixcloud" => "<iframe src=\"https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&autoplay={PROVIDER_AUTOPLAY}&feed={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+
     // soundcloud.com - https://soundcloud.com/sebastien-tellier/look
     "SoundCloud" => "
     <script type=\"text/javascript\">
