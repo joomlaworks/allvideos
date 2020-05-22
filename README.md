@@ -3,7 +3,7 @@ AllVideos
 
 AllVideos (by JoomlaWorks) is the universal media player for Joomla and a classic must-have extension for any Joomla based website.
 
-Use the plugin to easily embed video & audio content from all major 3rd party media providers (YouTube, Vimeo, Dailymotion, Twitch, Facebook, Flickr & SoundCloud) inside your Joomla articles, K2, Virtuemart, Kunena and any other Joomla component that supports "content" plugins.
+Use the plugin to easily embed video & audio content from all major 3rd party media providers (in alphabetical order: Dailymotion, Facebook, Flickr, Mixcloud, SoundCloud, Twitch, Vimeo, YouTube) inside your Joomla articles, K2, Virtuemart, Kunena or any other Joomla component that supports "content" plugins.
 
 Additionally, it allows you to playback any web-native video/audio file format hosted on your server or even a remote server, providing great flexibility when it comes to media content embedding. Fun videos, product presentations, audio podcasts, you name it!
 
@@ -14,7 +14,7 @@ Additionally, it allows you to playback any web-native video/audio file format h
 
 
 ## FEATURES
-1. All major 3rd party media providers are supported: YouTube (single videos & playlists), Vimeo, Dailymotion, Twitch, Facebook (for videos), Flickr (for videos) & SoundCloud. Use simple plugin tags utilizing the full media page URL (e.g. `{youtube}https://www.youtube.com/watch?v=0u_g6zNuP_I{/youtube}`) or just the ID from the media URL page (e.g `{youtube}0u_g6zNuP_I{/youtube}`).
+1. All major 3rd party media providers are supported: Dailymotion, Facebook (for videos), Flickr (for videos), Mixcloud, SoundCloud, Twitch, Vimeo, YouTube (single videos & playlists). Use simple plugin tags utilizing the full media page URL (e.g. `{youtube}https://www.youtube.com/watch?v=0u_g6zNuP_I{/youtube}`) or just the ID from the media URL page (e.g `{youtube}0u_g6zNuP_I{/youtube}`).
 2. Stream your own media content using web-native video and audio formats like H.264/MPEG-4 (.mp4/.m4v/.m4a), WebM (.webm), Ogg Theora Vorbis (.ogg/.ogv/.oga), MP3 (.mp3), WAVE PCM (.wav) & FLAC (.flac), as well as generic containers like .avi & .mkv. For non web-native media embedded with older version of AllVideos (prior to version 5.0.0), which are not supported by modern browsers, a download message will be presented - this basically includes Flash Video (.flv/.f4v), ShockWave Flash (.swf), Windows Media (.wmv/.wma), QuickTime (.mov/.mpg/.mpeg/.3gp/.3g2/.aac), DivX (.divx) etc.
 3. Easily embed your media content either directly from your server or a remote server.
 4. Use custom preview (poster) images for self-hosted video & audio files. For videos specifically (and unlike any other similar solution in Joomla), AllVideos can auto-generate preview images from the 5th second of each video by utilizing modern browser features.
@@ -39,4 +39,4 @@ AllVideos is a Joomla plugin developed by JoomlaWorks, released under the GNU Ge
 ## LEARN MORE
 Visit the AllVideos product page at: [https://www.joomlaworks.net/allvideos](https://www.joomlaworks.net/allvideos)
 
-Last update: May 22nd, 2020 - Version 6.1.0 (dev)
+Last update: May 22nd, 2020 - Version 6.1.0
