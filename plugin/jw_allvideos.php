@@ -184,13 +184,21 @@ class plgContentJw_allvideos extends JPlugin
                         'oggremote',
                         'wav',
                         'wavremote',
+                        'mixcloud',
                         'soundcloud'
                     ))) {
-                        if ($plg_tag=='soundcloud') {
-                            if (strpos($tagsource, '/sets/') !== false) {
-                                $output->mediaTypeClass = ' avSoundCloudSet';
-                            } else {
-                                $output->mediaTypeClass = ' avSoundCloudSong';
+                        if ($plg_tag=='mixcloud' || $plg_tag=='soundcloud') {
+                            if ($plg_tag=='mixcloud') {
+                                $output->mediaTypeClass = ' avMixcloud';
+                                $output->overrideAudioWidth = '100%';
+                                $output->overrideAudioHeight = '120';
+                            }
+                            if ($plg_tag=='soundcloud') {
+                                if (strpos($tagsource, '/sets/') !== false) {
+                                    $output->mediaTypeClass = ' avSoundCloudSet';
+                                } else {
+                                    $output->mediaTypeClass = ' avSoundCloudSong';
+                                }
                             }
                             $output->mediaType = 'provider';
                             $output->source = $tagsource;
@@ -226,13 +234,24 @@ class plgContentJw_allvideos extends JPlugin
                                 }
                                 if ($output->posterFrame) {
                                     $output->posterFrame = "background-image:url('".$output->posterFrame."');";
-                                    $aheight = ($awidth * 9 / 16);
+                                    $output->overrideAudioHeight = ($awidth * 9 / 16);
                                 }
                             }
                         }
 
-                        $final_awidth = (@$tagparams[1]) ? $tagparams[1] : $awidth;
-                        $final_aheight = (@$tagparams[2]) ? $tagparams[2] : $aheight;
+                        if (!empty($output->overrideAudioWidth)) {
+                            $audioWidth = $output->overrideAudioWidth;
+                        } else {
+                            $audioWidth = $awidth;
+                        }
+                        $final_awidth = (!empty($tagparams[1])) ? $tagparams[1] : $audioWidth;
+
+                        if (!empty($output->overrideAudioHeight)) {
+                            $audioHeight = $output->overrideAudioHeight;
+                        } else {
+                            $audioHeight = $aheight;
+                        }
+                        $final_aheight = (!empty($tagparams[2])) ? $tagparams[2] : $audioHeight;
 
                         $output->playerWidth = $final_awidth;
                         $output->playerHeight = $final_aheight;
@@ -274,8 +293,8 @@ class plgContentJw_allvideos extends JPlugin
                             }
                         }
 
-                        $final_vwidth = (@$tagparams[1]) ? $tagparams[1] : $vwidth;
-                        $final_vheight = (@$tagparams[2]) ? $tagparams[2] : $vheight;
+                        $final_vwidth = (!empty($tagparams[1])) ? $tagparams[1] : $vwidth;
+                        $final_vheight = (!empty($tagparams[2])) ? $tagparams[2] : $vheight;
 
                         $output->playerWidth = $final_vwidth;
                         $output->playerHeight = $final_vheight;
@@ -287,12 +306,12 @@ class plgContentJw_allvideos extends JPlugin
                     }
 
                     // Autoplay
-                    $tag_autoplay = (@$tagparams[3]) ? $tagparams[3] : $autoplay;
+                    $tag_autoplay = (!empty($tagparams[3])) ? $tagparams[3] : $autoplay;
                     $provider_autoplay = ($tag_autoplay) ? 'true' : 'false';
                     $player_autoplay = ($tag_autoplay) ? ' autoplay' : '';
 
                     // Loop
-                    $final_loop = (@$tagparams[4]) ? $tagparams[4] : $loop;
+                    $final_loop = (!empty($tagparams[4])) ? $tagparams[4] : $loop;
                     $final_loop = ($final_loop) ? ' loop' : '';
 
                     // Special treatment for specific video providers
@@ -348,7 +367,7 @@ class plgContentJw_allvideos extends JPlugin
 
                     if ($plg_tag=="mixcloud") {
                         if (strpos($tagsource, 'http')!==false) {
-                            $tagsource = str_replace('https://www.mixcloud.com/', '', $tagsource);
+                            $tagsource = str_replace('https://www.mixcloud.com', '', $tagsource);
                             $tagsource = urlencode($tagsource);
                         }
                     }
