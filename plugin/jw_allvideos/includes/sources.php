@@ -87,13 +87,13 @@ $tagReplace = array(
     /* --- 3rd party media providers --- */
 
     // youtube.com - https://www.youtube.com/watch?v=g5lGNkS5TE0 or https://www.youtube.com/playlist?list=PL0875C16C899A8DE6
-    "YouTube" => "<iframe src=\"https://www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen; encrypted-media\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+    "YouTube" => "<iframe src=\"https://www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen; encrypted-media\" allowfullscreen=\"true\" border=\"0\" overflow=\"hidden\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
     // dailymotion.com - https://www.dailymotion.com/featured/video/x35714_cap-nord-projet-1_creation
-    "Dailymotion" => "<iframe src=\"https://www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+    "Dailymotion" => "<iframe src=\"https://www.dailymotion.com/embed/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" border=\"0\" overflow=\"hidden\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
     // facebook.com - https://www.facebook.com/Channel4News/videos/10155042102006939/
-    "Facebook" => "<iframe src=\"https://www.facebook.com/plugins/video.php?href={SOURCE}&show_text=0&width={WIDTH}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+    "Facebook" => "<iframe src=\"https://www.facebook.com/plugins/video.php?href={SOURCE}&show_text=0&width={WIDTH}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" border=\"0\" overflow=\"hidden\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
     // flickr.com - https://www.flickr.com/photos/bswise/5930051523/in/pool-726923@N23/
     "Flickr" => "
@@ -110,7 +110,7 @@ $tagReplace = array(
     ",
 
     // mixcloud.com - https://www.mixcloud.com/worldwidefm/joao-gilberto-by-gilles-peterson-25-02-20/
-    "Mixcloud" => "<iframe src=\"https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&autoplay={PROVIDER_AUTOPLAY}&feed={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
+    "Mixcloud" => "<iframe src=\"https://www.mixcloud.com/widget/iframe/?hide_cover=1&light=1&autoplay={PROVIDER_AUTOPLAY}&feed={SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" border=\"0\" overflow=\"hidden\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
     // soundcloud.com - https://soundcloud.com/sebastien-tellier/look
     "SoundCloud" => "
