@@ -85,7 +85,6 @@ $tagReplace = array(
 
 
     /* --- 3rd party media providers --- */
-    
     // youtube.com - https://www.youtube.com/watch?v=g5lGNkS5TE0 or https://www.youtube.com/playlist?list=PL0875C16C899A8DE6
     "YouTube" => "<iframe src=\"https://www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen; encrypted-media\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
