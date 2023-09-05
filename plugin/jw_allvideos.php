@@ -261,7 +261,7 @@ class plgContentJw_allvideos extends JPlugin
                             $output->controls = $controls.' controlsList="nodownload"';
                         }
                     } else {
-                        if (in_array($plg_tag, array('dailymotion','facebook','flickr','twitch','vimeo','youtube'))) {
+                        if (in_array($plg_tag, array('dailymotion','facebook','flickr', 'twitch','vimeo','youtube','rutube'))) {
                             $output->mediaTypeClass = ' avVideo';
                             $output->mediaType = 'provider';
                             $output->source = $tagsource;
