@@ -152,6 +152,11 @@ class plgContentJw_allvideos extends JPlugin
             // expression to search for
             $regex = "~{".$plg_tag."}.*?{/".$plg_tag."}~is";
 
+            // Debugging: Check if the tag is found
+            //if (preg_match($regex, $row->text)) {
+            //    echo "Tag found: " . $plg_tag;
+            //}            
+
             // replacements for content to avoid issues with RegEx
             $row->text = str_replace('~', '&#126;', $row->text);
 
@@ -414,6 +419,21 @@ class plgContentJw_allvideos extends JPlugin
                         // Muted
                         if ($muted) {
                             $tagsource = $tagsource.'&amp;background=1';
+                        }
+                    }
+
+                    // Check if the current tag is "odysee"
+                    if ($plg_tag == "odysee") {
+                        // Check if the tag source contains 'http', indicating it's a full URL
+                        if (strpos($tagsource, 'http') !== false) {
+                            // Remove the 'http://odysee.com/' or 'https://odysee.com/' part from the URL using a regular expression
+                            // The regular expression "~https?://odysee.com/~" matches 'http://' or 'https://' followed by 'odysee.com/'
+                            // The 's' modifier at the end is unnecessary here, so it is omitted
+                            $tagsource = preg_replace("~https?://odysee.com/~", "", $tagsource);
+                            
+                            // Encode the remaining part of the URL to ensure it is properly formatted for use in the embed code
+                            // This replaces characters that are not safe in URLs with their percent-encoded equivalents
+                            $tagsource = urlencode($tagsource);
                         }
                     }
 
