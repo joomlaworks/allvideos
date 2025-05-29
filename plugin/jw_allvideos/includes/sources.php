@@ -9,6 +9,7 @@
 
 // no direct access
 defined('_JEXEC') or die('Restricted access');
+use Joomla\CMS\Language\Text as JText;
 
 /* -------------------------------- Media Output Templates -------------------------------- */
 

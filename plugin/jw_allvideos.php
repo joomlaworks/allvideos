@@ -10,7 +10,15 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-jimport('joomla.plugin.plugin');
+use Joomla\CMS\Plugin\CMSPlugin as JPlugin;
+use Joomla\CMS\Factory as JFactory;
+use Joomla\CMS\Uri\Uri as JURI;
+use Joomla\CMS\Plugin\PluginHelper as JPluginHelper;
+use Joomla\CMS\Language\Text as JText;
+use Joomla\Registry\Registry as JRegistry;
+use Joomla\CMS\Object\CMSObject as JObject;
+use Joomla\CMS\Filesystem\File as JFile;
+use Joomla\CMS\Filesystem\Folder as JFolder;
 
 class plgContentJw_allvideos extends JPlugin
 {
@@ -535,16 +543,19 @@ class plgContentJw_allvideos extends JPlugin
                         $output->player = str_replace('www.youtube.com/embed', 'www.youtube-nocookie.com/embed', $output->player);
                     }
 
-                    // Fetch the template
-                    ob_start();
+
                     $getTemplatePath = $this->getTemplatePath($this->plg_name, 'default.php', $playerTemplate);
                     $getTemplatePath = $getTemplatePath->file;
-                    include($getTemplatePath);
-                    $getTemplate = $this->plg_copyrights_start.ob_get_contents().$this->plg_copyrights_end;
-                    ob_end_clean();
+                    // Fetch the template
+                    if ($getTemplatePath) {
+                        ob_start();
+                        include($getTemplatePath);
+                        $getTemplate = $this->plg_copyrights_start.ob_get_contents().$this->plg_copyrights_end;
+                       ob_end_clean();
 
-                    // Output
-                    $row->text = preg_replace("~{".$plg_tag."}".preg_quote($tagcontent)."{/".$plg_tag."}~is", $getTemplate, $row->text);
+                       // Output
+                       $row->text = preg_replace("~{".$plg_tag."}".preg_quote($tagcontent)."{/".$plg_tag."}~is", $getTemplate, $row->text);
+                    }
                 } // End second foreach
             } // End if
         } // End first foreach
@@ -556,19 +567,20 @@ class plgContentJw_allvideos extends JPlugin
         $app = JFactory::getApplication();
 
         $p = new stdClass;
-
-        if (file_exists(JPATH_SITE.'/'.'templates'.'/'.$app->getTemplate().'/html/'.$pluginName.'/'.$tmpl.'/'.$file)) {
-            $p->file = JPATH_SITE.'/templates/'.$app->getTemplate().'/html/'.$pluginName.'/'.$tmpl.'/'.$file;
-            $p->http = JURI::root(true)."/templates/".$app->getTemplate()."/html/{$pluginName}/{$tmpl}/{$file}";
-        } else {
-            if (version_compare(JVERSION, '2.5.0', 'ge')) {
-                // Joomla 2.5 or newer
-                $p->file = JPATH_SITE.'/plugins/content/'.$pluginName.'/'.$pluginName.'/tmpl/'.$tmpl.'/'.$file;
-                $p->http = JURI::root(true)."/plugins/content/{$pluginName}/{$pluginName}/tmpl/{$tmpl}/{$file}";
+        if (method_exists($app, 'getTemplate')) {
+            if (file_exists(JPATH_SITE.'/'.'templates'.'/'.$app->getTemplate().'/html/'.$pluginName.'/'.$tmpl.'/'.$file)) {
+                $p->file = JPATH_SITE.'/templates/'.$app->getTemplate().'/html/'.$pluginName.'/'.$tmpl.'/'.$file;
+                $p->http = JURI::root(true)."/templates/".$app->getTemplate()."/html/{$pluginName}/{$tmpl}/{$file}";
             } else {
-                // Joomla 1.5
-                $p->file = JPATH_SITE.'/plugins/content/'.$pluginName.'/tmpl/'.$tmpl.'/'.$file;
-                $p->http = JURI::root(true)."/plugins/content/{$pluginName}/tmpl/{$tmpl}/{$file}";
+                if (version_compare(JVERSION, '2.5.0', 'ge')) {
+                    // Joomla 2.5 or newer
+                    $p->file = JPATH_SITE.'/plugins/content/'.$pluginName.'/'.$pluginName.'/tmpl/'.$tmpl.'/'.$file;
+                    $p->http = JURI::root(true)."/plugins/content/{$pluginName}/{$pluginName}/tmpl/{$tmpl}/{$file}";
+                } else {
+                    // Joomla 1.5
+                    $p->file = JPATH_SITE.'/plugins/content/'.$pluginName.'/tmpl/'.$tmpl.'/'.$file;
+                    $p->http = JURI::root(true)."/plugins/content/{$pluginName}/tmpl/{$tmpl}/{$file}";
+                }
             }
         }
         return $p;
