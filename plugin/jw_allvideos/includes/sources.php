@@ -85,7 +85,6 @@ $tagReplace = array(
 
 
     /* --- 3rd party media providers --- */
-
     // youtube.com - https://www.youtube.com/watch?v=g5lGNkS5TE0 or https://www.youtube.com/playlist?list=PL0875C16C899A8DE6
     "YouTube" => "<iframe src=\"https://www.youtube.com/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen; encrypted-media\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
@@ -130,6 +129,8 @@ $tagReplace = array(
     "Twitch" => "<iframe src=\"https://player.twitch.tv/?video=v{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
     // vimeo.com - https://www.vimeo.com/1319796
-    "Vimeo" => "<iframe src=\"https://player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>"
+    "Vimeo" => "<iframe src=\"https://player.vimeo.com/video/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\" frameborder=\"0\" scrolling=\"no\" title=\"JoomlaWorks AllVideos Player\"></iframe>",
 
+    // Rutube  - http://rutube.ru/video/995b21c0ad5a4db6c88adf0331d8826f 
+    "rutube" => "<iframe src=\"https://rutube.ru/play/embed/{SOURCE}\" width=\"{WIDTH}\" height=\"{HEIGHT}\" frameborder=\"0\" allow=\"clipboard-write; autoplay\" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>"
 );
