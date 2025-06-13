@@ -77,7 +77,10 @@ class plgContentJw_allvideos extends JPlugin
 
         // Simple performance check to determine whether plugin should process further
         $grabTags = strtolower(implode("|", array_keys($tagReplace)));
-        if (preg_match("~{(".$grabTags.")}~is", $row->text)==false) {
+
+        $checkTextString = isset($row->text) && is_string($row->text) ? $row->text : '';
+
+        if (preg_match("~{(" . $grabTags . ")}~is", $checkTextString) === false) {
             return;
         }
 
@@ -150,10 +153,12 @@ class plgContentJw_allvideos extends JPlugin
             $plg_tag = strtolower($plg_tag);
 
             // expression to search for
-            $regex = "~{".$plg_tag."}.*?{/".$plg_tag."}~is";
-
+            $regex = "~{".$plg_tag."}.*?{/".$plg_tag."}~is";            
+                        
+        
             // replacements for content to avoid issues with RegEx
-            $row->text = str_replace('~', '&#126;', $row->text);
+            $checkTextString = isset($row->text) && is_string($row->text) ? $row->text : '';
+            $row->text = str_replace('~', '&#126;', $checkTextString);
 
             // process tags
             if (preg_match_all($regex, $row->text, $matches, PREG_PATTERN_ORDER)) {
