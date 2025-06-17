@@ -444,7 +444,7 @@ class plgContentJw_allvideos extends JPlugin
                                 if (strpos($tagsource, '?') !== false) {
                                     $tagsource = explode('?', $tagsource)[0];
                                 }
-                                $tagsource = explode('/shorts/', $tagsource)[0];
+                                $tagsource = explode('/shorts/', $tagsource)[1];
                             } else {
                                 $ytQuery = parse_url($tagsource, PHP_URL_QUERY);
                                 if (is_array($ytQuery)) {

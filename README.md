@@ -29,7 +29,7 @@ Additionally, it allows you to playback any web-native video/audio file format h
 
 
 ## COMPATIBILITY
-AllVideos is fully compatible with Joomla versions 1.5, 2.5, 3.x & 4.x on servers running PHP 5 or 7.
+AllVideos is fully compatible with Joomla versions 1.5, 2.5, 3.x, 4.x & 5.x on servers running PHP 5, 7 or 8.
 
 
 ## LICENSE
