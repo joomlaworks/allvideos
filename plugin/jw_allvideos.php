@@ -1,23 +1,43 @@
 <?php
 /**
- * @version    6.1.0
+ * @version    7.0
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - https://www.joomlaworks.net
- * @copyright  Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.
+ * @copyright  Copyright (c) 2006 - 2025 JoomlaWorks Ltd. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
  */
 
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-jimport('joomla.plugin.plugin');
+// Joomla 1.5
+if (version_compare(JVERSION, '1.6', 'lt')) {
+    jimport('joomla.plugin.plugin');
+}
+
+// Joomla 4 & 5
+if (version_compare(JVERSION, '4', 'ge')) {
+    $aliases = [
+        'JFactory' => 'Joomla\\CMS\\Factory',
+        'JPlugin' => 'Joomla\\CMS\\Plugin\\CMSPlugin',
+        'JPluginHelper' => 'Joomla\\CMS\\Plugin\\PluginHelper',
+        'JRegistry' => 'Joomla\\Registry\\Registry',
+        'JText' => 'Joomla\\CMS\\Language\\Text',
+        'JUri' => 'Joomla\\CMS\\Uri\\Uri',
+    ];
+    foreach ($aliases as $legacy => $modern) {
+        if (class_exists($modern) && !class_exists($legacy)) {
+            class_alias($modern, $legacy);
+        }
+    }
+}
 
 class plgContentJw_allvideos extends JPlugin
 {
     // JoomlaWorks reference parameters
     public $plg_name             = "jw_allvideos";
-    public $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v6.1.0) starts here -->\n";
-    public $plg_copyrights_end   = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v6.1.0) ends here -->\n\n";
+    public $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"AllVideos\" Plugin (v7.0) starts here -->\n";
+    public $plg_copyrights_end   = "\n<!-- JoomlaWorks \"AllVideos\" Plugin (v7.0) ends here -->\n\n";
 
     public function __construct(&$subject, $params)
     {
@@ -33,6 +53,10 @@ class plgContentJw_allvideos extends JPlugin
     // Joomla 2.5+
     public function onContentPrepare($context, &$row, &$params, $page = 0)
     {
+        // Do not process the plugin in the indexer context
+        if ($context === 'com_finder.indexer') {
+            return;
+        }
         $this->renderAllVideos($row, $params, $page = 0);
     }
 
@@ -40,10 +64,6 @@ class plgContentJw_allvideos extends JPlugin
     public function renderAllVideos(&$row, &$params, $page = 0)
     {
         // API
-        if (version_compare(JVERSION, '2.5.0', 'ge')) {
-            jimport('joomla.html.parameter');
-        }
-        jimport('joomla.filesystem.file');
         $app = JFactory::getApplication();
         $document  = JFactory::getDocument();
 
@@ -56,15 +76,15 @@ class plgContentJw_allvideos extends JPlugin
 
         // Assign paths
         $sitePath = JPATH_SITE;
-        $siteUrl  = JURI::root(true);
+        $siteUrl  = JUri::root(true);
         if (version_compare(JVERSION, '2.5.0', 'ge')) {
             $pluginLivePath = $siteUrl.'/plugins/content/'.$this->plg_name.'/'.$this->plg_name;
         } else {
             $pluginLivePath = $siteUrl.'/plugins/content/'.$this->plg_name;
         }
 
-        // Check if plugin is enabled
-        if (JPluginHelper::isEnabled('content', $this->plg_name)==false) {
+        // Check if the plugin is enabled
+        if (JPluginHelper::isEnabled('content', $this->plg_name) == false) {
             return;
         }
 
@@ -77,7 +97,7 @@ class plgContentJw_allvideos extends JPlugin
 
         // Simple performance check to determine whether plugin should process further
         $grabTags = strtolower(implode("|", array_keys($tagReplace)));
-        if (preg_match("~{(".$grabTags.")}~is", $row->text)==false) {
+        if (preg_match("~{(".$grabTags.")}~is", $row->text) == false) {
             return;
         }
 
@@ -137,10 +157,10 @@ class plgContentJw_allvideos extends JPlugin
             // CSS
             $avCSS = $this->getTemplatePath($this->plg_name, 'css/template.css', $playerTemplate);
             $avCSS = $avCSS->http;
-            $document->addStyleSheet($avCSS.'?v=6.1.0');
+            $document->addStyleSheet($avCSS.'?v=7.0');
 
             // JS
-            $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=6.1.0');
+            $document->addScript($pluginLivePath.'/includes/js/behaviour.js?v=7.0');
         }
 
         // Loop throught the found tags
@@ -166,7 +186,7 @@ class plgContentJw_allvideos extends JPlugin
                     $tagsource = trim(strip_tags($tagparams[0]));
 
                     // Prepare the HTML
-                    $output = new JObject;
+                    $output = new stdClass();
 
                     $output->controls = $controls;
 
@@ -187,13 +207,13 @@ class plgContentJw_allvideos extends JPlugin
                         'mixcloud',
                         'soundcloud'
                     ))) {
-                        if ($plg_tag=='mixcloud' || $plg_tag=='soundcloud') {
-                            if ($plg_tag=='mixcloud') {
+                        if ($plg_tag == 'mixcloud' || $plg_tag == 'soundcloud') {
+                            if ($plg_tag == 'mixcloud') {
                                 $output->mediaTypeClass = ' avMixcloud';
                                 $output->overrideAudioWidth = '100%';
                                 $output->overrideAudioHeight = '120';
                             }
-                            if ($plg_tag=='soundcloud') {
+                            if ($plg_tag == 'soundcloud') {
                                 if (strpos($tagsource, '/sets/') !== false) {
                                     $output->mediaTypeClass = ' avSoundCloudSet';
                                 } else {
@@ -216,13 +236,13 @@ class plgContentJw_allvideos extends JPlugin
                             } else {
                                 $output->source = "$siteUrl/$afolder/$tagsource.$plg_tag";
                                 $posterFramePath = $sitePath.'/'.$afolder;
-                                if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
+                                if (file_exists($posterFramePath.'/'.$tagsource.'.jpg')) {
                                     $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.jpg';
-                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
+                                } elseif (file_exists($posterFramePath.'/'.$tagsource.'.png')) {
                                     $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.png';
-                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
+                                } elseif (file_exists($posterFramePath.'/'.$tagsource.'.gif')) {
                                     $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.gif';
-                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
+                                } elseif (file_exists($posterFramePath.'/'.$tagsource.'.webp')) {
                                     $output->posterFrame = $siteUrl.'/'.$afolder.'/'.$tagsource.'.webp';
                                 } else {
                                     if ($output->randomPosterFrame) {
@@ -275,13 +295,13 @@ class plgContentJw_allvideos extends JPlugin
                             } else {
                                 $output->source = "$siteUrl/$vfolder/$tagsource.$plg_tag";
                                 $posterFramePath = $sitePath.'/'.$vfolder;
-                                if (JFile::exists($posterFramePath.'/'.$tagsource.'.jpg')) {
+                                if (file_exists($posterFramePath.'/'.$tagsource.'.jpg')) {
                                     $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.jpg';
-                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.png')) {
+                                } elseif (file_exists($posterFramePath.'/'.$tagsource.'.png')) {
                                     $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.png';
-                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.gif')) {
+                                } elseif (file_exists($posterFramePath.'/'.$tagsource.'.gif')) {
                                     $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.gif';
-                                } elseif (JFile::exists($posterFramePath.'/'.$tagsource.'.webp')) {
+                                } elseif (file_exists($posterFramePath.'/'.$tagsource.'.webp')) {
                                     $output->posterFrame = $siteUrl.'/'.$vfolder.'/'.$tagsource.'.webp';
                                 } else {
                                     $output->posterFrame = '';
@@ -315,14 +335,14 @@ class plgContentJw_allvideos extends JPlugin
                     $final_loop = ($final_loop) ? ' loop' : '';
 
                     // Special treatment for specific video providers
-                    if ($plg_tag=="dailymotion") {
+                    if ($plg_tag == "dailymotion") {
                         $tagsource = preg_replace("~(http|https):(.+?)dailymotion.com\/video\/~s", "", $tagsource);
                         $tagsourceDailymotion = explode('_', $tagsource);
                         $tagsource = $tagsourceDailymotion[0];
 
                         // Autoplay
-                        if ($provider_autoplay=='true') {
-                            if (strpos($tagsource, '?')!==false) {
+                        if ($provider_autoplay == 'true') {
+                            if (strpos($tagsource, '?') !== false) {
                                 $tagsource = $tagsource.'&amp;autoplay=1';
                             } else {
                                 $tagsource = $tagsource.'?autoplay=1';
@@ -340,11 +360,11 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
-                    if ($plg_tag=="facebook") {
+                    if ($plg_tag == "facebook") {
                         $tagsource = urlencode($tagsource);
 
                         // Autoplay
-                        if ($provider_autoplay=='true') {
+                        if ($provider_autoplay == 'true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
 
@@ -359,26 +379,26 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
-                    if ($plg_tag=="flickr") {
-                        if (strpos($tagsource, 'http')!==false) {
+                    if ($plg_tag == "flickr") {
+                        if (strpos($tagsource, 'http') !== false) {
                             $tagsource = urlencode($tagsource);
                         }
                     }
 
-                    if ($plg_tag=="mixcloud") {
-                        if (strpos($tagsource, 'http')!==false) {
+                    if ($plg_tag == "mixcloud") {
+                        if (strpos($tagsource, 'http') !== false) {
                             $tagsource = str_replace('https://www.mixcloud.com', '', $tagsource);
                             $tagsource = urlencode($tagsource);
                         }
                     }
 
-                    if ($plg_tag=="twitch") {
-                        if (strpos($tagsource, 'http')!==false) {
+                    if ($plg_tag == "twitch") {
+                        if (strpos($tagsource, 'http') !== false) {
                             $tagsource = preg_replace("~(http|https):(.+?)twitch.tv\/videos\/~s", "", $tagsource);
                         }
 
                         // Autoplay
-                        if ($provider_autoplay=='true') {
+                        if ($provider_autoplay == 'true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
 
@@ -393,16 +413,16 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
-                    if ($plg_tag=="vimeo") {
+                    if ($plg_tag == "vimeo") {
                         $tagsource = preg_replace("~(http|https):(.+?)vimeo.com\/~s", "", $tagsource);
-                        if (strpos($tagsource, '?')!==false) {
+                        if (strpos($tagsource, '?') !== false) {
                             $tagsource = $tagsource.'&amp;portrait=0';
                         } else {
                             $tagsource = $tagsource.'?portrait=0';
                         }
 
                         // Autoplay
-                        if ($provider_autoplay=='true') {
+                        if ($provider_autoplay == 'true') {
                             $tagsource = $tagsource.'&amp;autoplay=1';
                         }
 
@@ -417,15 +437,22 @@ class plgContentJw_allvideos extends JPlugin
                         }
                     }
 
-                    if ($plg_tag=="youtube") {
+                    if ($plg_tag == "youtube") {
                         // Check the presence of fully pasted URLs
-                        if (strpos($tagsource, 'youtube.com')!==false) {
-                            $ytQuery = parse_url($tagsource, PHP_URL_QUERY);
-                            if (is_array($ytQuery)) {
-                                $ytQuery = implode("&", $ytQuery);
+                        if (strpos($tagsource, 'youtube.com') !== false) {
+                            if (strpos($tagsource, 'youtube.com/shorts/') !== false) {
+                                if (strpos($tagsource, '?') !== false) {
+                                    $tagsource = explode('?', $tagsource)[0];
+                                }
+                                $tagsource = explode('/shorts/', $tagsource)[0];
+                            } else {
+                                $ytQuery = parse_url($tagsource, PHP_URL_QUERY);
+                                if (is_array($ytQuery)) {
+                                    $ytQuery = implode("&", $ytQuery);
+                                }
+                                $ytQuery = str_replace('&amp;', '&', $ytQuery);
                             }
-                            $ytQuery = str_replace('&amp;', '&', $ytQuery);
-                        } elseif (strpos($tagsource, 'youtu.be')!==false) {
+                        } elseif (strpos($tagsource, 'youtu.be') !== false) {
                             $ytQuery = explode('youtu.be/', $tagsource);
                             $ytQuery = $ytQuery[1];
                             $tagsource = $ytQuery;
@@ -456,7 +483,7 @@ class plgContentJw_allvideos extends JPlugin
                                 $tagsource = 'videoseries?list='.$ytParams['list'];
                             }
                         } else {
-                            if (substr($tagsource, 0, 2)=="PL") {
+                            if (substr($tagsource, 0, 2) == "PL") {
                                 $tagsource = 'videoseries?list='.$tagsource;
                             }
                         }
@@ -519,26 +546,25 @@ class plgContentJw_allvideos extends JPlugin
                         $player_autoplay,
                         $muted,
                         $siteUrl,
-                        substr(JURI::root(false), 0, -1),
+                        substr(JUri::root(false), 0, -1),
                         $plg_tag,
                         str_replace("remote", "", $plg_tag),
                         $pluginLivePath,
                         $output->posterFrame
                     );
 
-                    // Do the element replace
+                    // Do the element replacement
                     $output->player = str_replace($findAVparams, $replaceAVparams, $tagReplace[$cloned_plg_tag]);
 
-                    // Post processing
-                    // For YouTube
+                    // Post processing for YouTube
                     if ($ytnocookie) {
                         $output->player = str_replace('www.youtube.com/embed', 'www.youtube-nocookie.com/embed', $output->player);
                     }
 
                     // Fetch the template
-                    ob_start();
                     $getTemplatePath = $this->getTemplatePath($this->plg_name, 'default.php', $playerTemplate);
                     $getTemplatePath = $getTemplatePath->file;
+                    ob_start();
                     include($getTemplatePath);
                     $getTemplate = $this->plg_copyrights_start.ob_get_contents().$this->plg_copyrights_end;
                     ob_end_clean();
@@ -555,20 +581,20 @@ class plgContentJw_allvideos extends JPlugin
     {
         $app = JFactory::getApplication();
 
-        $p = new stdClass;
+        $p = new stdClass();
 
         if (file_exists(JPATH_SITE.'/'.'templates'.'/'.$app->getTemplate().'/html/'.$pluginName.'/'.$tmpl.'/'.$file)) {
             $p->file = JPATH_SITE.'/templates/'.$app->getTemplate().'/html/'.$pluginName.'/'.$tmpl.'/'.$file;
-            $p->http = JURI::root(true)."/templates/".$app->getTemplate()."/html/{$pluginName}/{$tmpl}/{$file}";
+            $p->http = JUri::root(true)."/templates/".$app->getTemplate()."/html/{$pluginName}/{$tmpl}/{$file}";
         } else {
             if (version_compare(JVERSION, '2.5.0', 'ge')) {
                 // Joomla 2.5 or newer
                 $p->file = JPATH_SITE.'/plugins/content/'.$pluginName.'/'.$pluginName.'/tmpl/'.$tmpl.'/'.$file;
-                $p->http = JURI::root(true)."/plugins/content/{$pluginName}/{$pluginName}/tmpl/{$tmpl}/{$file}";
+                $p->http = JUri::root(true)."/plugins/content/{$pluginName}/{$pluginName}/tmpl/{$tmpl}/{$file}";
             } else {
                 // Joomla 1.5
                 $p->file = JPATH_SITE.'/plugins/content/'.$pluginName.'/tmpl/'.$tmpl.'/'.$file;
-                $p->http = JURI::root(true)."/plugins/content/{$pluginName}/tmpl/{$tmpl}/{$file}";
+                $p->http = JUri::root(true)."/plugins/content/{$pluginName}/tmpl/{$tmpl}/{$file}";
             }
         }
         return $p;

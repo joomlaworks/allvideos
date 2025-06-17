@@ -3,11 +3,11 @@
     <name>AllVideos (by JoomlaWorks)</name>
     <author>JoomlaWorks</author>
     <authorEmail>please-use-the-contact-form@joomlaworks.net</authorEmail>
-    <authorUrl>www.joomlaworks.net</authorUrl>
-    <copyright>Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.</copyright>
-    <creationDate>May 22nd, 2020</creationDate>
+    <authorUrl>https://www.joomlaworks.net</authorUrl>
+    <copyright>Copyright (c) 2006 - 2025 JoomlaWorks Ltd. All rights reserved.</copyright>
+    <creationDate>June 17th, 2025</creationDate>
     <license>https://www.gnu.org/copyleft/gpl.html</license>
-    <version>6.1.0</version>
+    <version>7.0</version>
     <description>JW_PLG_AV_XML_DESC</description>
     <!-- Parameters -->
     <config>

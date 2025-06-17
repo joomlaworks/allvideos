@@ -1,9 +1,9 @@
 <?php
 /**
- * @version    6.1.0
+ * @version    7.0
  * @package    AllVideos (plugin)
  * @author     JoomlaWorks - https://www.joomlaworks.net
- * @copyright  Copyright (c) 2006 - 2020 JoomlaWorks Ltd. All rights reserved.
+ * @copyright  Copyright (c) 2006 - 2025 JoomlaWorks Ltd. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
  */
 
@@ -18,12 +18,12 @@ class JWElementHeader extends JWElement
     {
         $plg_name = "jw_allvideos";
         if (version_compare(JVERSION, '2.5.0', 'ge')) {
-            $pluginLivePath = JURI::root(true).'/plugins/content/'.$plg_name.'/'.$plg_name;
+            $pluginLivePath = JUri::root(true).'/plugins/content/'.$plg_name.'/'.$plg_name;
         } else {
-            $pluginLivePath = JURI::root(true).'/plugins/content/'.$plg_name;
+            $pluginLivePath = JUri::root(true).'/plugins/content/'.$plg_name;
         }
         $document = JFactory::getDocument();
-        $document->addStyleSheet($pluginLivePath.'/includes/elements/header.css?v=6.1.0');
+        $document->addStyleSheet($pluginLivePath.'/includes/elements/header.css?v=7.0');
 
         $cssClass = '';
         if (version_compare(JVERSION, '3.0.0', 'ge')) {
